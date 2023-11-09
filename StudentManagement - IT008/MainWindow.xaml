@@ -1,0 +1,126 @@
+﻿<Window x:Class="StudentManagement___IT008.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagement___IT008"
+        xmlns:leftGroup="clr-namespace:StudentManagement___IT008.View"
+        xmlns:viewModel="clr-namespace:StudentManagement___IT008.ViewModel" d:DataContext="{d:DesignInstance Type=viewModel:Mainwd}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent" 
+        Title="MainWindow" Height="800" Width="1420" >
+    <Window.Resources>
+
+    </Window.Resources>
+    <Border CornerRadius="50">
+        <Border.Background>
+            <SolidColorBrush Color="#FBF7F8"></SolidColorBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"></ColumnDefinition>
+                <ColumnDefinition Width="1220"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Background="White" CornerRadius="50 0 0 50" >
+                <Grid Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*">
+
+                            </RowDefinition>
+                            <RowDefinition Height="2*">
+
+                            </RowDefinition>
+                            <RowDefinition Height="*">
+
+                            </RowDefinition>
+
+                        </Grid.RowDefinitions>
+                        <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup"></leftGroup:LeftOptions>
+                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="173" Height="52" VerticalAlignment="Center" Cursor="Hand">
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="20" BorderThickness="0">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#522c53"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Background" Value="Purple"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="Icons/icons8-calendar-plus-50 (1).png" Margin="9,17,7,11"></Image>
+                                            <TextBlock Grid.Column="1" Text="Học kì mới"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="1,0,0,0">
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </Grid>
+                    <TextBlock Text="Phần mềm" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="70,94,0,0" RenderTransformOrigin="0.672,0.065" />
+                    <TextBlock Text="Quản lý học sinh" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="41,120,0,0" />
+                    <Image Margin="33,95,166,675" Source="Icons/icons8-school-100.png"/>
+
+                </Grid>
+
+            </Border>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,63,0">
+                        <Button Click="HideClick" Height="auto" Background="Transparent" BorderThickness="0" Width="30">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Ellipse Width="20" Height="20" Fill ="Green" Margin="0 0 10 0">
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Click="CloseClick" Height="auto" Width="auto" Background="Transparent" BorderThickness="0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Ellipse Width="20" Height="20" Fill="Red" Margin="0 0 10 0">
+                                    </Ellipse>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <leftGroup:Overview Margin="21,0,101,0"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <leftGroup:StudentsList Grid.Column="0" Grid.ColumnSpan="2">
+                        
+                    </leftGroup:StudentsList>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

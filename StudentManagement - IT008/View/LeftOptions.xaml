@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="StudentManagement___IT008.View.LeftOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentManagement___IT008.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="315" d:DesignWidth="199">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+            <RowDefinition Height ="*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-home-50.png"  InnerText ="Trang chủ" Grid.Row="0" />
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-student-50.png" InnerText ="Học sinh" Grid.Row="1"/>
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-teacher-64.png" InnerText="Giáo viên" Grid.Row="2"/>
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-class-50.png" InnerText ="Lớp học" Grid.Row="3"/>
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-conclusion-contract-64.png" InnerText ="Tổng kết" Grid.Row="4"/>
+        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-setting-50.png" InnerText ="Cài đặt" Grid.Row="5"/>
+    </Grid>
+</UserControl>
