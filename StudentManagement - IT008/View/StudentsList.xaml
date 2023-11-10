@@ -7,36 +7,202 @@
              mc:Ignorable="d"
              d:DesignHeight="670" d:DesignWidth="1220">
     <Grid>
-        <Border Background="#FBF7F8">
+        <Border Background="#FBF7F8" Margin="0,0,36,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="0.02*"></RowDefinition>
                     <RowDefinition Height="2.5*"></RowDefinition>
-                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="122*"></ColumnDefinition>
-                        <ColumnDefinition Width="141*"></ColumnDefinition>
-                        <ColumnDefinition Width="347*"/>
+                        <ColumnDefinition Width="244*"></ColumnDefinition>
+                        <ColumnDefinition Width="282*"></ColumnDefinition>
+                        <ColumnDefinition Width="271*"/>
+                        <ColumnDefinition Width="423*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Danh sách học sinh" FontSize="21" FontFamily="Paytone One" Height="35" Width="202" Margin="91,7,0,0" Grid.ColumnSpan="2"/>
-                    <ComboBox SelectedIndex="0" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Bottom" Grid.Column="2" Margin="37,0,495,2">
-                        <ComboBoxItem Content="Tìm kiếm theo" IsEnabled="False" Visibility="Hidden"/>
-                    </ComboBox>
-                    <Border Grid.Column="2" Margin="245,10,94,0" Background="#EEE6E2" CornerRadius="10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="6*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="/Icons/icons8-search-30.png" Margin="20,5,17,5"></Image>
-                            <TextBlock  Grid.Column="1" IsEnabled="False" Text="Tìm kiếm" FontSize="17" FontFamily="Quicksand Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,0,0,0">
-                            </TextBlock>
-                        </Grid>
-                    </Border>
-                </Grid>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Danh sách học sinh" FontSize="25" FontFamily="Paytone One" Height="35" Width="248" Margin="45,9,0,0" Grid.ColumnSpan="2"/>
+                    <!--<ComboBox BorderThickness="0" SelectedIndex="0" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" 
+                              Grid.Column="2" Margin="37,0,72,0">
+                        <ComboBoxItem Content="Tìm kiếm theo"/>
+                        <ComboBoxItem Content="CMND"/>
+                    </ComboBox>-->
+                    <TextBox Text ="Tìm kiếm" FontFamily="Quicksand Semibold"  FontSize="17" Style="{StaticResource WatermarkTextBox}" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
 
+                </Grid>
+                
+                <Border Grid.Row="2" Background="#FFFFFF" Margin="39,0,62,0" BorderBrush="Gray" BorderThickness="0.5" Height="534" VerticalAlignment="Center">
+                    <DataGrid Name="Data"
+                            AutoGenerateColumns="False"
+                            Background="White"
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            CanUserReorderColumns="False"   
+                            HorizontalScrollBarVisibility="Disabled"
+                                    Margin="10,10,10,10"
+                            HeadersVisibility="Column"
+                            IsReadOnly="{Binding IsReadOnly}"
+                            SelectedItem="{Binding StudentDataGridItemSelected, Mode=TwoWay}"
+                            ItemsSource="{Binding StudentList}" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="0.8*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="CCCD" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="1.2*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Họ tên" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Ngày sinh" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="1.25*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Email" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Địa chỉ" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Giới tính" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Dân tộc" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Tôn giáo" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>                    
+                    </DataGrid>
+                </Border>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.75*">
+
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.05*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="ForestGreen"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="Green"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Grid>
+                                        <TextBlock Text="Thêm học sinh"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Grid.Column="2" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="OrangeRed"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="Red"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Grid>
+                                        <TextBlock Text="Xóa học sinh"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
             </Grid>
         </Border>
     </Grid>

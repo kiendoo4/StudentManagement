@@ -24,5 +24,6 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+
     }
 }

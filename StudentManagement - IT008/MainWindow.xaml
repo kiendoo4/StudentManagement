@@ -11,7 +11,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent" 
-        Title="MainWindow" Height="800" Width="1420" >
+        Title="MainWindow" Height="800" Width="1420"
+        Icon="Icons/icons8-school-building-48.ico">
     <Window.Resources>
 
     </Window.Resources>
@@ -39,7 +40,9 @@
                             </RowDefinition>
 
                         </Grid.RowDefinitions>
-                        <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup"></leftGroup:LeftOptions>
+                        <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup">
+                            
+                        </leftGroup:LeftOptions>
                         <Button Grid.Row="2" HorizontalAlignment="Center" Width="173" Height="52" VerticalAlignment="Center" Cursor="Hand">
 
                             <Button.Template>
