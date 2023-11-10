@@ -21,11 +21,11 @@
             <RowDefinition Height ="*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-home-50.png"  InnerText ="Trang chủ" Grid.Row="0" />
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-student-50.png" InnerText ="Học sinh" Grid.Row="1"/>
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-teacher-64.png" InnerText="Giáo viên" Grid.Row="2"/>
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-class-50.png" InnerText ="Lớp học" Grid.Row="3"/>
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-conclusion-contract-64.png" InnerText ="Tổng kết" Grid.Row="4"/>
-        <local:LeftOptionsPresentation InnerImageSource ="/Icons/icons8-setting-50.png" InnerText ="Cài đặt" Grid.Row="5"/>
+        <local:LeftOptionsPresentation x:Name="HomeScreenButton" InnerImageSource ="/Icons/icons8-home-50.png"  InnerText ="Trang chủ" Grid.Row="0" />
+        <local:LeftOptionsPresentation x:Name="StudentScreenButton" InnerImageSource ="/Icons/icons8-student-50.png" InnerText ="Học sinh" Grid.Row="1"/>
+        <local:LeftOptionsPresentation x:Name="TeacherScreenButton" InnerImageSource ="/Icons/icons8-teacher-64.png" InnerText="Giáo viên" Grid.Row="2"/>
+        <local:LeftOptionsPresentation x:Name="ClassScreenButton" InnerImageSource ="/Icons/icons8-class-50.png" InnerText ="Lớp học" Grid.Row="3"/>
+        <local:LeftOptionsPresentation x:Name="ResultScreenButton" InnerImageSource ="/Icons/icons8-conclusion-contract-64.png" InnerText ="Tổng kết" Grid.Row="4"/>
+        <local:LeftOptionsPresentation x:Name="SettingButton" InnerImageSource ="/Icons/icons8-setting-50.png" InnerText ="Cài đặt" Grid.Row="5"/>
     </Grid>
 </UserControl>

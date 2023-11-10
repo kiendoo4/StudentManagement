@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for StudentsList.xaml
+    /// Interaction logic for TeachersList.xaml
     /// </summary>
-    public partial class StudentsList : UserControl
+    public partial class TeachersList : UserControl
     {
-        public StudentsList()
+        public TeachersList()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

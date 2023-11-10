@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using StudentManagement___IT008.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace StudentManagement___IT008
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new StudentsList();
         }
 
         private void HideClick(object sender, RoutedEventArgs e)

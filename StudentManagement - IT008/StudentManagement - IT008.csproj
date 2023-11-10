@@ -106,6 +106,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Mainwd.cs" />
     <Compile Include="View\LeftOptions.xaml.cs">
       <DependentUpon>LeftOptions.xaml</DependentUpon>
@@ -118,6 +119,9 @@
     </Compile>
     <Compile Include="View\StudentsList.xaml.cs">
       <DependentUpon>StudentsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeachersList.xaml.cs">
+      <DependentUpon>TeachersList.xaml</DependentUpon>
     </Compile>
     <Page Include="Icons\icons.xaml">
       <SubType>Designer</SubType>
@@ -148,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\StudentsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TeachersList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
