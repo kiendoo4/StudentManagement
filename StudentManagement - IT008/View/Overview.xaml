@@ -32,8 +32,8 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row ="0" Text ="Niên khóa" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="21" FontFamily="Paytone One" Margin="11,13,0,0" Grid.RowSpan="2"/>
-                    <ComboBox BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" Grid.Row="1" FontFamily="Quicksand Semibold" FontSize="18" Height="26" Width="120"
-                         Margin="9,4,0,0" Background="White">
+                    <ComboBox Background="#FFFFFF" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" Grid.Row="1" FontFamily="Quicksand Semibold" FontSize="18" Height="26" Width="120"
+                         Margin="9,4,0,0">
                         <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2022-2023"></ComboBoxItem>
                         <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2023-2024"></ComboBoxItem>
                     </ComboBox>
