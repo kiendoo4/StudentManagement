@@ -126,7 +126,7 @@
                                         <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
+                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
@@ -162,7 +162,7 @@
                                         <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
+                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
@@ -205,7 +205,7 @@
                                         <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
+                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
@@ -241,7 +241,7 @@
                                         <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
+                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
@@ -277,7 +277,7 @@
                                         <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
+                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
