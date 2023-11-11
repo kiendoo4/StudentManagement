@@ -18,9 +18,9 @@ namespace StudentManagement___IT008.View
     /// <summary>
     /// Interaction logic for Conclusion.xaml
     /// </summary>
-    public partial class Conclusion : UserControl
+    public partial class ClassesList : UserControl
     {
-        public Conclusion()
+        public ClassesList()
         {
             InitializeComponent();
         }
