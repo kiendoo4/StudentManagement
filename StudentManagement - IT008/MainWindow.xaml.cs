@@ -38,5 +38,9 @@ namespace StudentManagement___IT008
             App.Current.Shutdown();
         }
 
+        private void StudentsList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
