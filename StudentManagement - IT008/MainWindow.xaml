@@ -116,7 +116,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <leftGroup:StudentsList Grid.Column="0" Grid.ColumnSpan="2">
-                        
+                        fgasgfjsaj
                     </leftGroup:StudentsList>
                 </Grid>
             </Grid>
