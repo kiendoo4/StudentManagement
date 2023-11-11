@@ -186,6 +186,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icons\icons8-teacher-50.png" />
     <Resource Include="Icons\icons8-search-30.png" />
     <Resource Include="Icons\icons8-online-class-64.png" />
     <Resource Include="Icons\icons8-student-64.png" />

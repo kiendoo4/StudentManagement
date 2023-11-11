@@ -73,6 +73,7 @@
                         </Button>
 
                     </Grid>
+                    <TextBlock Text="Phần mềm" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="70,94,0,0" RenderTransformOrigin="0.672,0.065" />
                     <TextBlock Text="Quản lý học sinh" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="41,120,0,0" />
                     <Image Margin="33,95,166,675" Source="Icons/icons8-school-100.png"/>
 
@@ -106,22 +107,15 @@
                         </Button>
                     </StackPanel>
                 </Grid>
-                <TextBlock Text="Danh sách lớp học" HorizontalAlignment="Left" FontSize="25" FontFamily="Paytone One" VerticalAlignment="Top" Margin="44,15,0,0" Grid.Row="1"></TextBlock>
-                <ComboBox Background="#FFFFFF" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" Grid.Row="1" FontFamily="Quicksand Semibold" FontSize="18" Height="26" Width="120"
-                         Margin="773,19,0,0">
-                    <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2022-2023"></ComboBoxItem>
-                    <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2023-2024"></ComboBoxItem>
-
-                </ComboBox>
-                <Grid >
-
+                <Grid Grid.Row="1">
+                    <leftGroup:Overview Margin="21,0,101,0"/>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <leftGroup:StudentsList Grid.Column="0" Grid.ColumnSpan="2" Loaded="StudentsList_Loaded">
+                    <leftGroup:StudentsList Grid.Column="0" Grid.ColumnSpan="2">
 
                     </leftGroup:StudentsList>
                 </Grid>
