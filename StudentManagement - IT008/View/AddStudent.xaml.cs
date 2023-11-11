@@ -10,25 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for StudentsList.xaml
+    /// Interaction logic for AddStudent.xaml
     /// </summary>
-    public partial class StudentsList : UserControl
+    public partial class AddStudent : Window
     {
-        public StudentsList()
+        public AddStudent()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)
         {
-            AddStudent addStudent = new AddStudent();
-            addStudent.ShowDialog();
+            this.Close();
         }
     }
 }

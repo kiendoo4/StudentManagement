@@ -20,11 +20,13 @@ namespace StudentManagement___IT008.View
     /// </summary>
     public partial class LeftOptionsPresentation : UserControl
     {
+        //public event EventHandler ButtonClick;
+
         public LeftOptionsPresentation()
         {
             InitializeComponent();
-            
         }
+        public event EventHandler ButtonClick;
         public string InnerText
         {
             get { return TB.Text; }
@@ -55,6 +57,20 @@ namespace StudentManagement___IT008.View
             {
                 ImageSymbol.Source = null;
             }
+        }
+
+        private void ChangeView(object sender, RoutedEventArgs e)
+        {
+            ButtonClick?.Invoke(this, EventArgs.Empty);
+        }
+        public bool IsButtonPressed 
+        { 
+            get;
+                set; }
+        public void CheckButtonState()
+        {
+            // Do something with IsButtonPressed
+            Console.WriteLine($"Button Pressed: {IsButtonPressed}");
         }
     }
 }

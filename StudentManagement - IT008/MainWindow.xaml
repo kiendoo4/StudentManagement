@@ -118,9 +118,10 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <leftGroup:StudentsList Grid.Column="0" Grid.ColumnSpan="2">
-                        
-                    </leftGroup:StudentsList>
+                    <Grid Name ="CurrentUC"  Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

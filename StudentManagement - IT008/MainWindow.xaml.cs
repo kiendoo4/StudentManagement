@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using StudentManagement___IT008.View;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,46 @@ namespace StudentManagement___IT008
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new StudentsList();
+            //AddUserControlToGrid();
+            leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
+            leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButton_ButtonClick;
         }
 
+        private void TeacherScreenButton_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.StudentScreenButton.IsButtonPressed = true;
+            TeachersList teachersList = new TeachersList();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(teachersList);
+        }
+
+        private void StudentScreenUserControl_ButtonClick(object sender, System.EventArgs e)
+        {
+            // Set the button state in the InnerUserControl
+            leftGroup.StudentScreenButton.IsButtonPressed = true;
+            StudentsList studentsList = new StudentsList();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(studentsList);
+        }
+        //private void AddUserControlToGrid()
+        //{
+        //    // Create an instance of your UserControl
+        //    StudentsList studentsList = new StudentsList();
+        //    TeachersList teachersList = new TeachersList();
+        //    CurrentUC.Children.Clear();
+        //    CurrentUC.Children.Add(studentsList);
+        //    //if (leftGroup.StudentScreenButton.ButtonClick)
+        //    //{
+        //    //    MessageBox.Show("bruh");
+        //    //    CurrentUC.Children.Clear();
+        //    //    CurrentUC.Children.Add(studentsList);
+        //    //}
+        //    //else if (leftGroup.TeacherScreenButton.ButtonClick)
+        //    //{
+        //    //    CurrentUC.Children.Clear();
+        //    //    CurrentUC.Children.Add(teachersList);
+        //    //}
+        //}
         private void HideClick(object sender, RoutedEventArgs e)
         {
             Window window = Application.Current.MainWindow as Window;
