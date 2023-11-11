@@ -10,25 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for TeachersList.xaml
+    /// Interaction logic for AddTeacher.xaml
     /// </summary>
-    public partial class TeachersList : UserControl
+    public partial class AddTeacher : Window
     {
-        public TeachersList()
+        public AddTeacher()
         {
             InitializeComponent();
         }
-
-        private void AddTeacherButton(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)
         {
-            AddTeacher addTeacher = new AddTeacher();
-            addTeacher.ShowDialog();
+            this.Close();
         }
     }
 }

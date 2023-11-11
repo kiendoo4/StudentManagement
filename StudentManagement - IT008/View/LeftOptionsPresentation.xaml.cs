@@ -67,10 +67,5 @@ namespace StudentManagement___IT008.View
         { 
             get;
                 set; }
-        public void CheckButtonState()
-        {
-            // Do something with IsButtonPressed
-            Console.WriteLine($"Button Pressed: {IsButtonPressed}");
-        }
     }
 }

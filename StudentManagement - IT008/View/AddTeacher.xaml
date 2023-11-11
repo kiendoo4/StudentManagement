@@ -1,11 +1,11 @@
-﻿<Window x:Class="StudentManagement___IT008.View.AddStudent"
+﻿<Window x:Class="StudentManagement___IT008.View.AddTeacher"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagement___IT008.View"
         mc:Ignorable="d"
-        Title="" Height="700" Width="500"
+        Title="" Height="750" Width="500"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="Black"
@@ -14,10 +14,10 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="11*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Background="Purple" BorderBrush="Gray" BorderThickness="0.5" Grid.Row="0">
-                <TextBlock Text="Thêm học sinh" FontFamily="Paytone One" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="White"></TextBlock>
+                <TextBlock Text="Thêm giáo viên" FontFamily="Paytone One" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="White"></TextBlock>
             </Border>
             <Button Grid.Row="0" Click="CloseClick" Height="auto" Width="auto" Background="Transparent" BorderThickness="0">
                 <Button.Template>
@@ -30,6 +30,7 @@
             <Border Grid.Row="1" Background="#F8F7F8">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -95,32 +96,42 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Lớp" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
-                            <TextBox VerticalAlignment="Center" BorderBrush="Transparent" FontSize="19" BorderThickness="0.5" Grid.Column="1" Name ="Lop" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Username" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
+                            <TextBox VerticalAlignment="Center" BorderBrush="Transparent" FontSize="19" BorderThickness="0.5" Grid.Column="1" Name ="Username" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="6" Background="White" Margin="15,15,268,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                    <Border Grid.Row="6" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="6*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Password" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
+                            <TextBox VerticalAlignment="Center" BorderBrush="Transparent" FontSize="19" BorderThickness="0.5" Grid.Column="1" Name ="Password" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="7" Background="White" Margin="15,15,268,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid Margin="0,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Dân tộc" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Giới tính" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
                             <ComboBox Grid.Column="1" Margin="70,0,2,0" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="6" Background="White" Margin="250,15,20,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                    <Border Grid.Row="7" Background="White" Margin="250,15,20,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid Margin="0,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="6*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Tôn giáo" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Môn dạy" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
                             <ComboBox Grid.Column="1" Margin="70,0,2,0" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
                     
-                    <Button Grid.Row="7" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0">
+                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
