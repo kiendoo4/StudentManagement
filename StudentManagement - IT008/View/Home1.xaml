@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="StudentManagement___IT008.View.Home1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentManagement___IT008.View"
+             mc:Ignorable="d" 
+              d:DesignHeight="670" d:DesignWidth="1220">
+    <Grid>
+        <Border Background="#ffffff" CornerRadius="20" BorderThickness="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Bảng điểm lớp học" FontSize="30" FontFamily="Paytone One" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"/>
+                    <ComboBox HorizontalAlignment="Left"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21" Width="128"
+                               Margin="644,32,0,10" Background="White">
+                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="Học kì 1"></ComboBoxItem>
+                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="Học kì 2"></ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox HorizontalAlignment="Left"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21" Width="128"
+                            Margin="812,32,0,10" Background="White">
+
+                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2021-2022"></ComboBoxItem>
+                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2022-2023"></ComboBoxItem>
+                    </ComboBox>
+
+                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="1005,19,0,0" RenderTransformOrigin="0.725,0.249">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="20" BorderThickness="0">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="GreenYellow"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="Green"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock  Text="Kết quả"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
+                                    </TextBlock>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="1005,0,0,0" RenderTransformOrigin="0.725,0.249">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="20" BorderThickness="0">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#522c53"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="Purple"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock  Text="Lưu thay đổi"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
+                                    </TextBlock>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="835,0,0,0" RenderTransformOrigin="0.725,0.249">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="20" BorderThickness="0">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="GreenYellow"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="Green"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock  Text="Trở lại"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
+                                    </TextBlock>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <ListView Name="lvSV" Margin="10,0,0,0" HorizontalAlignment="Left" Width="1178" FontSize="21" FontFamily="Qucksand">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="STT" Width="105"></GridViewColumn>
+                                <GridViewColumn Header="Họ tên" Width="320"></GridViewColumn>
+                                <GridViewColumn Header="Điểm 15'" Width="150"></GridViewColumn>
+                                <GridViewColumn Header="Điểm 15'" Width="150"></GridViewColumn>
+                                <GridViewColumn Header="Điểm 15'" Width="150"></GridViewColumn>
+                                <GridViewColumn Header="Điểm 1 tiết" Width="150"></GridViewColumn>
+                                <GridViewColumn Header="Điểm cuối kì" Width="150"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
