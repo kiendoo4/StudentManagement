@@ -44,16 +44,13 @@
                             CanUserReorderColumns="False"   
                             HorizontalScrollBarVisibility="Disabled"
                                     Margin="10,10,10,10"
-                            HeadersVisibility="Column"
-                            IsReadOnly="{Binding IsReadOnly}"
-                            SelectedItem="{Binding StudentDataGridItemSelected, Mode=TwoWay}"
-                            ItemsSource="{Binding StudentList}" Grid.ColumnSpan="2">
+                            HeadersVisibility="Column" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Width="0.25*">
                                 <DataGridTemplateColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <TextBlock Text="Cb" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.HeaderTemplate>

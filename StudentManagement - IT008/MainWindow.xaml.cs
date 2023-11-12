@@ -31,6 +31,15 @@ namespace StudentManagement___IT008
             //AddUserControlToGrid();
             leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
             leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButton_ButtonClick;
+            leftGroup.SettingButton.ButtonClick += SettingButton_ButtonClick;
+        }
+
+        private void SettingButton_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            Setting setting = new Setting();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(setting);
         }
 
         private void TeacherScreenButton_ButtonClick(object sender, EventArgs e)

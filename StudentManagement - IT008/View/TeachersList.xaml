@@ -44,10 +44,7 @@
                             CanUserReorderColumns="False"   
                             HorizontalScrollBarVisibility="Disabled"
                                     Margin="10,10,10,10"
-                            HeadersVisibility="Column"
-                            IsReadOnly="{Binding IsReadOnly}"
-                            SelectedItem="{Binding TeacherDataGridItemSelected, Mode=TwoWay}"
-                            ItemsSource="{Binding TeacherList}" Grid.ColumnSpan="2">
+                            HeadersVisibility="Column" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Width="0.25*">
                                 <DataGridTemplateColumn.HeaderTemplate>
