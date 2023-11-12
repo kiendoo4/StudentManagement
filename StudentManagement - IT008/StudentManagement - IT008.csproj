@@ -112,6 +112,9 @@
     <Compile Include="View\Home1.xaml.cs">
       <DependentUpon>Home1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Home2.xaml.cs">
+      <DependentUpon>Home2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LeftOptions.xaml.cs">
       <DependentUpon>LeftOptions.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Home1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Home2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
