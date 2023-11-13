@@ -121,6 +121,12 @@
     <Compile Include="View\StudentsList.xaml.cs">
       <DependentUpon>StudentsList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Summarize_Period.xaml.cs">
+      <DependentUpon>Summarize_Period.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Summarize_Subject.xaml.cs">
+      <DependentUpon>Summarize_Subject.xaml</DependentUpon>
+    </Compile>
     <Page Include="Icons\icons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +160,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\StudentsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Summarize_Period.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Summarize_Subject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
