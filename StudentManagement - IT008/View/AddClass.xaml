@@ -20,9 +20,12 @@
             <Grid Margin="25,25,25,460" Height="45">
                 <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                 <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                <ComboBox Text="Chọn khối" Margin="58,10,10,10">
+                <ComboBox x:Name="ChooseGrade" Text="Chọn khối" Margin="58,10,10,10">
                     <Border Background="Transparent" CornerRadius="10,10,10,10"/>
                 </ComboBox>
+            </Grid>
+            <Grid Margin="25,99,24.6,387.2" Height="45">
+                <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
             </Grid>
         </Grid>
     </Grid>
