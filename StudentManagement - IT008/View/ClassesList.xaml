@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="670" d:DesignWidth="1220">
     <Grid>
-        <Border Background="#FBF7F8">
+        <Border Background="#FFFBF7F8">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"></RowDefinition>
@@ -29,6 +29,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <ComboBox SelectedIndex="0" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Bottom" Margin="199,0,333,584.8" Height="34">
+                            <ComboBox.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                    <GradientStop Color="#FFEBEBEB" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Background>
                             <ComboBoxItem Content="Tìm kiếm theo" IsEnabled="False" Visibility="Hidden"/>
                         </ComboBox>
                         <Border Margin="419,10,18,585" Background="#FFEAEAEA" CornerRadius="10">
@@ -42,15 +48,23 @@
                                 </TextBlock>
                             </Grid>
                         </Border>
-                        <DataGrid x:Name="Data" HorizontalAlignment="Left" Height="490" Margin="29,53,0,0" VerticalAlignment="Top" Width="685">
+                        <DataGrid x:Name="Data" HorizontalAlignment="Left" Height="477" Margin="29,66,0,0" VerticalAlignment="Top" Width="685" ColumnHeaderHeight="30" RowHeight="30" Background="White" BorderBrush="#FFFBF7F8">
                             <DataGrid.Columns>
-                                <DataGridCheckBoxColumn Width="50"/>
-                                <DataGridTextColumn Header="STT" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Khối" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Lớp" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Giáo viên chủ nhiệm" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Sỉ số" Binding="{Binding Name}" />
+                                <DataGridCheckBoxColumn Width="0.7* "/>
+                                <DataGridTextColumn Header="STT" Binding="{Binding Name}" Width="1*"/>
+                                <DataGridTextColumn Header="Khối" Binding="{Binding Name}"  Width="1*"/>
+                                <DataGridTextColumn Header="Lớp" Binding="{Binding Name}"  Width="1*"/>
+                                <DataGridTextColumn Header="Giáo viên chủ nhiệm" Binding="{Binding Name}"  Width="3.5*"/>
+                                <DataGridTextColumn Header="Sỉ số" Binding="{Binding Name}"  Width="1*"/>
                             </DataGrid.Columns>
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="Purple" />
+                                    <Setter Property="Foreground" Value="#FFF0F0F0" />
+                                    <Setter Property="FontSize" Value="20" />
+                                    <Setter Property="FontFamily" Value="Quicksand Semibold"/>
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
                         </DataGrid>
                         <Button HorizontalAlignment="Center" Width="173" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="441,565,118,23.8">
 
@@ -105,7 +119,10 @@
                         </Button>
                     </Grid>
                     <Grid Grid.Column="1">
-
+                        <Grid Margin="10,10,20,25">
+                            <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
+                            <Border BorderThickness="2" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>

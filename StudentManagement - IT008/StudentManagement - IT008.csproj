@@ -106,6 +106,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\Mainwd.cs" />
+    <Compile Include="View\AddClass.xaml.cs">
+      <DependentUpon>AddClass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassesList.xaml.cs">
       <DependentUpon>ClassesList.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ClassesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
