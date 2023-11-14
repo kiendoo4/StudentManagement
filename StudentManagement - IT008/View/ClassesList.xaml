@@ -123,6 +123,7 @@
                             <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
                             <Border BorderThickness="2" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
                             <local:AddClass Visibility="Hidden"></local:AddClass>
+                            <local:ClassInfo Visibility="Visible"></local:ClassInfo>
                         </Grid>
                     </Grid>
                 </Grid>
