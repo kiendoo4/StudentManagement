@@ -43,7 +43,7 @@
                         <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup">
 
                         </leftGroup:LeftOptions>
-                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="199" Height="52" VerticalAlignment="Center" Cursor="Hand">
+                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="199" Height="52" VerticalAlignment="Center" Cursor="Hand" Click="AddNamHoc">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">

@@ -87,9 +87,12 @@ namespace StudentManagement___IT008
             App.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void AddNamHoc(object sender, RoutedEventArgs e)
+        {
+            AddNewYear addNewYear = new AddNewYear();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(addNewYear);
         }
     }
 }
