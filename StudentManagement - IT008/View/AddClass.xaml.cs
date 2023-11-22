@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for Setting.xaml
+    /// Interaction logic for AddClass.xaml
     /// </summary>
-    public partial class Setting : UserControl
+    public partial class AddClass : UserControl
     {
-        public Setting()
+        public AddClass()
         {
             InitializeComponent();
-        }
-
-        private void AddClassButton(object sender, RoutedEventArgs e)
-        {
-            AddClass addClass = new AddClass();
-            AddMonHocUC.Children.Add(addClass);
         }
     }
 }

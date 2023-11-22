@@ -4,11 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="670" Width="1159">
+             mc:Ignorable="d" Width="1105" Height="665">
     <Grid>
-        <Border Background="#F8F7F8">
-            <Grid>
+        <Border Background="Transparent" Margin="-43,0,-25,0">
+            <Grid Margin="0,0,10,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -41,37 +40,37 @@
                                 <Border Grid.Column="0" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Tuổi tối thiểu học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="149"/>
+                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="135"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="0" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Tuổi tối đa học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="169"/>
+                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="152"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="0" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Sỉ số lớp tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="187"/>
+                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="170"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="1" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Điểm số tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="188"/>
+                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="168"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="1" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Điểm số tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="207"/>
+                                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="189"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Column="1" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="203"/>
+                                        <TextBox FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="182"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>
@@ -133,13 +132,22 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.HeaderTemplate>
                                         </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Width="0.5*">
+                                            <DataGridTemplateColumn.HeaderTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Grid>
 
                         </Grid>
                     </Grid>
-                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="303,10,0,0">
+                    <Button Click="AddClassButton" Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="255,4,0,11">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -165,7 +173,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="658,10,0,0">
+                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="620,4,0,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -191,7 +199,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="483,10,0,0">
+                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="439,4,0,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -218,9 +226,9 @@
                         </Button.Template>
                     </Button>
                 </Grid>
-                <Border Grid.Column="1" Margin="25,25,25,25" CornerRadius="29" Background="#FFFFFF" BorderBrush="Gray" BorderThickness="0.5">
-                    
-                </Border>
+                <Grid Name ="AddMonHocUC"  Grid.Column="1">
+                    <Border Margin="10,25,25,25" CornerRadius="29" Background="#FFFFFF" BorderBrush="Gray" BorderThickness="0.5"/>
+                </Grid>
             </Grid>
         </Border>
     </Grid>

@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for Setting.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class Setting : UserControl
+    public partial class LoginView : Window
     {
-        public Setting()
+        public LoginView()
         {
             InitializeComponent();
-        }
-
-        private void AddClassButton(object sender, RoutedEventArgs e)
-        {
-            AddClass addClass = new AddClass();
-            AddMonHocUC.Children.Add(addClass);
         }
     }
 }

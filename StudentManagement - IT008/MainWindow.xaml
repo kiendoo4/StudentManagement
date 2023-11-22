@@ -41,9 +41,9 @@
 
                         </Grid.RowDefinitions>
                         <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup">
-                            
+
                         </leftGroup:LeftOptions>
-                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="173" Height="52" VerticalAlignment="Center" Cursor="Hand">
+                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="199" Height="52" VerticalAlignment="Center" Cursor="Hand">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -67,8 +67,7 @@
                                                 <ColumnDefinition></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
                                             <Image Grid.Column="0" Source="Icons/icons8-calendar-plus-50 (1).png" Margin="9,17,7,11"></Image>
-                                            <TextBlock Grid.Column="1" Text="Học kì mới"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="1,0,0,0">
-                                            </TextBlock>
+                                            <TextBlock Text="Năm học mới"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="50,0,0,0" Grid.ColumnSpan="2"/>
                                         </Grid>
                                     </Border>
                                 </ControlTemplate>
