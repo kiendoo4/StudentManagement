@@ -34,7 +34,7 @@ namespace StudentManagement___IT008.View
                 }
             }
         }
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string v)
         {
             if (PropertyChanged != null)
