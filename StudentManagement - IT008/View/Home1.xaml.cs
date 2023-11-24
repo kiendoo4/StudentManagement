@@ -24,5 +24,10 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+
+        private void Data_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
