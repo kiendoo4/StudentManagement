@@ -113,13 +113,7 @@
                     <leftGroup:Overview Margin="21,0,101,0"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid Name ="CurrentUC"  Grid.Column="0" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                        </Grid.ColumnDefinitions>
+                    <Grid Name ="CurrentUC">
                     </Grid>
                 </Grid>
             </Grid>

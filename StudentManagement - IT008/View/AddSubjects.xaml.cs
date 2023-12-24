@@ -16,26 +16,13 @@ using System.Windows.Shapes;
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for Setting.xaml
+    /// Interaction logic for AddSubjects.xaml
     /// </summary>
-    public partial class Setting : UserControl
+    public partial class AddSubjects : UserControl
     {
-        public Setting()
+        public AddSubjects()
         {
             InitializeComponent();
-        }
-
-
-        private void AddSubjectButton(object sender, RoutedEventArgs e)
-        {
-            AddMonHocUC.Children.Clear();
-            AddSubjects addSubjects = new AddSubjects();
-            AddMonHocUC.Children.Add(addSubjects);
-        }
-
-        private void DeleteSubjectButton(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
