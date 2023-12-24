@@ -32,6 +32,15 @@ namespace StudentManagement___IT008
             leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
             leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButton_ButtonClick;
             leftGroup.SettingButton.ButtonClick += SettingButton_ButtonClick;
+            leftGroup.ClassScreenButton.ButtonClick += ClassScreenButton_ButtonClick;
+        }
+
+        private void ClassScreenButton_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            ClassesList classesList = new ClassesList();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(classesList);
         }
 
         private void SettingButton_ButtonClick(object sender, EventArgs e)
