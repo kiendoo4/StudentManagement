@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
-             d:DesignHeight="741" d:DesignWidth="1205">
+             d:DesignHeight="670" d:DesignWidth="1220">
     <UserControl.Resources>
         <Image x:Key="Search_icon" Source="search_icon.png"></Image>
         <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
@@ -262,7 +262,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--Table_General-->
-                <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,0, 40, 40">
+                <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,0,40,96">
                     <Border.Background>White</Border.Background>
                     <Grid Margin="24, 0, 0, 0">
                         <Grid.RowDefinitions>
@@ -337,7 +337,7 @@
                 </Border>
 
                 <!--Table_Specifically-->
-                <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="17, 0, 29, 40">
+                <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="16,0,29,96">
                     <Border.Background>White</Border.Background>
                     <Grid Margin="24, 0, 0, 0">
                         <Grid.RowDefinitions>

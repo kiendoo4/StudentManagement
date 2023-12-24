@@ -33,6 +33,15 @@ namespace StudentManagement___IT008
             leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButton_ButtonClick;
             leftGroup.SettingButton.ButtonClick += SettingButton_ButtonClick;
             leftGroup.ClassScreenButton.ButtonClick += ClassScreenButton_ButtonClick;
+            leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
+        }
+
+        private void ResultScreenButton_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            Summarize_Period periodList = new Summarize_Period();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(periodList);
         }
 
         private void ClassScreenButton_ButtonClick(object sender, EventArgs e)
