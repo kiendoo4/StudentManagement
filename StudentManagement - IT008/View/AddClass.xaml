@@ -5,42 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="300">
              d:DesignHeight="593.6" d:DesignWidth="457.6">
     <Grid>
-        <!--<Label Content="Thêm môn học" FontFamily="Paytone One" FontSize="25"></Label>-->
-        <Grid>
         <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="0.35*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
-            <Grid Grid.Row="0" >
-                <Label Content="Thêm môn học" FontFamily="Paytone One" FontSize="25" Margin="46,41,55,0"></Label>
         <Grid Grid.Row="0">
             <Border Background="Purple" CornerRadius="10,10,0,0"/>
             <TextBlock Text="Thêm lớp học" FontFamily="Quicksand Bold" FontSize="23" Foreground="White" Margin="25,15,279.6,15"/>
         </Grid>
-            <Grid Grid.Row="1" Margin="0,0,10,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
-                    <StackPanel Orientation="Horizontal" Margin="0,0,-20,0">
-                        <Label Content="Mã môn" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="185"/>
-                    </StackPanel>
-                </Border>
-                <Border Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
-                    <StackPanel Orientation="Horizontal" Margin="0,0,-20,0">
-                        <Label Content="Tên môn " FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                        <TextBox  FontSize="17" FontFamily="Quicksand Semibold" Height="29" Width="172"/>
-                    </StackPanel>
-                </Border>
-
         <Grid Grid.Row="1">
             <Border Background="White" CornerRadius="0,0,10,10"/>
             <Grid Margin="25,25,25,460" Height="45">
@@ -69,12 +43,10 @@
                     <Border Background="Transparent" CornerRadius="10,10,10,10"/>
                 </ComboBox>
             </Grid>
-            <Button Grid.Row="2" HorizontalAlignment="Left" Width="118" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="150,291,0,0">
             <Button HorizontalAlignment="Center" Width="173" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="260,470,24.6,21.2">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="20" BorderThickness="0">
                         <Border CornerRadius="15" BorderThickness="0">
                             <Border.Style>
                                 <Style TargetType="Border">
@@ -90,7 +62,6 @@
                                 </Style>
                             </Border.Style>
                             <Grid>
-                                <TextBlock Grid.Column="1" Text="Hoàn tát"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White" Margin="1,0,0,0">
                                 <TextBlock Text="Thêm lớp học"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
                                 </TextBlock>
                             </Grid>
