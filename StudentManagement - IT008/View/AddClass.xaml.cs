@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace StudentManagement___IT008.View
 {
@@ -23,6 +24,13 @@ namespace StudentManagement___IT008.View
         public AddClass()
         {
             InitializeComponent();
+        }
+
+        private string connectionString = "Data Source=LAPTOP-9VMFMRRH\\SQLEXPRESS;Initial Catalog=QUANLYHOCSINH;Integrated Security=True;Trust Server Certificate=True";
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

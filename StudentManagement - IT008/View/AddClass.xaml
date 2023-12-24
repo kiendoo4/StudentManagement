@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
              d:DesignHeight="593.6" d:DesignWidth="457.6">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.35*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
@@ -30,7 +30,9 @@
                     <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                     <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
                     <ComboBox Name="ChooseGrade" Text="Chọn khối" Margin="58,10,10,10" BorderBrush="#FFFBF7F8">
-                        <Border Background="Transparent" CornerRadius="10,10,10,10"/>
+                        <ComboBoxItem Content="10"/>
+                        <ComboBoxItem Content="11"/>
+                        <ComboBoxItem Content="12"/>
                     </ComboBox>
                 </Grid>
                 <Grid Grid.Row="1" Margin="10" Height="45">

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
              d:DesignHeight="670" d:DesignWidth="1220">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Border Background="#FFFBF7F8">
             <Grid>
                 <Grid.RowDefinitions>
@@ -56,8 +56,7 @@
                                         <ColumnDefinition Width="6*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="/Icons/icons8-search-30.png" Margin="5"></Image>
-                                    <TextBlock  Grid.Column="1" IsEnabled="False" Text="Tìm kiếm" FontSize="17" FontFamily="Quicksand Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,0,0,0">
-                                    </TextBlock>
+                                    <TextBox Grid.Column="1" Name="SearchWord" FontSize="17" FontFamily="Quicksand Semibold" BorderBrush="Transparent" Margin="5" Background="{x:Null}"/>
                                 </Grid>
                             </Border>
                         </Grid>
@@ -88,7 +87,7 @@
                                 <ColumnDefinition Width="0.5*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="1" HorizontalAlignment="Center" Width="173" Height="35" VerticalAlignment="Center" Cursor="Hand" Margin="5">
+                            <Button x:Name="btAdd" Grid.Column="1" HorizontalAlignment="Center" Width="173" Height="35" VerticalAlignment="Center" Cursor="Hand" Margin="5" Click="btAdd_Click">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border CornerRadius="15" BorderThickness="0">
@@ -145,8 +144,8 @@
                         <Grid Margin="10,0,20,10">
                             <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
                             <Border BorderThickness="2" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
-                            <local:AddClass x:Name="AddClassBox"></local:AddClass>
-                            <local:ClassInfo x:Name="ClassInfoBox" Visibility="Visible"></local:ClassInfo>
+                            <local:AddClass x:Name="AddClassBox" Visibility="Collapsed"/>
+                            <local:ClassInfo x:Name="ClassInfoBox" Visibility="Collapsed"/>
                         </Grid>
                     </Grid>
                 </Grid>
