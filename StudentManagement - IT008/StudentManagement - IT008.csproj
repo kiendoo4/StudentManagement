@@ -120,6 +120,12 @@
     <Compile Include="View\AddNewYear.xaml.cs">
       <DependentUpon>AddNewYear.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassesList.xaml.cs">
+      <DependentUpon>ClassesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassInfo.xaml.cs">
+      <DependentUpon>ClassInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LeftOptions.xaml.cs">
       <DependentUpon>LeftOptions.xaml</DependentUpon>
     </Compile>
@@ -178,6 +184,14 @@
     <Page Include="View\AddNewYear.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClassesList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ClassInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LeftOptions.xaml">
       <SubType>Designer</SubType>
