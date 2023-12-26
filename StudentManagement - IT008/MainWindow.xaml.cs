@@ -39,7 +39,7 @@ namespace StudentManagement___IT008
         private void ResultScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
-            Summarize_Period periodList = new Summarize_Period();
+            Summarize_Subject periodList = new Summarize_Subject();
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(periodList);
         }

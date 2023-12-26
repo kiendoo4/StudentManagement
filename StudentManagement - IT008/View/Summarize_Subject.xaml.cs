@@ -42,6 +42,7 @@ namespace StudentManagement___IT008.View
             InitializeComponent();
             cb_Period.SelectedIndex = 0;
             cb_Subject.SelectedIndex = 0;
+            ReportType.SelectedIndex = 0;
             changeText();
             List<Class> list = new List<Class> {
                 new Class{STT = 1, Lop = "10A1", SiSo=33, SL_Dat=20, TiLe=70},
@@ -64,23 +65,7 @@ namespace StudentManagement___IT008.View
             tb_Subject_Chung.Text = cbi_Period.Content.ToString() + " - Môn: " + cbi_Subject.Content.ToString();
             tb_Period_2.Text = tb_Subject_Chung.Text;
         }
-        private void tbx_Search_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tbx_Search.Text == "Tìm kiếm")
-            {
-                tbx_Search.Text = "";
-                tbx_Search.Foreground = Brushes.Black;
-            }
-        }
 
-        private void tbx_Search_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbx_Search.Text))
-            {
-                tbx_Search.Text = "Tìm kiếm";
-                tbx_Search.Foreground = Brushes.Gray;
-            }
-        }
 
         private void cb_Search_In_Loaded(object sender, RoutedEventArgs e)
         {

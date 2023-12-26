@@ -183,77 +183,79 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="Transparent" Height="741" Width="1205">
+    <Grid Background="Transparent">
         <Grid Margin="30, 0, 0, 0" Height="741" Width="auto">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="0.00001*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Margin="0,0,0,0">
-                <TextBlock.FontFamily>PayTone One</TextBlock.FontFamily>
-                <TextBlock.FontSize>24</TextBlock.FontSize>
-                <Bold>Tổng kết môn học</Bold>
-            </TextBlock>
-            <WrapPanel Grid.Row="1" Margin="0, 10, 0, 0">
-                <ComboBox Name="cb_Period"
-                          Width="141" Height="37" 
-                          Margin="220, 0, 0, 0" 
+            <ComboBox Name="cb_Period"
+              Width="153" Height="37" 
+              Margin="242,24,0,6" 
+              HorizontalAlignment="Left"
+              Style="{DynamicResource theComboBox}"
+              ItemContainerStyle="{DynamicResource theComboBoxItem}" SelectionChanged="cb_Period_SelectionChanged" Grid.Row="1">
+                <!--<ComboBoxItem>Loại báo cáo</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>-->
+                <ComboBoxItem>Cả năm</ComboBoxItem>
+                <ComboBoxItem>Học kỳ I</ComboBoxItem>
+                <ComboBoxItem>Học kỳ II</ComboBoxItem>
+            </ComboBox>
+            <ComboBox  Name="ReportType"
+                          Width="229" Height="37" 
+                          Margin="2,24,0,6" 
                           HorizontalAlignment="Left"
                           Style="{DynamicResource theComboBox}"
-                          ItemContainerStyle="{DynamicResource theComboBoxItem}" SelectionChanged="cb_Period_SelectionChanged">
-                    <ComboBoxItem>Cả năm</ComboBoxItem>
-                    <ComboBoxItem>Học kỳ I</ComboBoxItem>
-                    <ComboBoxItem>Học kỳ II</ComboBoxItem>
-                </ComboBox>
-                <ComboBox Name="cb_Subject"
+                          ItemContainerStyle="{DynamicResource theComboBoxItem}" SelectionChanged="cb_Period_SelectionChanged" Grid.Row="1">
+                <!--<ComboBoxItem>Cả năm</ComboBoxItem>
+                <ComboBoxItem>Học kỳ I</ComboBoxItem>
+                <ComboBoxItem>Học kỳ II</ComboBoxItem>-->
+                <ComboBoxItem>Loại báo cáo</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="cb_Subject"
                           Width="141" Height="37" 
-                          Margin="20, 0, 0, 0" 
-                          HorizontalAlignment="Left"
-                          Style="{DynamicResource theComboBox}"
-                          ItemContainerStyle="{DynamicResource theComboBoxItem}"
-                          SelectionChanged="cb_Subject_SelectionChanged">
-                    <ComboBoxItem>Toán</ComboBoxItem>
-                    <ComboBoxItem>Văn</ComboBoxItem>
-                    <ComboBoxItem>Anh</ComboBoxItem>
-                </ComboBox>
-
-                <WrapPanel Margin="195, 0, 0, 0">
-                    <TextBox Name="tbx_Search"  
-                         HorizontalAlignment="Left"
-                         VerticalAlignment="Center"
-                         Padding="10"
-                         FontFamily="Quicksand Semibold"
-                         FontSize="14"
-                         GotFocus="tbx_Search_GotFocus" 
-                         LostFocus="tbx_Search_LostFocus"
-                         Foreground="Gray">
-                        <TextBox.Width>200</TextBox.Width>
-                        <TextBox.Height>37</TextBox.Height>
-                        Tìm kiếm
-                    </TextBox>
-                    <Button Name="btn_Search" 
-                            Content="{StaticResource Search_icon}" 
-                            Width="37" Height="37"
-                            Background="White"></Button>
-                </WrapPanel>
-
-                <ComboBox Name="cb_Search_In"
-                          Loaded="cb_Search_In_Loaded"
-                          Width="141" Height="37" 
-                          Margin="19, 0, 0, 0"
+                          Margin="406,24,0,6" 
                           HorizontalAlignment="Left"
                           Style="{DynamicResource theComboBox}"
                           ItemContainerStyle="{DynamicResource theComboBoxItem}"
-                          IsEditable="True"
-                          IsReadOnly="True"
-                          Text="Tìm kiếm theo..." SelectionChanged="cb_Search_In_SelectionChanged">
-                    <ComboBoxItem>Tên</ComboBoxItem>
-                    <ComboBoxItem>Lớp</ComboBoxItem>
-                    <ComboBoxItem>Tất cả</ComboBoxItem>
-                </ComboBox>
-            </WrapPanel>
+                          SelectionChanged="cb_Subject_SelectionChanged" Grid.Row="1">
+                <ComboBoxItem>Toán</ComboBoxItem>
+                <ComboBoxItem>Văn</ComboBoxItem>
+                <ComboBoxItem>Anh</ComboBoxItem>
+            </ComboBox>
+            <Button Grid.Row="1" HorizontalAlignment="Left" Width="122" Height="43" VerticalAlignment="Top" Cursor="Hand" Margin="568,24,0,0">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightBlue"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Background" Value="CadetBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid>
+                                <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <!--Table-->
             <Grid Grid.Row="2" Margin="0, 25, 0, 0">
                 <Grid.ColumnDefinitions>
@@ -262,7 +264,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--Table_General-->
-                <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,0,40,96">
+                <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,-18,10,96">
                     <Border.Background>White</Border.Background>
                     <Grid Margin="24, 0, 0, 0">
                         <Grid.RowDefinitions>
@@ -285,7 +287,7 @@
                                    VerticalAlignment="Center"  
                                    Margin="0, 0, 26, 20"></TextBlock>
 
-                        <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0, 0, 21, 0" 
+                        <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
                                   ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
@@ -293,6 +295,7 @@
                                   GridLinesVisibility="None"
                                   Background="White"
                                   BorderThickness="0"
+                                  BorderBrush="Gray"
                                   HorizontalScrollBarVisibility="Disabled"
                                   VerticalScrollBarVisibility="Disabled"
                                   HeadersVisibility="Column"
@@ -301,7 +304,7 @@
                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
-                                  CanUserReorderColumns="False"
+                                  CanUserReorderColumns="False" Grid.RowSpan="2"
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
@@ -313,23 +316,28 @@
                             </DataGrid.Columns>
                         </DataGrid>
 
-                        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Margin="0, 0, 25, 0" HorizontalAlignment="Right">
-                            Xuất excel
+                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="367,30,26,30">
                             <Button.Template>
-                                <ControlTemplate TargetType="{x:Type ButtonBase}">
-                                    <Border Background="{TemplateBinding Background}"
-                                            BorderThickness="0"
-                                            CornerRadius="10">
-                                        <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="15" BorderThickness="0">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#522c53"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Background" Value="Purple"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <TextBlock Text="Xuất Excel"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
+                                            </TextBlock>
+                                        </Grid>
                                     </Border>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#5e315e"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="#844685"></Setter>
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -337,7 +345,7 @@
                 </Border>
 
                 <!--Table_Specifically-->
-                <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="16,0,29,96">
+                <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="0,-18,29,96">
                     <Border.Background>White</Border.Background>
                     <Grid Margin="24, 0, 0, 0">
                         <Grid.RowDefinitions>
@@ -361,7 +369,7 @@
                                    Margin="0, 0, 26, 20">
                         </TextBlock>
 
-                        <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, 0, 21, 0" 
+                        <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, -30, 21, 0" 
                                   ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
@@ -369,6 +377,7 @@
                                   GridLinesVisibility="None"
                                   Background="White"
                                   BorderThickness="0"
+                                  BorderBrush="Gray"
                                   HorizontalScrollBarVisibility="Disabled"
                                   VerticalScrollBarVisibility="Disabled"
                                   HeadersVisibility="Column"
@@ -388,23 +397,27 @@
                                 <DataGridTextColumn Width="0.5*" Header="Hạng" Binding="{Binding Hang}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Margin="0, 0, 25, 0" HorizontalAlignment="Right">
-                            Trở lại
+                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="422,30,10,30">
                             <Button.Template>
-                                <ControlTemplate TargetType="{x:Type ButtonBase}">
-                                    <Border Background="{TemplateBinding Background}"
-                                            BorderThickness="0"
-                                            CornerRadius="10">
-                                        <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border CornerRadius="15" BorderThickness="0">
+                                        <Border.Style>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="PaleVioletRed"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Background" Value="Red"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <TextBlock Text="Trở lại"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" />
+                                        </Grid>
                                     </Border>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#FF5F4E"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="#FF876C"></Setter>
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>

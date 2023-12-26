@@ -12,24 +12,24 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="1.4*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+        <Border CornerRadius="20" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.7*"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Content="Mã môn" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                <TextBox Grid.Column="1" FontSize="17" BorderBrush="Gray" BorderThickness="0.25" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
             </Grid>
         </Border>
-        <Border Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+        <Border CornerRadius="20" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.7*"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Content="Tên môn" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                <TextBox Grid.Column="1" FontSize="17"  BorderBrush="Gray" BorderThickness="0.25" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
             </Grid>
         </Border>
         <Button Grid.Row="2" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Top" Cursor="Hand" Margin="152,3,0,0" >

@@ -110,10 +110,10 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <leftGroup:Overview Margin="21,0,101,0"/>
+                    <leftGroup:Overview Margin="21,0,60,0"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Grid Name ="CurrentUC">
+                    <Grid Name ="CurrentUC" Margin="0,0,43,0">
                     </Grid>
                 </Grid>
             </Grid>

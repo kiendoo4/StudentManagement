@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" Width="1105" Height="665">
     <Grid>
-        <Border Background="Transparent" Margin="-43,0,-25,0">
+        <Border Background="Transparent" Margin="-21,0,-41,0">
             <Grid Margin="0,0,10,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2.5*"></ColumnDefinition>
@@ -37,64 +37,64 @@
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Border Grid.Column="0" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="0" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối thiểu học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
-                                <Border Grid.Column="0" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="0" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối đa học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
-                                <Border Grid.Column="0" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="0" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Sỉ số lớp tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
-                                <Border Grid.Column="1" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="1" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
-                                <Border Grid.Column="1" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="1" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
-                                <Border Grid.Column="1" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                <Border CornerRadius="20" Grid.Column="1" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -117,7 +117,7 @@
                             CanUserDeleteRows="False"
                             CanUserReorderColumns="False"   
                             HorizontalScrollBarVisibility="Disabled"
-                                    Margin="61,10,43,0"
+                                    Margin="53,10,43,0"
                             HeadersVisibility="Column" Height="274" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn Width="0.25*">
@@ -181,7 +181,7 @@
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="ForestGreen"/>
+                                                    <Setter Property="Background" Value="PaleGreen"/>
                                                 </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="False">
                                                     <Setter Property="Background" Value="Green"/>
@@ -233,10 +233,10 @@
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="OrangeRed"/>
+                                                    <Setter Property="Background" Value="Red"/>
                                                 </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Red"/>
+                                                    <Setter Property="Background" Value="OrangeRed"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
@@ -258,7 +258,9 @@
                     <TextBlock Name ="AddorFixSubjects"  Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="25" FontFamily="Paytone One" Margin="10,11,0,0"/>
 
                     <Border Grid.Row="0" CornerRadius="20" Background="#FFFFFF" BorderBrush="Gray" BorderThickness="0.5" Margin="0,51,32,76">
-                        <Grid Name="AddMonHocUC"></Grid>
+
+                        <Grid Name="AddMonHocUC">
+                        </Grid>
                     </Border>
                 </Grid>
             </Grid>

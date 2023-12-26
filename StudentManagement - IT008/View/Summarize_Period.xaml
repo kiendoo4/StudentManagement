@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
-             d:DesignHeight="741" d:DesignWidth="1205">
+             d:DesignHeight="670" d:DesignWidth="1220">
     <UserControl.Resources>
         <Image x:Key="Search_icon" Source="search_icon.png"></Image>
         <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
@@ -190,12 +190,6 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Margin="0,0,0,0">
-                <TextBlock.FontFamily>PayTone One</TextBlock.FontFamily>
-                <TextBlock.FontSize>24</TextBlock.FontSize>
-                <Bold>Tổng kết học kỳ</Bold>
-            </TextBlock>
             <WrapPanel Grid.Row="1" Margin="0,0,0,35">
                 <ComboBox Name="cb_Period"
                           Loaded="cb_Period_Loaded" 
@@ -245,7 +239,7 @@
                 </ComboBox>
             </WrapPanel>
             <!--Table-->
-            <Grid Grid.Row="2" Margin="0,0,0,0">
+            <Grid Grid.Row="2" Margin="0,0,42,70">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
