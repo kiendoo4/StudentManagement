@@ -40,7 +40,7 @@ namespace StudentManagement___IT008
         private void HomeScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
-            Home home = new Home();
+            Home home = new Home(); 
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(home);
         }
