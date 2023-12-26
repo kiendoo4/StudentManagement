@@ -28,32 +28,7 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="2">
-                            <Button HorizontalAlignment="Left" Width="173" Height="52" VerticalAlignment="Top" Cursor="Hand" Margin="925,77,0,0">
-
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border CornerRadius="20" BorderThickness="0">
-                                            <Border.Style>
-                                                <Style TargetType="Border">
-                                                    <Setter Property="Background" Value="Transparent"/>
-                                                    <Style.Triggers>
-                                                        <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="Background" Value="#522c53"/>
-                                                        </Trigger>
-                                                        <Trigger Property="IsMouseOver" Value="False">
-                                                            <Setter Property="Background" Value="Purple"/>
-                                                        </Trigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </Border.Style>
-                                            <TextBlock Grid.Column="1" Text="Thêm lớp học"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="1,0,0,0">
-                                            </TextBlock>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                        </Grid>
+                        <Grid Grid.Row="2"/>
                         <Grid Grid.Row="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>

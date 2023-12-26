@@ -34,6 +34,15 @@ namespace StudentManagement___IT008
             leftGroup.SettingButton.ButtonClick += SettingButton_ButtonClick;
             leftGroup.ClassScreenButton.ButtonClick += ClassScreenButton_ButtonClick;
             leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
+            leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
+        }
+
+        private void HomeScreenButton_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            Home home = new Home();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(home);
         }
 
         private void ResultScreenButton_ButtonClick(object sender, EventArgs e)

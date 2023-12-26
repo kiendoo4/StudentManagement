@@ -44,6 +44,12 @@
     <Reference Include="CommunityToolkit.Mvvm, Version=8.2.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
       <HintPath>..\packages\CommunityToolkit.Mvvm.8.2.2\lib\netstandard2.0\CommunityToolkit.Mvvm.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -75,6 +81,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -106,6 +114,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="Model\DIEMMONHOC.cs" />
+    <Compile Include="Model\DIEMTRUNGBINHMONHOCNAMHOC.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\GIAOVIEN.cs" />
+    <Compile Include="Model\HANHKIEM.cs" />
+    <Compile Include="Model\HOCKY.cs" />
+    <Compile Include="Model\HOCLUC.cs" />
+    <Compile Include="Model\HOCSINH.cs" />
+    <Compile Include="Model\KETQUA.cs" />
+    <Compile Include="Model\KHANANGGIANGDAY.cs" />
+    <Compile Include="Model\KQHOCKYMONHOC.cs" />
+    <Compile Include="Model\KQHOCKYTONGHOP.cs" />
+    <Compile Include="Model\KQNAMHOC.cs" />
+    <Compile Include="Model\LOAIKIEMTRA.cs" />
+    <Compile Include="Model\LOP.cs" />
+    <Compile Include="Model\LOPHOCTHUCTE.cs" />
+    <Compile Include="Model\MONHOC.cs" />
+    <Compile Include="Model\NAMHOC.cs" />
+    <Compile Include="Model\NHANVIENPHONGDAOTAO.cs" />
+    <Compile Include="Model\PHANCONGGIANGDAY.cs" />
+    <Compile Include="Model\PHH.cs" />
+    <Compile Include="Model\TAIKHOAN.cs" />
+    <Compile Include="Model\THAMSO.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Mainwd.cs" />
     <Compile Include="View\AddClass.xaml.cs">
@@ -128,6 +159,15 @@
     </Compile>
     <Compile Include="View\ClassInfo.xaml.cs">
       <DependentUpon>ClassInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home1.xaml.cs">
+      <DependentUpon>Home1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home2.xaml.cs">
+      <DependentUpon>Home2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LeftOptions.xaml.cs">
       <DependentUpon>LeftOptions.xaml</DependentUpon>
@@ -197,6 +237,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ClassInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Home1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Home2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
