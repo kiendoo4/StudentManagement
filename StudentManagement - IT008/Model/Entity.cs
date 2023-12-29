@@ -11,7 +11,18 @@ namespace StudentManagement___IT008.Model
             : base("name=Entity")
         {
         }
-
+        private static Entity _ins;
+        public static Entity ins
+        {
+            get
+            {
+                if (_ins == null)
+                {
+                    _ins = new Entity();
+                }
+                return _ins;
+            }
+        }
         public virtual DbSet<DIEMMONHOC> DIEMMONHOCs { get; set; }
         public virtual DbSet<DIEMTRUNGBINHMONHOCNAMHOC> DIEMTRUNGBINHMONHOCNAMHOCs { get; set; }
         public virtual DbSet<GIAOVIEN> GIAOVIENs { get; set; }

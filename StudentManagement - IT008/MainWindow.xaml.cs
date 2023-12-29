@@ -25,6 +25,7 @@ namespace StudentManagement___IT008
     /// </summary>
     public partial class MainWindow : Window
     {
+        string currentYear { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace StudentManagement___IT008
             leftGroup.ClassScreenButton.ButtonClick += ClassScreenButton_ButtonClick;
             leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
             leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
+            currentYear = overview.CurrentYear.ToString();
         }
 
         private void HomeScreenButton_ButtonClick(object sender, EventArgs e)
