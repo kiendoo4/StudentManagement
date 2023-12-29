@@ -111,7 +111,13 @@ namespace StudentManagement___IT008.View
             AddStudent addStudent = new AddStudent();
             addStudent.ShowDialog();
             Data.ItemsSource = null;
-            Data.ItemsSource = Entity.ins.HOCSINHs.ToList();
+            hocsinhList = new ObservableCollection<HOCSINH>();
+            foreach (HOCSINH hs in Entity.ins.HOCSINHs.ToList())
+            {
+                if (hs.ISDELETED == false)
+                    hocsinhList.Add(hs);
+            }
+            Data.ItemsSource = hocsinhList;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
