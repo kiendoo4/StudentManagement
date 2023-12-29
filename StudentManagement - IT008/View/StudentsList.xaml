@@ -28,7 +28,7 @@
                         <ComboBoxItem Content="Tìm kiếm theo"/>
                         <ComboBoxItem Content="CMND"/>
                     </ComboBox>-->
-                    <TextBox  Text ="Tìm kiếm" FontFamily="Quicksand Semibold"  FontSize="17" Style="{StaticResource WatermarkTextBox}" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
+                    <TextBox Name="SearchingStudent" Text ="Tìm kiếm" FontFamily="Quicksand Semibold"  FontSize="17" Style="{StaticResource WatermarkTextBox}" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
 
                 </Grid>
                 
@@ -44,106 +44,116 @@
                             CanUserReorderColumns="False"   
                             HorizontalScrollBarVisibility="Disabled"
                                     Margin="10,10,10,10"
-                            HeadersVisibility="Column" Grid.ColumnSpan="2">
+                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
+                              >
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Width="0.25*">
+                            <DataGridTemplateColumn Width="0.25*" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox VerticalAlignment="Top" Background="White" Checked="CheckStudentClick" Name="CheckStudent"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
                                 <DataGridTemplateColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <TextBlock Text="" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <CheckBox Name="CheckAllStudents" Checked="CheckAllStudentsClick" Unchecked="UncheckAllStudentsClick" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.HeaderTemplate>
+                                
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="0.8*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTextColumn Width="0.8*"  Binding ="{Binding CCCD}" IsReadOnly="True" >
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="CCCD" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="1.2*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding ="{Binding HOTENHS}" Width="1.2*" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Họ tên" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="*" Binding="{Binding NGSINHSHOW}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Ngày sinh" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="1.25*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="1.25*" Binding="{Binding EMAIL}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Email" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="*" Binding="{Binding DCHI}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Địa chỉ" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.6*" Binding="{Binding GIOITINHSHOW}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Giới tính" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.6*" Binding="{Binding LOP}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.6*" Binding="{Binding DANTOC}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Dân tộc" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.6*" Binding="{Binding TONGIAO}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <TextBlock Text="Tôn giáo" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                            </DataGridTemplateColumn>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
                             <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.Header>
+                                    <Grid>
+                                        <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Grid>
-                                            <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        </Grid>
+                                        <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="ChangeTTHocSinh" />
                                     </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>                    
                     </DataGrid>
@@ -183,7 +193,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Column="2" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand">
+                    <Button Grid.Column="2" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand" Click="Button_Click_1">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

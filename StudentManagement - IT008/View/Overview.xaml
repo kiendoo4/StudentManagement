@@ -32,7 +32,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row ="0" Text ="Niên khóa" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="21" FontFamily="Paytone One" Margin="5,7,0,0"/>
-                    <ComboBox Style="{DynamicResource theComboBox}" Background="#FFFFFF" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="18" Height="20" Width="131"
+                    <ComboBox Name="CurrentYear" Style="{DynamicResource theComboBox}" Background="#FFFFFF" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="18" Height="20" Width="131"
                          Margin="2,38,0,0" Grid.RowSpan="2" ItemContainerStyle="{DynamicResource theComboBoxItem}" >
                         <ComboBoxItem Content="2022-2023" ></ComboBoxItem>
                         <ComboBoxItem Content="2023-2024" ></ComboBoxItem>

@@ -1,4 +1,4 @@
-namespace StudentManagement___IT008.Model
+﻿namespace StudentManagement___IT008.Model
 {
     using System;
     using System.Collections.Generic;
@@ -34,6 +34,15 @@ namespace StudentManagement___IT008.Model
         [Column(TypeName = "smalldatetime")]
         public DateTime? NGSINH { get; set; }
 
+        public string NGSINHSHOW
+        {
+            get
+            {
+                string[] ng = Convert.ToString(NGSINH).Split(' ');
+                return ng[0];
+            }
+        }
+
         [StringLength(250)]
         public string EMAIL { get; set; }
 
@@ -43,7 +52,33 @@ namespace StudentManagement___IT008.Model
         [StringLength(250)]
         public string DCHI { get; set; }
 
-        public bool? GIOITINH { get; set; }
+        public bool GIOITINH { get; set; }
+
+        public string GIOITINHSHOW
+        {
+            get
+            {
+                string show;
+                if (GIOITINH == true)
+                    show = "Nam";
+                else
+                    show = "Nữ";
+                return show;
+            }
+        }
+        string lop;
+        public string LOP
+        {
+            get
+            {
+                foreach (LOPHOCTHUCTE s in LOPHOCTHUCTEs)
+                {
+                    lop = s.MALOP;
+                    break;
+                }    
+                return lop;
+            }
+        }
 
         [StringLength(10)]
         public string TONGIAO { get; set; }
