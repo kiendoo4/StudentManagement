@@ -157,6 +157,9 @@
     <Compile Include="View\ClassesList.xaml.cs">
       <DependentUpon>ClassesList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassIn4.xaml.cs">
+      <DependentUpon>ClassIn4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClassInfo.xaml.cs">
       <DependentUpon>ClassInfo.xaml</DependentUpon>
     </Compile>
@@ -165,12 +168,6 @@
     </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Home1.xaml.cs">
-      <DependentUpon>Home1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Home2.xaml.cs">
-      <DependentUpon>Home2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LeftOptions.xaml.cs">
       <DependentUpon>LeftOptions.xaml</DependentUpon>
@@ -239,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\ClassIn4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ClassInfo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -248,14 +249,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Home.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Home1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Home2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

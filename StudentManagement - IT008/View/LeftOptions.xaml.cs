@@ -24,5 +24,10 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+
+        private void StudentScreenButton_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -131,7 +131,7 @@
                         </Grid>
                     </Border>
                     
-                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0">
+                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="Button_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

@@ -19,10 +19,20 @@ namespace StudentManagement___IT008.View
     /// Interaction logic for ClassLogin.xaml
     /// </summary>
     public partial class ClassLogin : UserControl
-    {
+    {     
         public ClassLogin()
         {
             InitializeComponent();
+           
+
+        }
+
+        private void Button_click(object sender, RoutedEventArgs e)
+        {
+            ClassIn4 login = new ClassIn4();
+            login.ShowDialog();
+
+
         }
     }
 }

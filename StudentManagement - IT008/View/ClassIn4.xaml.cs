@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for Home2.xaml
+    /// Interaction logic for ClassIn4.xaml
     /// </summary>
-    public partial class Home2 : UserControl
+    public partial class ClassIn4 : Window
     {
-        public Home2()
+        public ClassIn4()
         {
             InitializeComponent();
         }

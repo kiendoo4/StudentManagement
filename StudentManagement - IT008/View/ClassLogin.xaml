@@ -42,7 +42,7 @@
                     <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="QuickSand Bold"></TextBlock>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button  HorizontalAlignment="Center" Width="150" Height="40" VerticalAlignment="Center" Cursor="Hand" Click="AddNamHoc">
+                    <Button  HorizontalAlignment="Center" Width="150" Height="40" VerticalAlignment="Center" Cursor="Hand" Click="Button_click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

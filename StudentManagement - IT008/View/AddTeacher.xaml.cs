@@ -27,5 +27,7 @@ namespace StudentManagement___IT008.View
         {
             this.Close();
         }
+
+        
     }
 }
