@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace StudentManagement___IT008.View
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for ClassLogin.xaml
     /// </summary>
-    public partial class Home : UserControl
+    public partial class ClassLogin : UserControl
     {
-        public Home()
+        public ClassLogin()
         {
             InitializeComponent();
-        }
-
-        private void AddNamHoc(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

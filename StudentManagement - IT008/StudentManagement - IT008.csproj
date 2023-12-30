@@ -160,6 +160,9 @@
     <Compile Include="View\ClassInfo.xaml.cs">
       <DependentUpon>ClassInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassLogin.xaml.cs">
+      <DependentUpon>ClassLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -239,6 +242,10 @@
     <Page Include="View\ClassInfo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ClassLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Home.xaml">
       <Generator>MSBuild:Compile</Generator>
