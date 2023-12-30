@@ -62,7 +62,7 @@
                                 </DataGridTemplateColumn.HeaderTemplate>
                                 
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Width="0.8*"  Binding ="{Binding CCCD}" IsReadOnly="True" >
+                            <DataGridTextColumn Width="0.8*" Binding ="{Binding CCCD}" IsReadOnly="True" >
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
