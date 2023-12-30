@@ -21,6 +21,7 @@
             <SolidColorBrush Color="#FBF7F8"></SolidColorBrush>
         </Border.Background>
         <Grid>
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="240"></ColumnDefinition>
                 <ColumnDefinition Width="1220"></ColumnDefinition>

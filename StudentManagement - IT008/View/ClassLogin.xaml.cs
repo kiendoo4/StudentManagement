@@ -23,8 +23,8 @@ namespace StudentManagement___IT008.View
         public ClassLogin()
         {
             InitializeComponent();
-           
 
+            this.DataContext = this;
         }
 
         private void Button_click(object sender, RoutedEventArgs e)
