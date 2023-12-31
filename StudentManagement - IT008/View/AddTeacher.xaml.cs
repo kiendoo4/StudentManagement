@@ -29,6 +29,8 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
             LabelToShow.Text = "Thêm giáo viên";
+            Magv.Text = "GV" + Convert.ToString(Entity.ins.GIAOVIENs.Count() + 1);
+            Magv.IsEnabled = false;
             foreach (string gt in gioitinhList)
             {
                 Gioitinh.Items.Add(new ComboBoxItem { Content = gt });
@@ -40,11 +42,14 @@ namespace StudentManagement___IT008.View
             Gioitinh.SelectedIndex = 0;
             Monday.SelectedIndex = 0;
         }
-        public AddTeacher(TAIKHOAN fixTK)
+        TAIKHOAN fixTK = new TAIKHOAN();
+        public AddTeacher(TAIKHOAN TK)
         {
             InitializeComponent();
+            fixTK = TK;
             LabelToShow.Text = "Chỉnh sửa giáo viên";
             Username.IsEnabled = false;
+            int j = 0;
             foreach (string gt in gioitinhList)
             {
                 Gioitinh.Items.Add(new ComboBoxItem { Content = gt });
@@ -53,8 +58,24 @@ namespace StudentManagement___IT008.View
             {
                 Monday.Items.Add(mh.TENMH);
             }
+            if (fixTK.GIOITINHSHOW == "Nam")
+                Gioitinh.SelectedIndex = 0;
+            else
+            {
+                Gioitinh.SelectedIndex = 1;
+            }
+            GIAOVIEN existinggv2 = Entity.ins.GIAOVIENs.SingleOrDefault(gv => gv.USERNAME == TK.USERNAME);
+            KHANANGGIANGDAY existingKN = existinggv2.KHANANGGIANGDAYs.SingleOrDefault(kn => kn.MAGV == existinggv2.MAGV && kn.ISDELETED == false);
+            foreach (MONHOC mh in Entity.ins.MONHOCs)
+            {
+                if (mh.TENMH == existingKN.MONHOC.TENMH)
+                {
+                    Monday.SelectedIndex = j;
+                    break;
+                }
+                else j++;
+            }
             Gioitinh.SelectedIndex = 0;
-            Monday.SelectedIndex = 0;
             Hoten.Text = fixTK.HOTEN;
             Ngsinh.SelectedDate = DateTime.Parse(fixTK.NGSINHSHOW);
             Email.Text = fixTK.EMAIL;
@@ -62,6 +83,15 @@ namespace StudentManagement___IT008.View
             Username.Text = fixTK.USERNAME;
             Password.Text = fixTK.PASSWRD;
             Hocvi.Text = fixTK.HOCVI;
+            foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
+            {
+                if (gv.USERNAME == fixTK.USERNAME)
+                {
+                    Magv.Text = gv.MAGV;
+                    break;
+                }
+            }
+            Magv.IsEnabled = false;
             if (fixTK.GIOITINHSHOW == "Nam")
                 Gioitinh.SelectedIndex = 0;
             else
@@ -73,7 +103,6 @@ namespace StudentManagement___IT008.View
         {
             this.Close();
         }
-
         private void Finish_Click(object sender, RoutedEventArgs e)
         {
             if (LabelToShow.Text == "Thêm giáo viên")
@@ -96,14 +125,26 @@ namespace StudentManagement___IT008.View
                     USERNAME = Username.Text,
                     HOCVI = Hocvi.Text
                 };
-                KHANANGGIANGDAY ab = Entity.ins.KHANANGGIANGDAYs.SingleOrDefault(c => c.MAMH == Monday.Text);
-                newgv.KHANANGGIANGDAYs.Add(ab);
+                KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
+                foreach (MONHOC mh in Entity.ins.MONHOCs)
+                {
+                    if (mh.TENMH == Monday.Text)
+                    {
+                        newknnd.MAMH = mh.MAMH;
+                        newknnd.MONHOC = mh;
+                        newknnd.MAGV = newgv.MAGV;
+                        newknnd.GIAOVIEN = newgv;
+                        newknnd.ISDELETED = false;
+                        newgv.KHANANGGIANGDAYs.Add(newknnd);
+                        break;
+                    }
+                }
                 gv.GIAOVIENs.Add(newgv);
                 Entity.ins.TAIKHOANs.Add(gv);
                 try
                 {
                     Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã thêm học sinh thành công!", "Thông báo");
+                    MessageBox.Show("Đã thêm giáo viên thành công!", "Thông báo");
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                 {
@@ -118,10 +159,37 @@ namespace StudentManagement___IT008.View
             }
             else
             {
+                fixTK.HOTEN = Hoten.Text;
+                fixTK.NGSINH = DateTime.Parse(Ngsinh.Text);
+                fixTK.VAITRO = "GV";
+                fixTK.USERNAME = Username.Text;
+                fixTK.PASSWRD = Password.Text;
+                fixTK.DCHI = Dchi.Text;
+                fixTK.EMAIL = Email.Text;
+                fixTK.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);               
+                GIAOVIEN existinggv = Entity.ins.GIAOVIENs.SingleOrDefault(gv => gv.USERNAME == Username.Text);
+                existinggv.HOCVI = Hocvi.Text;
+                KHANANGGIANGDAY existingkn = existinggv.KHANANGGIANGDAYs.SingleOrDefault(gv => gv.MAGV == Magv.Text);
+                existinggv.KHANANGGIANGDAYs.Remove(existingkn);
+                KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
+                foreach (MONHOC mh in Entity.ins.MONHOCs)
+                {
+                    if (mh.TENMH == Monday.Text)
+                    {
+                        newknnd.MAMH = mh.MAMH;
+                        newknnd.MONHOC = mh;
+                        newknnd.MAGV = existinggv.MAGV;
+                        newknnd.GIAOVIEN = existinggv;
+                        newknnd.ISDELETED = false;
+                        existinggv.KHANANGGIANGDAYs.Add(newknnd);
+                        break;
+                    }
+                }
+                
                 try
                 {
                     Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã chỉnh sửa học sinh thành công!", "Thông báo");
+                    MessageBox.Show("Đã chỉnh sửa giáo viên thành công!", "Thông báo");
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                 {

@@ -38,6 +38,13 @@ namespace StudentManagement___IT008.View
         {
             AddTeacher addTeacher = new AddTeacher();
             addTeacher.ShowDialog();
+            taikhoanList = new ObservableCollection<TAIKHOAN>();
+            foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs.ToList())
+            {
+                if (tk.ISDELETED == false && tk.VAITRO == "GV")
+                    taikhoanList.Add(tk);
+            }
+            Data.ItemsSource = taikhoanList;
         }
         private void CheckTeacherClick(object sender, RoutedEventArgs e)
         {

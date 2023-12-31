@@ -137,12 +137,11 @@
                                 <ColumnDefinition Width="6*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" FontSize="19" Text="Môn dạy" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
-                            <ComboBox Name ="Monday" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                            <ComboBox Name ="Monday" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontSize="14" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
-                    
-                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="Finish_Click">
 
+                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="Finish_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
