@@ -115,5 +115,31 @@ namespace StudentManagement___IT008.View
             Data.ItemsSource = null;
             Data.ItemsSource = taikhoanList;
         }
+        private void DeleteTeacherClick(object sender, RoutedEventArgs e)
+        {
+            List<TAIKHOAN> itemsToRemove = new List<TAIKHOAN>();
+            foreach (var item in Data.Items)
+            {
+                var row = Data.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
+                if (row != null)
+                {
+                    CheckBox checkBox = FindVisualChild<CheckBox>(row);
+                    if (checkBox != null && checkBox.IsChecked == true)
+                    {
+                        TAIKHOAN tk = item as TAIKHOAN;
+                        tk.ISDELETED = true;
+                        itemsToRemove.Add(tk);
+                    }
+                }
+            }
+            foreach (TAIKHOAN itemToRemove in itemsToRemove)
+            {
+                taikhoanList.Remove(itemToRemove);
+            }
+            Entity.ins.SaveChanges();
+            Data.ItemsSource = null;
+            Data.ItemsSource = taikhoanList;
+            MessageBox.Show("Đã xóa giáo viên thành công!", "Thông báo");
+        }
     }
 }
