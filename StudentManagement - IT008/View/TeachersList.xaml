@@ -28,7 +28,50 @@
                         <ComboBoxItem Content="Tìm kiếm theo"/>
                         <ComboBoxItem Content="CMND"/>
                     </ComboBox>-->
-                    <TextBox Text ="Tìm kiếm" FontFamily="Quicksand Semibold"  FontSize="17" Style="{StaticResource WatermarkTextBox}" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
+                    <Label Content="Tìm kiếm theo:" FontFamily="Quicksand Semibold" FontSize="18" Margin="179,11,230,-2" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                    <ComboBox Name="FindTK"
+                    Width="170" Height="29" 
+                    Margin="0,8,0,-1" 
+                    HorizontalAlignment="Center"
+                    Style="{DynamicResource theComboBox}"
+                    ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="2">
+                        <ComboBoxItem>Họ và tên</ComboBoxItem>
+                        <ComboBoxItem>Tài khoản</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox Name="FindTKTextBox"  FontFamily="Quicksand Semibold"  FontSize="17" Grid.Column="2" Grid.ColumnSpan="2">
+                        <TextBox.Style>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="BorderBrush" Value="Gray" />
+                                <Setter Property="BorderThickness" Value="0.5" />
+                                <!-- ... other style setters ... -->
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TextBox}">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0" Margin="250,12,70,2">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Grid.Column="0" Source="/Icons/icons8-search-30.png"></Image>
+                                                    <TextBlock Grid.Column="1" Text="Tìm kiếm" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,10,5">
+                                                        <TextBlock.Visibility>
+                                                            <MultiBinding Converter="{StaticResource InputToVisibility}">
+                                                                <Binding ElementName="inputText" Path="Text.IsEmpty" />
+                                                                <Binding ElementName="inputText" Path="IsFocused"/>
+                                                            </MultiBinding>
+                                                        </TextBlock.Visibility>
+                                                    </TextBlock>
+                                                    <TextBox Grid.Column="1" Name="inputText" TextChanged="FindTK_SelectionChanged" Background="Transparent" />
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
 
                 </Grid>
 

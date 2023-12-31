@@ -26,6 +26,7 @@ namespace StudentManagement___IT008.View
         public TeachersList()
         {
             InitializeComponent();
+            FindTK.SelectedIndex = 0;
             foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs.ToList())
             {
                 if (tk.ISDELETED == false && tk.VAITRO == "GV")
@@ -50,7 +51,7 @@ namespace StudentManagement___IT008.View
         {
 
         }
-        private void CheckAllTeachersClick(object sender, RoutedEventArgs e) 
+        private void CheckAllTeachersClick(object sender, RoutedEventArgs e)
         {
             foreach (var item in Data.Items)
             {
@@ -67,7 +68,7 @@ namespace StudentManagement___IT008.View
                 }
             }
         }
-        private void UncheckAllTeachersClick(object sender, RoutedEventArgs e) 
+        private void UncheckAllTeachersClick(object sender, RoutedEventArgs e)
         {
             foreach (var item in Data.Items)
             {
@@ -106,7 +107,7 @@ namespace StudentManagement___IT008.View
             }
             return null;
         }
-        private void ChangeTTGiaoVien(object sender, RoutedEventArgs e) 
+        private void ChangeTTGiaoVien(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
             TAIKHOAN dataItem = (TAIKHOAN)button.DataContext;
@@ -140,6 +141,33 @@ namespace StudentManagement___IT008.View
             Data.ItemsSource = null;
             Data.ItemsSource = taikhoanList;
             MessageBox.Show("Đã xóa giáo viên thành công!", "Thông báo");
+        }
+        private void FindTK_SelectionChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox inputTextBox = (TextBox)sender;
+            string findContent = inputTextBox.Text;
+            taikhoanList = new ObservableCollection<TAIKHOAN>();
+            if (FindTK.SelectedIndex == 0)
+            {
+                foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs.ToList())
+                {
+                    if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.HOTEN.ToLower().Contains(findContent.ToLower()))
+                        taikhoanList.Add(tk);
+                }
+            }
+            else
+            {
+                foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs.ToList())
+                {
+                    if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.USERNAME.ToLower().Contains(findContent.ToLower()))
+                        taikhoanList.Add(tk);
+                }
+            }
+            if (Data != null)
+            {
+                Data.ItemsSource = null;
+                Data.ItemsSource = taikhoanList;
+            }
         }
     }
 }
