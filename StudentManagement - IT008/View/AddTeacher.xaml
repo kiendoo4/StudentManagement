@@ -17,7 +17,7 @@
                 <RowDefinition Height="11*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Background="Purple" BorderBrush="Gray" BorderThickness="0.5" Grid.Row="0">
-                <TextBlock Text="Thêm giáo viên" FontFamily="Paytone One" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="White"></TextBlock>
+                <TextBlock Name ="LabelToShow"  FontFamily="Paytone One" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="White"></TextBlock>
             </Border>
             <Button Grid.Row="0" Click="CloseClick" Height="auto" Width="auto" Background="Transparent" BorderThickness="0">
                 <Button.Template>
@@ -46,8 +46,8 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="CMND" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,303,0" />
-                            <TextBox BorderBrush="Gray" BorderThickness="0.25" VerticalAlignment="Center" FontSize="19" Grid.Column="1" Name ="CMND" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
+                            <TextBlock Grid.Column="0" Text="Họ và tên" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,303,0" />
+                            <TextBox BorderBrush="Gray" BorderThickness="0.25" VerticalAlignment="Center" FontSize="19" Grid.Column="1" Name ="Hoten" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
                         </Grid>
                     </Border>
                     <Border Grid.Row="1" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
@@ -56,18 +56,28 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Họ và tên" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
-                            <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Hoten" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Học vị" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
+                            <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Hocvi" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="2" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                    <Border Grid.Row="2" Background="White" Margin="15,15,240,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid Margin="0,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="1.2*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Ngày sinh" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,347,0" />
-                            <DatePicker Grid.Column="1" FontFamily="Quicksand Semibold" FontSize="19" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" Margin="105,0,0,0"></DatePicker>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Ngày sinh" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Margin="12,0,5,0" />
+                            <DatePicker FontSize="14" Name="Ngsinh" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontFamily="Quicksand Semibold" VerticalAlignment="Center"></DatePicker>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="2" Background="White" Margin="283,15,14,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                        <Grid Margin="0,0,10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Giới tính" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,90,0" />
+                            <ComboBox Name="Gioitinh" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
                         </Grid>
                     </Border>
                     <Border Grid.Row="3" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
@@ -111,13 +121,13 @@
                         </Grid>
                     </Border>
                     <Border Grid.Row="7" Background="White" Margin="15,15,268,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
-                        <Grid Margin="0,0,10,0">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="6*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Giới tính" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
-                            <ComboBox Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="MAGV" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Margin="13,0,29,0" />
+                            <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Magv" FontFamily="Quicksand Semibold" Margin="0,0,10,0" ></TextBox>
                         </Grid>
                     </Border>
                     <Border Grid.Row="7" Background="White" Margin="250,15,20,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
@@ -127,12 +137,11 @@
                                 <ColumnDefinition Width="6*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" FontSize="19" Text="Môn dạy" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
-                            <ComboBox Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontSize="19" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                            <ComboBox Name ="Monday" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontSize="14" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
-                    
-                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0">
 
+                    <Button Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="Finish_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">

@@ -30,6 +30,8 @@ namespace StudentManagement___IT008.Model
 
         public bool? ISDELETED { get; set; }
 
+
+
         public virtual TAIKHOAN TAIKHOAN { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

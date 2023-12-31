@@ -30,6 +30,7 @@ namespace StudentManagement___IT008.View
         public StudentsList()
         {
             InitializeComponent();
+            FindST.SelectedIndex = 0;
             foreach (HOCSINH hs in Entity.ins.HOCSINHs.ToList())
             {
                 if (hs.ISDELETED == false)
@@ -111,7 +112,13 @@ namespace StudentManagement___IT008.View
             AddStudent addStudent = new AddStudent();
             addStudent.ShowDialog();
             Data.ItemsSource = null;
-            Data.ItemsSource = Entity.ins.HOCSINHs.ToList();
+            hocsinhList = new ObservableCollection<HOCSINH>();
+            foreach (HOCSINH hs in Entity.ins.HOCSINHs.ToList())
+            {
+                if (hs.ISDELETED == false)
+                    hocsinhList.Add(hs);
+            }
+            Data.ItemsSource = hocsinhList;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -139,6 +146,33 @@ namespace StudentManagement___IT008.View
             Data.ItemsSource = null;
             Data.ItemsSource = hocsinhList;
             MessageBox.Show("Đã xóa học sinh thành công!", "Thông báo");
+        }
+        private void FindST_SelectionChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox inputTextBox = (TextBox)sender;
+            string findContent = inputTextBox.Text;
+            hocsinhList = new ObservableCollection<HOCSINH>();
+            if (FindST.SelectedIndex == 0)
+            {
+                foreach (HOCSINH hs in Entity.ins.HOCSINHs.ToList())
+                {
+                    if (hs.ISDELETED == false && hs.HOTENHS.ToLower().Contains(findContent.ToLower()))
+                        hocsinhList.Add(hs);
+                }
+            }
+            else
+            {
+                foreach (HOCSINH hs in Entity.ins.HOCSINHs.ToList())
+                {
+                    if (hs.ISDELETED == false && hs.CCCD.ToLower().Contains(findContent.ToLower()))
+                        hocsinhList.Add(hs);
+                }
+            }
+            if (Data != null)
+            {
+                Data.ItemsSource = null;
+                Data.ItemsSource = hocsinhList;
+            }
         }
     }
 }

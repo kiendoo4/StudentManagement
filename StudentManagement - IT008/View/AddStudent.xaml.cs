@@ -228,7 +228,7 @@ namespace StudentManagement___IT008.View
                 LOPHOCTHUCTE newLopHoc = Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lop => lop.MALOP == Lop.Text);
                 fixHS.LOPHOCTHUCTEs.Clear();
                 fixHS.LOPHOCTHUCTEs.Add(newLopHoc);
-                Entity.ins.SaveChanges();
+                fixHS.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);
                 try
                 {
                     Entity.ins.SaveChanges();

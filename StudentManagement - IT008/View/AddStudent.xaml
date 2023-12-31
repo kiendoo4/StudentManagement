@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagement___IT008.View"
         mc:Ignorable="d"
-        Title="" Height="800" Width="500"
+        Title="" Height="750" Width="500"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="Black"
@@ -60,14 +60,14 @@
                             <TextBox BorderBrush="Gray" BorderThickness="0.25" VerticalAlignment="Center" FontSize="19"  Grid.Column="1" Name ="Hoten" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="2" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                    <Border Grid.Row="2" Background="White" Margin="15,15,240,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid Margin="0,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="1.2*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Ngày sinh" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,347,0" />
-                            <DatePicker Name="Ngsinh" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontFamily="Quicksand Semibold" FontSize="19" VerticalAlignment="Center" Margin="105,0,0,0"></DatePicker>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Ngày sinh" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Margin="12,0,5,0" />
+                            <DatePicker FontSize="14" Name="Ngsinh" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontFamily="Quicksand Semibold" VerticalAlignment="Center"></DatePicker>
                         </Grid>
                     </Border>
                     <Border Grid.Row="3" Background="White" Margin="15,15,15,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
@@ -140,17 +140,17 @@
                             <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Sdt" FontFamily="Quicksand Semibold" Margin="44,0,19,0"></TextBox>
                         </Grid>
                     </Border>
-                    <Border Grid.Row="8" Background="White" Margin="15,15,268,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
+                    <Border Grid.Row="2" Background="White" Margin="283,15,14,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid Margin="0,0,10,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="6*"></ColumnDefinition>
+                                <ColumnDefinition Width="1.1*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Giới tính" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
-                            <ComboBox Name="Gioitinh" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Giới tính" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,90,0" />
+                            <ComboBox Name="Gioitinh" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
                         </Grid>
                     </Border>
-                    <Button Name="FinishButon" Grid.Row="8" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="FinishButon_Click">
+                    <Button Name="FinishButon" Grid.Row="9" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="335,0,0,0" Click="FinishButon_Click">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
