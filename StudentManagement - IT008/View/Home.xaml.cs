@@ -24,5 +24,12 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+
+       private void VaoLop(object sender, EventArgs e)
+        {
+           Home1 home1 = new Home1();
+           currentUC.Children.Clear();
+           currentUC.Children.Add(home1);
+        }
     }
 }

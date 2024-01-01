@@ -3,264 +3,149 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
                                    d:DesignHeight="670" d:DesignWidth="1220">
     <Grid>
-        <Border Background="#ffffff" CornerRadius="20" BorderThickness="0">
-            <Grid>
-                <Border>
-                    <Border.Style>
-                        <Style TargetType="Border">
-                            <Setter Property="Background" Value="Transparent"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="False">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Border.Style>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="2"/>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
+        <Border Background="Transparent" Margin="0,0,-36,0">
+            <Grid Name="currentUC">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                    <RowDefinition Height="0.02*"></RowDefinition>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="244*"></ColumnDefinition>
+                        <ColumnDefinition Width="282*"></ColumnDefinition>
+                        <ColumnDefinition Width="271*"/>
+                        <ColumnDefinition Width="423*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Danh sách lớp học" FontSize="25" FontFamily="Paytone One" Height="35" Width="248" Margin="45,9,0,0" Grid.ColumnSpan="2"/>
+                    <!--<ComboBox BorderThickness="0" SelectedIndex="0" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" 
+                              Grid.Column="2" Margin="37,0,72,0">
+                        <ComboBoxItem Content="Tìm kiếm theo"/>
+                        <ComboBoxItem Content="CMND"/>
+                    </ComboBox>-->
+                
+                    <TextBox Name="SearchingStudent" FontFamily="Quicksand Semibold"  FontSize="17" Grid.Column="2" Grid.ColumnSpan="2">
+                        <TextBox.Style>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="BorderBrush" Value="Gray" />
+                                <Setter Property="BorderThickness" Value="0.5" />
+                                <!-- ... other style setters ... -->
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TextBox}">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+        BorderThickness="0" Margin="250,12,70,2">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Grid.Column="0" Source="/Icons/icons8-search-30.png"></Image>
+                                                    <TextBlock Grid.Column="1" Text="Tìm kiếm" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,10,5">
+                                                        <TextBlock.Visibility>
+                                                            <MultiBinding Converter="{StaticResource InputToVisibility}">
+                                                                <Binding ElementName="inputText" Path="Text.IsEmpty" />
+                                                                <Binding ElementName="inputText" Path="IsFocused"/>
+                                                            </MultiBinding>
+                                                        </TextBlock.Visibility>
+                                                    </TextBlock>
+                                                    <TextBox Grid.Column="1" Name="inputText" TextChanged="FindST_SelectionChanged" Background="Transparent" />
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+
+                </Grid>
+
+                <Border Grid.Row="2" Background="#FFFFFF" Margin="39,0,62,0" BorderBrush="Gray" BorderThickness="0.5" Height="534" VerticalAlignment="Center">
+                    <DataGrid Name="Data"
+                            AutoGenerateColumns="False"
+                            Background="White"
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            CanUserReorderColumns="False"   
+                            HorizontalScrollBarVisibility="Disabled"
+                                    Margin="10,10,10,10"
+                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="0.25*" IsReadOnly="True">
+                                
+
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Width="0.8*" Binding ="{Binding TenLop}" IsReadOnly="True" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Tên lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding ="{Binding GVCN}" Width="1.2*" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Giáo viên chủ nhiệm" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.5*" Binding="{Binding SoHS}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Tổng số học sinh" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.5*" Binding="{Binding HSToida}" IsReadOnly="True">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Số học sinh tối đa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.Header>
+                                    <Grid>
+                                        <TextBlock Text="Vào Lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LoginLop"/>
                                     </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Column="1" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Column="2" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Column="1" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Column="2" CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                        <RowDefinition Height="3*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <TextBlock Text="30/40" FontSize="21" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Quicksand" ></TextBlock>
-                                        <TextBlock Text="Lớp 10A1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone one"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="2">
-                                        <TextBlock Text="GVCN: Nguyễn Thị Ánh Tuyết" FontSize="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One"></TextBlock>
-                                    </Grid>
-                                    <Grid Grid.Row="3">
-                                        <TextBlock Text="Vào lớp" FontSize="21" Foreground="Purple" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand"></TextBlock>
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Grid>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="VaoLop" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Border>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.75*"> </ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.05*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    
+                </Grid>
             </Grid>
         </Border>
     </Grid>
