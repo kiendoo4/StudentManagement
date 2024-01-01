@@ -44,7 +44,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối thiểu học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="TTSHS" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="0" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -54,7 +54,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối đa học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="TTDHS" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="0" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -63,8 +63,8 @@
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Content="Sỉ số lớp tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <Label Grid.Column="0" Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                        <TextBox Name="SSTD" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -74,7 +74,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="DSTT" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -84,7 +84,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="DSTD" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -93,8 +93,8 @@
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <Label Grid.Column="0" Content="Điểm đạt tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                        <TextBox Name="DDTT" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -120,50 +120,49 @@
                                     Margin="53,10,43,0"
                             HeadersVisibility="Column" Height="274" VerticalAlignment="Top">
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn Width="0.25*">
+                                        <DataGridTemplateColumn Width="0.2*" IsReadOnly="True">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox VerticalAlignment="Top" Background="White"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
                                             <DataGridTemplateColumn.HeaderTemplate>
                                                 <DataTemplate>
                                                     <Grid>
-                                                        <TextBlock Text="" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                        <CheckBox Name="CheckAllMonhocs" Checked="CheckAllMonhocsClick" Unchecked="UncheckAllMonhocsClick" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                     </Grid>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.HeaderTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn Width="0.8*">
-                                            <DataGridTemplateColumn.HeaderTemplate>
-                                                <DataTemplate>
-                                                    <Grid>
-                                                        <TextBlock Text="STT" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                    </Grid>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.HeaderTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn Width="1.2*">
-                                            <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTextColumn Width="0.65*" Binding ="{Binding MAMH}" IsReadOnly="True">
+                                            <DataGridTextColumn.HeaderTemplate>
                                                 <DataTemplate>
                                                     <Grid>
                                                         <TextBlock Text="Mã môn học" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                     </Grid>
                                                 </DataTemplate>
-                                            </DataGridTemplateColumn.HeaderTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn Width="*">
-                                            <DataGridTemplateColumn.HeaderTemplate>
+                                            </DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Width="*" Binding="{Binding TENMH}" IsReadOnly="True">
+                                            <DataGridTextColumn.HeaderTemplate>
                                                 <DataTemplate>
                                                     <Grid>
                                                         <TextBlock Text="Tên môn học" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                     </Grid>
                                                 </DataTemplate>
-                                            </DataGridTemplateColumn.HeaderTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn Width="0.5*">
-                                            <DataGridTemplateColumn.HeaderTemplate>
+                                            </DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTextColumn>
+                                        <DataGridTemplateColumn Width="0.25*">
+                                            <DataGridTemplateColumn.Header>
+                                                <Grid>
+                                                    <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </DataGridTemplateColumn.Header>
+                                            <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                    </Grid>
+                                                    <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="ChangeTTMonhoc" />
                                                 </DataTemplate>
-                                            </DataGridTemplateColumn.HeaderTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -197,7 +196,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="620,2,0,0">
+                    <Button Click="SaveInfo"  Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="620,2,0,12">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -233,10 +232,10 @@
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="Red"/>
+                                                    <Setter Property="Background" Value="OrangeRed"/>
                                                 </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="OrangeRed"/>
+                                                    <Setter Property="Background" Value="Red"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
