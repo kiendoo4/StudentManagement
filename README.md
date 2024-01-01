@@ -17,6 +17,7 @@
 <h3>Supervisors</h3>
 
 Nguyễn Tấn Toàn
+
 Email: toannt@uit.edu.vn
 
 <h3>Video demo</h3>
