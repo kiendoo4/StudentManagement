@@ -20,7 +20,7 @@ namespace StudentManagement___IT008.Model
         [StringLength(7)]
         public string MALOP { get; set; }
 
-        public int? KHOI { get; set; }
+        public int KHOI { get; set; }
 
         [StringLength(30)]
         public string TENLOP { get; set; }

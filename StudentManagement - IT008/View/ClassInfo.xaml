@@ -30,12 +30,12 @@
                     <Grid Grid.Row="0" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBox x:Name="KhoiBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
+                        <TextBox Name="KhoiBox" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Tên lớp:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBox x:Name="ClassBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
+                        <TextBox Name="ClassBox" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>

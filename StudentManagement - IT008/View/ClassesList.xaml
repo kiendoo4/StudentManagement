@@ -67,7 +67,22 @@
                                       HorizontalScrollBarVisibility="Disabled"
                                       HeadersVisibility="Column">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Width="0.5*" Binding="{Binding KHOI}">
+                                    <DataGridTemplateColumn Width="0.25*" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox VerticalAlignment="Top" Background="White" Name="CheckStudent"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <CheckBox Name="CheckAllLops" Checked="CheckAllLopsClick" Unchecked="UncheckAllLopsClick" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.HeaderTemplate>
+
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Width="0.5*" Binding="{Binding KHOI}" IsReadOnly="True">
                                         <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -76,7 +91,7 @@
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn Width="0.5*" Binding="{Binding TENLOP}">
+                                    <DataGridTextColumn Width="0.5*" Binding="{Binding TENLOP}" IsReadOnly="True">
                                         <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -85,7 +100,7 @@
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn Width="2*" Binding="{Binding TENGV}">
+                                    <DataGridTextColumn Width="2*" Binding="{Binding TENGV}" IsReadOnly="True">
                                         <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -94,7 +109,7 @@
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn Width="*" Binding="{Binding SISO}">
+                                    <DataGridTextColumn Width="*" Binding="{Binding SISO}" IsReadOnly="True">
                                         <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -180,9 +195,11 @@
                     <Grid Grid.Column="1">
                         <Grid Margin="10,50,20,82">
                             <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
-                            <Border BorderThickness="0.5" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
-                            <local:AddClass x:Name="AddClassBox" Visibility="Collapsed" DoneClick="DataUpdate"/>
-                            <local:ClassInfo x:Name="ClassInfoBox" Visibility="Collapsed"/>
+                            <Border BorderThickness="0.5" BorderBrush="#FFC5C5C5" CornerRadius="10">
+                                <Grid Name="NewLopHocUC">
+
+                                </Grid>
+                            </Border>
                         </Grid>
                     </Grid>
                 </Grid>
