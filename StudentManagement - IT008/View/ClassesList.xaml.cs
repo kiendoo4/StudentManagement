@@ -46,7 +46,12 @@ namespace StudentManagement___IT008.View
 
         }
 
-
+        private void CheckAllLopsClick(object sender, RoutedEventArgs e)
+        {
+        }
+        private void UncheckAllLopsClick(object sender, RoutedEventArgs e)
+        {
+        }
         private void EditClass(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;

@@ -26,7 +26,6 @@ namespace StudentManagement___IT008.View
     /// </summary>
     public partial class ClassInfo : UserControl
     {
-        public LOP info = new LOP();
         public ClassInfo()
         {
             InitializeComponent();
@@ -55,30 +54,7 @@ namespace StudentManagement___IT008.View
                 else i++;
             }
         }
-        public void Reload()
-        {
-            KhoiBox.Text = info.KHOI.ToString();
-            ClassBox.Text = info.TENLOP;
-            TeacherBox.Text = info.TENGV;
-            //NienKhoaBox.Text = info.NAMHOC;
-            KhoiBox.IsEnabled = false;
-            ClassBox.IsEnabled = false;
-            TeacherBox.Items.Clear();
-            foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
-            {
-                TeacherBox.Items.Add(gv.TAIKHOAN.HOTEN);
-            }
-            int i = 0;
-            foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
-            {
-                if (gv.TAIKHOAN.HOTEN == info.TENGV)
-                {
-                    TeacherBox.SelectedIndex = i;
-                    break;
-                }
-                else i++;
-            }
-        }
+       
 
         private void FinishButtonClick(object sender, RoutedEventArgs e)
         {
