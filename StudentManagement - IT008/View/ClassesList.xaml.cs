@@ -37,7 +37,22 @@ namespace StudentManagement___IT008.View
             }
             Data.ItemsSource = lophocList;
         }
-
+        public ClassesList(bool role)
+        {
+            InitializeComponent();
+            foreach (LOP lh in Entity.ins.LOPs.ToList())
+            {
+                if (lh.ISDELETED == false)
+                    lophocList.Add(lh);
+            }
+            Data.ItemsSource = lophocList;
+            if(!role)
+            {
+                DeleteButton.Visibility = Visibility.Hidden;
+                btAdd.Visibility = Visibility.Hidden;
+                Fixing.Visibility = Visibility.Hidden;
+            }    
+        }
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
             ClassInfo classInfo = new ClassInfo(lophocList);

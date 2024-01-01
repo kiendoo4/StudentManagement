@@ -324,6 +324,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icons\icons8-teacher-50.png" />
+    <Resource Include="Icons\school-software.png" />
     <Resource Include="Icons\storyline-branding-kit-corporate-identity-development.png" />
     <Resource Include="Icons\icons8-calendar-64 %281%29.png" />
     <Resource Include="Icons\icons8-school-building-48.ico" />

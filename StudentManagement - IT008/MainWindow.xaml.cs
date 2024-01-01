@@ -37,9 +37,33 @@ namespace StudentManagement___IT008
             leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
             leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
             currentYear = overview.CurrentYear.ToString();
+        }
+        public MainWindow(bool role, LoginView loginView)
+        {
+            InitializeComponent();
+            loginView.Close();
+            if (role == true)
+            {
+                leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
+                leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButton_ButtonClick;
+                leftGroup.SettingButton.ButtonClick += SettingButton_ButtonClick;
+                leftGroup.ClassScreenButton.ButtonClick += ClassScreenButton_ButtonClick;
+                leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
+                leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
+                currentYear = overview.CurrentYear.ToString();
+            }
+            else
+            {
+                leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
+                leftGroup.TeacherScreenButton.ButtonClick += TeacherScreenButtonNotAdmin_ButtonClick;
+                leftGroup.SettingButton.ButtonClick += SettingButtonNotAdmin_ButtonClick;
+                leftGroup.ClassScreenButton.ButtonClick += ClassScreenButtonNotAdmin_ButtonClick;
+                leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
+                leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
+                currentYear = overview.CurrentYear.ToString();
+            }
             
         }
-
         private void HomeScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
@@ -59,15 +83,28 @@ namespace StudentManagement___IT008
         private void ClassScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
-            ClassesList classesList = new ClassesList();
+            ClassesList classesList = new ClassesList(true);
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(classesList);
         }
-
+        private void ClassScreenButtonNotAdmin_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            ClassesList classesList = new ClassesList(false);
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(classesList);
+        }
         private void SettingButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
-            Setting setting = new Setting();
+            Setting setting = new Setting(true);
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(setting);
+        }
+        private void SettingButtonNotAdmin_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.SettingButton.IsButtonPressed = true;
+            Setting setting = new Setting(false);
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(setting);
         }
@@ -75,11 +112,17 @@ namespace StudentManagement___IT008
         private void TeacherScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.StudentScreenButton.IsButtonPressed = true;
-            TeachersList teachersList = new TeachersList();
+            TeachersList teachersList = new TeachersList(true);
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(teachersList);
         }
-
+        private void TeacherScreenButtonNotAdmin_ButtonClick(object sender, EventArgs e)
+        {
+            leftGroup.StudentScreenButton.IsButtonPressed = true;
+            TeachersList teachersList = new TeachersList(false);
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(teachersList);
+        }
         private void StudentScreenUserControl_ButtonClick(object sender, System.EventArgs e)
         {
             // Set the button state in the InnerUserControl
