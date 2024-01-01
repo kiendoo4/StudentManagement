@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
              d:DesignHeight="670" d:DesignWidth="1220">
-    <Grid Loaded="Grid_Loaded">
+    <Grid>
         <Border Background="Transparent" Margin="0,1,0,0">
             <Grid>
                 <Grid.RowDefinitions>
@@ -24,14 +24,14 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="6*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0.25*"></RowDefinition>
                             <RowDefinition Height="3*"></RowDefinition>
-                            <RowDefinition Height="0.3*"></RowDefinition>
+                            <RowDefinition Height="0.35*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
                             <Grid.ColumnDefinitions>
@@ -54,91 +54,65 @@
                                 </Grid>
                             </Border>
                         </Grid>
-                        <Grid Margin="0,43,0,10" Grid.RowSpan="3">
-                            <DataGrid BorderBrush="Gray" BorderThickness="0.5" x:Name="Data" Height="477" Margin="38,10,10,0" VerticalAlignment="Top" ColumnHeaderHeight="30" RowHeight="30" 
+                        <Grid Grid.Row="1">
+                            <DataGrid BorderBrush="Gray" BorderThickness="0.5" Name="Data" Height="477" Margin="38,10,10,0" VerticalAlignment="Top" ColumnHeaderHeight="30" RowHeight="30" 
                                       AutoGenerateColumns="False"
-Background="White"
-ScrollViewer.CanContentScroll="True" 
-ScrollViewer.VerticalScrollBarVisibility="Auto" 
-ScrollViewer.HorizontalScrollBarVisibility="Auto"
-CanUserAddRows="False"
-CanUserDeleteRows="False"
-CanUserReorderColumns="False"   
-HorizontalScrollBarVisibility="Disabled"
-HeadersVisibility="Column">
-                                <!--<DataGrid.Columns>
-                                    <DataGridCheckBoxColumn Width="0.7* "/>
-                                    <DataGridTextColumn FontFamily="Paytone One" Header="STT" Binding="{Binding Name}" Width="1*"/>
-                                    <DataGridTextColumn Header="Khối" Binding="{Binding Name}"  Width="1*"/>
-                                    <DataGridTextColumn Header="Lớp" Binding="{Binding Name}"  Width="1*"/>
-                                    <DataGridTextColumn Header="Giáo viên chủ nhiệm" Binding="{Binding Name}"  Width="3.5*"/>
-                                    <DataGridTextColumn Header="Sỉ số" Binding="{Binding Name}"  Width="1*"/>
-                                </DataGrid.Columns>-->
+                                      Background="White"
+                                      ScrollViewer.CanContentScroll="True" 
+                                      ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                      CanUserAddRows="False"
+                                      CanUserDeleteRows="False"
+                                      CanUserReorderColumns="False"   
+                                      HorizontalScrollBarVisibility="Disabled"
+                                      HeadersVisibility="Column">
                                 <DataGrid.Columns>
-                                    <DataGridTemplateColumn Width="0.25*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
-                                            <DataTemplate>
-                                                <Grid>
-                                                    <TextBlock Text="" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Width="0.4*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
-                                            <DataTemplate>
-                                                <Grid>
-                                                    <TextBlock Text="STT" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Width="0.5*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTextColumn Width="0.5*" Binding="{Binding KHOI}">
+                                        <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
                                                     <TextBlock Text="Khối" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 </Grid>
                                             </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Width="0.5*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Width="0.5*" Binding="{Binding TENLOP}">
+                                        <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
                                                     <TextBlock Text="Lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 </Grid>
                                             </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Width="2*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Width="2*" Binding="{Binding TENGV}">
+                                        <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
                                                     <TextBlock Text="Giáo viên chủ nhiệm" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 </Grid>
                                             </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Width="*">
-                                        <DataGridTemplateColumn.HeaderTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Width="*" Binding="{Binding SISO}">
+                                        <DataGridTextColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <Grid>
                                                     <TextBlock Text="Sỉ số" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 </Grid>
                                             </DataTemplate>
-                                        </DataGridTemplateColumn.HeaderTemplate>
-                                    </DataGridTemplateColumn>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
-                        <Grid Grid.Row="1" Margin="0,503,10,0" Grid.RowSpan="2">
+                        <Grid Grid.Row="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="6*"/>
                                 <ColumnDefinition Width="3*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Button x:Name="btAdd" Grid.Column="1" Height="35" Cursor="Hand" Click="btAdd_Click" Margin="14,-4,0,21">
+                            <Button x:Name="btAdd" Grid.Column="1" Height="35" Cursor="Hand" Click="btAdd_Click" Margin="10,0,10,0" VerticalAlignment="Top">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border CornerRadius="15" BorderThickness="0">
@@ -164,7 +138,7 @@ HeadersVisibility="Column">
                                 </Button.Template>
                             </Button>
 
-                            <Button Grid.Column="2" Height="35" Cursor="Hand" Margin="25,-4,10,21">
+                            <Button Grid.Column="2" Height="35" Cursor="Hand" Margin="10,0,10,0" VerticalAlignment="Top">
                                 <Button.Template>
                                     <ControlTemplate TargetType="{x:Type Button}">
                                         <Border CornerRadius="15" BorderThickness="0">
@@ -192,10 +166,10 @@ HeadersVisibility="Column">
 
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Grid Margin="10,0,20,10">
+                        <Grid Margin="10,50,20,82">
                             <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
                             <Border BorderThickness="0.5" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
-                            <local:AddClass x:Name="AddClassBox" Visibility="Collapsed"/>
+                            <local:AddClass x:Name="AddClassBox" Visibility="Collapsed" DoneClick="DataUpdate"/>
                             <local:ClassInfo x:Name="ClassInfoBox" Visibility="Collapsed"/>
                         </Grid>
                     </Grid>

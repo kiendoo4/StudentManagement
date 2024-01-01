@@ -5,6 +5,7 @@ namespace StudentManagement___IT008.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("LOP")]
     public partial class LOP
@@ -23,6 +24,59 @@ namespace StudentManagement___IT008.Model
 
         [StringLength(30)]
         public string TENLOP { get; set; }
+
+        public string SISO
+        {
+            get
+            {
+                int sl = 0;
+                LOPHOCTHUCTE LopHoc = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lophocfind in LOPHOCTHUCTEs)
+                {
+                    if(lophocfind.MALOP == MALOP)
+                    {
+                        LopHoc = lophocfind; break;
+                    }
+                }
+                foreach (LOPHOCTHUCTE lh in Entity.ins.LOPHOCTHUCTEs)
+                {
+                    if(lh.MALHTT == LopHoc.MALHTT) sl++;
+                }
+                return Convert.ToString(sl);
+            }
+        }
+
+        public string TENGV
+        {
+            get
+            {
+                LOPHOCTHUCTE LopHoc = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lophocfind in LOPHOCTHUCTEs)
+                {
+                    if (lophocfind.MALOP == MALOP)
+                    {
+                        LopHoc = lophocfind; break;
+                    }
+                }
+                GIAOVIEN gvcn = new GIAOVIEN();
+                foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
+                {
+                    if (gv.MAGV == LopHoc.MAGVCN)
+                    {
+                        gvcn = gv; break;
+                    }
+                }
+                TAIKHOAN tk = new TAIKHOAN();
+                foreach (TAIKHOAN alltk in Entity.ins.TAIKHOANs)
+                {
+                    if (alltk.USERNAME == gvcn.USERNAME)
+                    {
+                        tk = alltk; break;
+                    }
+                }
+                return tk.HOTEN;
+            }
+        }
 
         public bool? ISDELETED { get; set; }
 

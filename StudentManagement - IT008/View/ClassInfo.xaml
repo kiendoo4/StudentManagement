@@ -47,7 +47,7 @@
                         <TextBlock Text="Niên khóa:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
                     </Grid>
-                    <Button Grid.Row="5" HorizontalAlignment="Right" Width="126" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="15">
+                    <Button Grid.Row="5" HorizontalAlignment="Right" Width="126" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="0,0,15,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
