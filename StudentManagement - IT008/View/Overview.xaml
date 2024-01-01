@@ -34,8 +34,6 @@
                     <TextBlock Grid.Row ="0" Text ="Niên khóa" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="21" FontFamily="Paytone One" Margin="5,7,0,0"/>
                     <ComboBox Name="CurrentYear" Style="{DynamicResource theComboBox}" Background="#FFFFFF" BorderBrush="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="18" Height="20" Width="131"
                          Margin="2,38,0,0" Grid.RowSpan="2" ItemContainerStyle="{DynamicResource theComboBoxItem}" >
-                        <ComboBoxItem Content="2022-2023" ></ComboBoxItem>
-                        <ComboBoxItem Content="2023-2024" ></ComboBoxItem>
                     </ComboBox>
                 </Grid>
             </Grid>
@@ -57,7 +55,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row ="0" Text ="Giáo viên"  FontSize="21" FontFamily="Paytone One" Margin="11,8,-11,4"/>
-                    <TextBlock Text="30" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
+                    <TextBlock Name="SLGV" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
                 </Grid>
             </Grid>
         </Border>
@@ -78,7 +76,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row ="0" Text ="Học sinh"  FontSize="21" FontFamily="Paytone One" Margin="11,9,-11,0"/>
-                    <TextBlock Text="100" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
+                    <TextBlock Name="SLHS" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
                 </Grid>
             </Grid>
         </Border>
@@ -99,7 +97,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row ="0" Text ="Lớp học"  FontSize="21" FontFamily="Paytone One" Margin="11,10,-11,39" Grid.RowSpan="2"/>
-                    <TextBlock Text="12" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
+                    <TextBlock Name="SLL" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Quicksand Semibold" FontSize="18" Grid.Row="1" Margin="11,2,0,0"/>
                 </Grid>
             </Grid>
         </Border>

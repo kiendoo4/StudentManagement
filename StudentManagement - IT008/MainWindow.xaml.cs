@@ -37,6 +37,7 @@ namespace StudentManagement___IT008
             leftGroup.ResultScreenButton.ButtonClick += ResultScreenButton_ButtonClick;
             leftGroup.HomeScreenButton.ButtonClick += HomeScreenButton_ButtonClick;
             currentYear = overview.CurrentYear.ToString();
+            
         }
 
         private void HomeScreenButton_ButtonClick(object sender, EventArgs e)

@@ -123,7 +123,8 @@ namespace StudentManagement___IT008.View
                 {
                     MAGV = Magv.Text,
                     USERNAME = Username.Text,
-                    HOCVI = Hocvi.Text
+                    HOCVI = Hocvi.Text,
+                    ISDELETED = false
                 };
                 KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
                 foreach (MONHOC mh in Entity.ins.MONHOCs)
