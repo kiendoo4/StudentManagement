@@ -38,9 +38,9 @@ namespace StudentManagement___IT008.Model
                         LopHoc = lophocfind; break;
                     }
                 }
-                foreach (LOPHOCTHUCTE lh in Entity.ins.LOPHOCTHUCTEs)
+                foreach (HOCSINH lh in LopHoc.HOCSINHs)
                 {
-                    if(lh.MALHTT == LopHoc.MALHTT) sl++;
+                    if(lh.ISDELETED == false) sl++;
                 }
                 return Convert.ToString(sl);
             }

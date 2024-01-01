@@ -52,16 +52,16 @@
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#522c53"/>
+                                                    <Setter Property="Background" Value="LightBlue"/>
                                                 </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Purple"/>
+                                                    <Setter Property="Background" Value="CadetBlue"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Border.Style>
                                     <Grid>
-                                        <TextBlock Text="Chỉnh sửa"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
+                                        <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
                                         </TextBlock>
                                     </Grid>
                                 </Border>

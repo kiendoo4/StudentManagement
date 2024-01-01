@@ -26,21 +26,26 @@ namespace StudentManagement___IT008.View
     /// </summary>
     public partial class ClassInfo : UserControl
     {
-        public ClassInfo()
+        ObservableCollection<LOP> lophocList2 = new ObservableCollection<LOP>();
+        LOP info2 = new LOP();
+        public ClassInfo(ObservableCollection<LOP> lophocList)
         {
             InitializeComponent();
+            lophocList2 = lophocList;
             TeacherBox.Items.Clear();
             LabelToShow.Text = "Thêm lớp học";
             foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
             {
-                if(tk.ISDELETED == false && tk.VAITRO == "GV")
+                if (tk.ISDELETED == false && tk.VAITRO == "GV")
                     TeacherBox.Items.Add(tk.HOTEN);
             }
             TeacherBox.SelectedIndex = 0;
         }
-        public ClassInfo(LOP info)
+        public ClassInfo(LOP info, ObservableCollection<LOP> lophocList)
         {
             InitializeComponent();
+            lophocList2 = lophocList;
+            info2 = info;
             LabelToShow.Text = "Chỉnh sửa lớp học";
             KhoiBox.Text = Convert.ToString(info.KHOI);
             ClassBox.Text = info.TENLOP;
@@ -55,9 +60,9 @@ namespace StudentManagement___IT008.View
                     TeacherBox.Items.Add(tk.HOTEN);
             }
             int i = 0;
-            foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
+            foreach (var item in TeacherBox.Items)
             {
-                if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.HOTEN == info.TENGV)
+                if (item == info.TENGV)
                 {
                     TeacherBox.SelectedIndex = i;
                     break;
@@ -72,7 +77,125 @@ namespace StudentManagement___IT008.View
             {
                 LOP newL = new LOP();
                 newL.MALOP = "L" + KhoiBox.Text + ClassBox.Text;
-                newL.TENLOP = ClassBox.Text;
+                LOP existingLop = Entity.ins.LOPs.FirstOrDefault(l => l.MALOP == newL.MALOP && l.ISDELETED == true);
+                if (existingLop != null)
+                {
+                    existingLop.ISDELETED = false;
+                    GIAOVIEN findGV2 = new GIAOVIEN();
+                    findGV2.ISDELETED = false;
+                    foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
+                    {
+                        if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.HOTEN == TeacherBox.Text)
+                        {
+                            mal = tk.USERNAME;
+                            break;
+                        }
+                    }
+                    foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
+                    {
+                        if (gv.ISDELETED == false && gv.USERNAME == mal)
+                        {
+                            findGV2 = gv;
+                            break;
+                        }
+                    }
+                    LOPHOCTHUCTE lhtt2 = new LOPHOCTHUCTE
+                    {
+                        MALHTT = "LHTT" + Convert.ToString(Entity.ins.LOPHOCTHUCTEs.Count()),
+                        MALOP = existingLop.MALOP,
+                        MANH = "N2023",
+                        MAGVCN = findGV2.MAGV,
+                        ISDELETED = false
+                    };
+                    existingLop.LOPHOCTHUCTEs.Clear();
+                    existingLop.LOPHOCTHUCTEs.Add(lhtt2);
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Thêm lớp học thành công", "Thông báo");
+                        lophocList2.Clear();
+                        foreach (LOP lop in Entity.ins.LOPs)
+                        {
+                            if (lop.ISDELETED == false)
+                            {
+                                lophocList2.Add(lop);
+                            }
+                        }
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    newL.TENLOP = ClassBox.Text;
+                    newL.ISDELETED = false;
+                    newL.KHOI = Convert.ToInt32(KhoiBox.Text);
+                    foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
+                    {
+                        if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.HOTEN == TeacherBox.Text)
+                        {
+                            mal = tk.USERNAME;
+                            break;
+                        }
+                    }
+                    GIAOVIEN findGV = new GIAOVIEN();
+                    findGV.ISDELETED = false;
+                    foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
+                    {
+                        if (gv.ISDELETED == false && gv.USERNAME == mal)
+                        {
+                            findGV = gv;
+                            break;
+                        }
+                    }
+
+                    LOPHOCTHUCTE lhtt = new LOPHOCTHUCTE
+                    {
+                        MALHTT = "LHTT" + Convert.ToString(Entity.ins.LOPHOCTHUCTEs.Count()),
+                        MALOP = newL.MALOP,
+                        MANH = "N2023",
+                        MAGVCN = findGV.MAGV,
+                        ISDELETED = false
+                    };
+                    newL.LOPHOCTHUCTEs.Add(lhtt);
+                    lophocList2.Add(newL);
+                    Entity.ins.LOPs.Add(newL);
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Thêm lớp học thành công", "Thông báo");
+                        lophocList2.Clear();
+                        foreach (LOP lop in Entity.ins.LOPs)
+                        {
+                            if(lop.ISDELETED == false)
+                            {
+                                lophocList2.Add(lop);
+                            }    
+                        }    
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
+                        }
+                    }
+                }
+            }   
+            else
+            {
+                GIAOVIEN findGV2 = new GIAOVIEN();
                 foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
                 {
                     if (tk.ISDELETED == false && tk.VAITRO == "GV" && tk.HOTEN == TeacherBox.Text)
@@ -81,31 +204,36 @@ namespace StudentManagement___IT008.View
                         break;
                     }
                 }
-                GIAOVIEN findGV  = new GIAOVIEN();
-                findGV.ISDELETED = false;
                 foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
                 {
                     if (gv.ISDELETED == false && gv.USERNAME == mal)
                     {
-                        findGV = gv;
+                        findGV2 = gv;
                         break;
                     }
                 }
-
-                LOPHOCTHUCTE lhtt = new LOPHOCTHUCTE
+                LOPHOCTHUCTE lhtt2 = new LOPHOCTHUCTE
                 {
                     MALHTT = "LHTT" + Convert.ToString(Entity.ins.LOPHOCTHUCTEs.Count()),
-                    MALOP = newL.MALOP,
-                    MANH = "NH001",
-                    MAGVCN = findGV.MAGV,
+                    MALOP = info2.MALOP,
+                    MANH = "N2023",
+                    MAGVCN = findGV2.MAGV,
                     ISDELETED = false
                 };
-                newL.LOPHOCTHUCTEs.Add(lhtt);
-                Entity.ins.LOPs.Add(newL);
+                info2.LOPHOCTHUCTEs.Clear();
+                info2.LOPHOCTHUCTEs.Add(lhtt2);
                 try
                 {
                     Entity.ins.SaveChanges();
-                    MessageBox.Show("Thêm lớp học thành công", "Thông báo");
+                    MessageBox.Show("Chỉnh sửa lớp học thành công", "Thông báo");
+                    lophocList2.Clear();
+                    foreach (LOP lop in Entity.ins.LOPs)
+                    {
+                        if (lop.ISDELETED == false)
+                        {
+                            lophocList2.Add(lop);
+                        }
+                    }
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                 {

@@ -271,22 +271,17 @@
                                    Margin="0, 0, 26, 20"></TextBlock>
 
                         <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0, 0, 21, 0" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
-                                  IsReadOnly="True"
-                                  RowStyle="{StaticResource DataGridRowStyle}"
-                                  GridLinesVisibility="None"
-                                  Background="White"
-                                  BorderThickness="0"
-                                  HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Disabled"
-                                  HeadersVisibility="Column"
-                                  ScrollViewer.CanContentScroll="True"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  CanUserAddRows="False"
-                                  CanUserDeleteRows="False"
-                                  CanUserReorderColumns="False"
+                            Background="White"
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            CanUserReorderColumns="False"   
+                            HorizontalScrollBarVisibility="Disabled"
+
+                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
@@ -295,6 +290,18 @@
                                 <DataGridTextColumn Width="*" Header="Sĩ số" Binding="{Binding SiSo}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="2*" Header="Số lượng đạt" Binding="{Binding SL_Dat}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Tỉ lệ" Binding="{Binding TiLe}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Width="2*">
+                                    <DataGridTemplateColumn.Header>
+                                        <Grid>
+                                            <TextBlock Text="Chi tiết"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button VerticalAlignment="Top" Background="White" Content="Chọn"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
 

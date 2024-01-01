@@ -170,7 +170,7 @@ namespace StudentManagement___IT008.View
                 fixTK.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);               
                 GIAOVIEN existinggv = Entity.ins.GIAOVIENs.SingleOrDefault(gv => gv.USERNAME == Username.Text);
                 existinggv.HOCVI = Hocvi.Text;
-                KHANANGGIANGDAY existingkn = existinggv.KHANANGGIANGDAYs.SingleOrDefault(gv => gv.MAGV == Magv.Text);
+                KHANANGGIANGDAY existingkn = existinggv.KHANANGGIANGDAYs.SingleOrDefault(gv => gv.MAGV == Magv.Text && gv.ISDELETED == false);
                 existinggv.KHANANGGIANGDAYs.Remove(existingkn);
                 KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
                 foreach (MONHOC mh in Entity.ins.MONHOCs)
