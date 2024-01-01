@@ -103,6 +103,18 @@
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
                                     </DataGridTextColumn>
+                                    <DataGridTemplateColumn Width="0.6*">
+                                        <DataGridTemplateColumn.Header>
+                                            <Grid>
+                                                <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Grid>
+                                        </DataGridTemplateColumn.Header>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="EditClass"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

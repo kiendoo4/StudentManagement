@@ -78,6 +78,30 @@ namespace StudentManagement___IT008.Model
             }
         }
 
+        public string NAMHOC
+        {
+            get
+            {
+                LOPHOCTHUCTE LopHoc = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lophocfind in LOPHOCTHUCTEs)
+                {
+                    if (lophocfind.MALOP == MALOP)
+                    {
+                        LopHoc = lophocfind; break;
+                    }
+                }
+                NAMHOC mynh = new NAMHOC();
+                foreach (NAMHOC nh in Entity.ins.NAMHOCs)
+                {
+                    if (nh.MANH == LopHoc.MANH)
+                    {
+                        mynh = nh; break;
+                    }
+                }
+                return mynh.TENNAMHOC;
+            }
+        }
+
         public bool? ISDELETED { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

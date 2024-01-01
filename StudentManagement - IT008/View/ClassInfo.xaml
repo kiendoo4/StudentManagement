@@ -30,22 +30,22 @@
                     <Grid Grid.Row="0" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBox x:Name="KhoiBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Tên lớp:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBox x:Name="ClassBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="GV chủ nhiệm:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBox x:Name="TeacherBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Niên khóa:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBox x:Name="NienKhoaBox" Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
                     </Grid>
                     <Button Grid.Row="5" HorizontalAlignment="Right" Width="126" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="0,0,15,0">
 

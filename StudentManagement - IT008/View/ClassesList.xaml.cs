@@ -55,5 +55,22 @@ namespace StudentManagement___IT008.View
         {
             Data.ItemsSource = Entity.ins.LOPs.ToList();
         }
+
+        private void EditClass(object sender, RoutedEventArgs e)
+        {
+            if (ClassInfoBox.Visibility == Visibility.Visible)
+            {
+                ClassInfoBox.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                var button = (Button)sender;
+                LOP dataItem = (LOP)button.DataContext;
+                ClassInfoBox.Visibility = Visibility.Visible;
+                ClassInfoBox.info = dataItem;
+                ClassInfoBox.Reload();
+            }
+            
+        }
     }
 }
