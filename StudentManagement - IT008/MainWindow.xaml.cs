@@ -51,7 +51,7 @@ namespace StudentManagement___IT008
         private void ResultScreenButton_ButtonClick(object sender, EventArgs e)
         {
             leftGroup.SettingButton.IsButtonPressed = true;
-            Summarize_Subject periodList = new Summarize_Subject();
+            Summarize_US periodList = new Summarize_US();
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(periodList);
         }
@@ -123,6 +123,11 @@ namespace StudentManagement___IT008
             AddNewYear addNewYear = new AddNewYear();
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(addNewYear);
+        }
+
+        private void leftGroup_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

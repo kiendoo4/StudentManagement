@@ -40,9 +40,6 @@ namespace StudentManagement___IT008.View
         public Summarize_Subject()
         {
             InitializeComponent();
-            cb_Period.SelectedIndex = 0;
-            cb_Subject.SelectedIndex = 0;
-            ReportType.SelectedIndex = 0;
             changeText();
             List<Class> list = new List<Class> {
                 new Class{STT = 1, Lop = "10A1", SiSo=33, SL_Dat=20, TiLe=70},
@@ -60,9 +57,6 @@ namespace StudentManagement___IT008.View
         }
         public void changeText()
         {
-            ComboBoxItem cbi_Period = (ComboBoxItem)cb_Period.SelectedItem;
-            ComboBoxItem cbi_Subject = (ComboBoxItem)cb_Subject.SelectedItem;
-            tb_Subject_Chung.Text = cbi_Period.Content.ToString() + " - Môn: " + cbi_Subject.Content.ToString();
             tb_Period_2.Text = tb_Subject_Chung.Text;
         }
 
@@ -75,22 +69,6 @@ namespace StudentManagement___IT008.View
         private void cb_Search_In_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void cb_Period_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cb_Period.SelectedItem != null && cb_Subject.SelectedItem != null)
-            {
-                changeText();
-            }
-        }
-
-        private void cb_Subject_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cb_Period.SelectedItem != null && cb_Subject.SelectedItem != null)
-            {
-                changeText();
-            }
         }
     }
 }
