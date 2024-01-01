@@ -33,7 +33,7 @@ namespace StudentManagement___IT008.View
         }
         public ClassInfo(LOP info)
         {
-            KhoiBox.Text = info.KHOI.ToString();
+            KhoiBox.Text = Convert.ToString(info.KHOI);
             ClassBox.Text = info.TENLOP;
             TeacherBox.Text = info.TENGV;
             //NienKhoaBox.Text = info.NAMHOC;
