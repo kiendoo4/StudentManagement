@@ -40,37 +40,20 @@ namespace StudentManagement___IT008.View
 
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (AddClassBox.Visibility == Visibility.Visible)
-            {
-                AddClassBox.Visibility = Visibility.Collapsed;
-            }
-            else 
-            {
-                AddClassBox.Visibility = Visibility.Visible;
-            }
-            ClassInfoBox.Visibility = Visibility.Collapsed;
+            ClassInfo classInfo = new ClassInfo();
+            NewLopHocUC.Children.Clear();
+            NewLopHocUC.Children.Add(classInfo);
+
         }
 
-        private void DataUpdate(object sender, EventArgs e)
-        {
-            Data.ItemsSource = Entity.ins.LOPs.ToList();
-        }
 
         private void EditClass(object sender, RoutedEventArgs e)
         {
-            //if (ClassInfoBox.Visibility == Visibility.Visible)
-            //{
-            //    ClassInfoBox.Visibility = Visibility.Collapsed;
-            //}
-            //else
-            //{
-                var button = (Button)sender;
-                LOP dataItem = (LOP)button.DataContext;
-                ClassInfo classInfo = new ClassInfo(dataItem);
-                //ClassInfoBox.Visibility = Visibility.Visible;
-                ClassInfoBox = classInfo;
-            //}
-            
+            var button = (Button)sender;
+            LOP dataItem = (LOP)button.DataContext;
+            ClassInfo classInfo = new ClassInfo(dataItem);
+            NewLopHocUC.Children.Clear();
+            NewLopHocUC.Children.Add(classInfo);
         }
     }
 }

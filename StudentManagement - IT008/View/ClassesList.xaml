@@ -180,9 +180,11 @@
                     <Grid Grid.Column="1">
                         <Grid Margin="10,50,20,82">
                             <TextBlock Text="Chọn để hiển thị thông tin"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="19" Foreground="#FFABABAB" />
-                            <Border BorderThickness="0.5" BorderBrush="#FFC5C5C5" CornerRadius="10"/>
-                            <local:AddClass x:Name="AddClassBox" Visibility="Collapsed" DoneClick="DataUpdate"/>
-                            <local:ClassInfo x:Name="ClassInfoBox" Visibility="Collapsed"/>
+                            <Border BorderThickness="0.5" BorderBrush="#FFC5C5C5" CornerRadius="10">
+                                <Grid Name="NewLopHocUC">
+
+                                </Grid>
+                            </Border>
                         </Grid>
                     </Grid>
                 </Grid>
