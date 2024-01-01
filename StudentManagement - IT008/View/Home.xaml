@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
                                    d:DesignHeight="670" d:DesignWidth="1220">
-    <Grid>
+    <Grid Name="currentUC">
         <Border Background="Transparent" Margin="0,0,-36,0">
-            <Grid Name="currentUC">
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"></RowDefinition>
                     <RowDefinition Height="0.02*"></RowDefinition>
@@ -54,7 +54,7 @@
                                                             </MultiBinding>
                                                         </TextBlock.Visibility>
                                                     </TextBlock>
-                                                    <TextBox Grid.Column="1" Name="inputText" TextChanged="FindST_SelectionChanged" Background="Transparent" />
+                                                    <TextBox Grid.Column="1" Name="inputText" Background="Transparent" />
                                                 </Grid>
                                             </Border>
                                         </ControlTemplate>
@@ -85,7 +85,7 @@
                                 
 
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Width="0.8*" Binding ="{Binding TenLop}" IsReadOnly="True" >
+                            <DataGridTextColumn Width="0.8*" Binding ="{Binding MALOP}" IsReadOnly="True" >
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -94,7 +94,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding ="{Binding GVCN}" Width="1.2*" IsReadOnly="True">
+                            <DataGridTextColumn Binding ="{Binding MAGVCN}" Width="1.2*" IsReadOnly="True">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -112,7 +112,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Width="0.5*" Binding="{Binding HSToida}" IsReadOnly="True">
+                            <DataGridTextColumn Width="0.5*"  IsReadOnly="True">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
