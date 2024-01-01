@@ -25,5 +25,6 @@ namespace StudentManagement___IT008.Model
         public string GHICHU { get; set; }
 
         public bool? ISDELETED { get; set; }
+
     }
 }

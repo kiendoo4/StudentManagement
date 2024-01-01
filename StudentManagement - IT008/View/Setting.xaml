@@ -44,7 +44,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối thiểu học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="TTSHS" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="0" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -54,7 +54,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Tuổi tối đa học sinh" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox  BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="TTDHS" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="0" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -63,8 +63,8 @@
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Content="Sỉ số lớp tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <Label Grid.Column="0" Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                        <TextBox Name="SSTD" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -74,7 +74,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="DSTT" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="1" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -84,7 +84,7 @@
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Content="Điểm số tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <TextBox Name="DSTD" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                                 <Border CornerRadius="20" Grid.Column="1" Grid.Row="2" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
@@ -93,8 +93,8 @@
                                             <ColumnDefinition Width="1.5*"></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Content="Sỉ số lớp tối đa" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
-                                        <TextBox BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
+                                        <Label Grid.Column="0" Content="Điểm đạt tối thiểu" FontSize="17" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                        <TextBox Name="DDTT" BorderBrush="Gray" BorderThickness="0.25" Grid.Column="1" FontSize="17" FontFamily="Quicksand Semibold" Height="29" Margin="1,6,10,8"/>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -134,7 +134,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.HeaderTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Width="0.65*" Binding ="{Binding MAMH}">
+                                        <DataGridTextColumn Width="0.65*" Binding ="{Binding MAMH}" IsReadOnly="True">
                                             <DataGridTextColumn.HeaderTemplate>
                                                 <DataTemplate>
                                                     <Grid>
@@ -143,7 +143,7 @@
                                                 </DataTemplate>
                                             </DataGridTextColumn.HeaderTemplate>
                                         </DataGridTextColumn>
-                                        <DataGridTextColumn Width="*" Binding="{Binding TENMH}">
+                                        <DataGridTextColumn Width="*" Binding="{Binding TENMH}" IsReadOnly="True">
                                             <DataGridTextColumn.HeaderTemplate>
                                                 <DataTemplate>
                                                     <Grid>
@@ -196,7 +196,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Top" Cursor="Hand" Margin="620,2,0,0">
+                    <Button Click="SaveInfo"  Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="620,2,0,12">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

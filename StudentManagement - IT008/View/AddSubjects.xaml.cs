@@ -25,20 +25,16 @@ namespace StudentManagement___IT008.View
         bool addorchange = true;
         ObservableCollection<MONHOC> monhocList2 = new ObservableCollection<MONHOC>();
         MONHOC monhoc2 = new MONHOC();
-        public AddSubjects(ObservableCollection<MONHOC> monhocList)
+        TextBlock textBlock2 = new TextBlock();
+        public AddSubjects(ObservableCollection<MONHOC> monhocList, TextBlock textBlock)
         {
             InitializeComponent();
             monhocList2 = monhocList;
             Mamh.IsEnabled = false;
-            int cnt = 1;
-            foreach (MONHOC countMH in Entity.ins.MONHOCs)
-            {
-                if (countMH.ISDELETED == false)
-                    cnt++;
-            }
-            Mamh.Text = "MH" + Convert.ToString(cnt);
+            Mamh.Text = "MH" + Convert.ToString(Entity.ins.MONHOCs.Count() + 1);
+            textBlock2 = textBlock;
         }
-        public AddSubjects(ObservableCollection<MONHOC> monhocList, MONHOC mh)
+        public AddSubjects(ObservableCollection<MONHOC> monhocList, MONHOC mh, TextBlock textBlock)
         {
             InitializeComponent();
             monhocList2 = monhocList;
@@ -47,6 +43,7 @@ namespace StudentManagement___IT008.View
             addorchange = false;
             Mamh.Text = mh.MAMH;
             Tenmh.Text = mh.TENMH;
+            textBlock2 = textBlock;
         }
 
         private void FinishClick(object sender, RoutedEventArgs e)
@@ -54,12 +51,6 @@ namespace StudentManagement___IT008.View
             if(addorchange)
             {
                 MONHOC newMh = new MONHOC();
-                int cnt = 1;
-                foreach (MONHOC countMH in Entity.ins.MONHOCs)
-                {
-                    if (countMH.ISDELETED == false)
-                        cnt++;
-                }
                 newMh.MAMH = Mamh.Text;
                 newMh.TENMH = Tenmh.Text;
                 newMh.ISDELETED = false;
@@ -74,6 +65,8 @@ namespace StudentManagement___IT008.View
                         if (mh.ISDELETED == false)
                             monhocList2.Add(mh);
                     }
+                    this.Visibility = Visibility.Collapsed;
+                    textBlock2.Text = "";
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                 {
@@ -99,6 +92,9 @@ namespace StudentManagement___IT008.View
                         if (mh.ISDELETED == false)
                             monhocList2.Add(mh);
                     }
+                    this.Visibility = Visibility.Collapsed;
+                    textBlock2.Text = "";
+
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                 {
