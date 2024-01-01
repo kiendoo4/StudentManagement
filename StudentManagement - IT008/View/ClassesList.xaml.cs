@@ -58,18 +58,18 @@ namespace StudentManagement___IT008.View
 
         private void EditClass(object sender, RoutedEventArgs e)
         {
-            if (ClassInfoBox.Visibility == Visibility.Visible)
-            {
-                ClassInfoBox.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
+            //if (ClassInfoBox.Visibility == Visibility.Visible)
+            //{
+            //    ClassInfoBox.Visibility = Visibility.Collapsed;
+            //}
+            //else
+            //{
                 var button = (Button)sender;
                 LOP dataItem = (LOP)button.DataContext;
-                ClassInfoBox.Visibility = Visibility.Visible;
-                ClassInfoBox.info = dataItem;
-                ClassInfoBox.Reload();
-            }
+                ClassInfo classInfo = new ClassInfo(dataItem);
+                //ClassInfoBox.Visibility = Visibility.Visible;
+                ClassInfoBox = classInfo;
+            //}
             
         }
     }
