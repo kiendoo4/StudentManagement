@@ -184,7 +184,7 @@
         </Style>
     </UserControl.Resources>
     <Grid Background="Transparent">
-        <Grid Margin="30,-59,0,-12" Height="741" Width="auto">
+        <Grid Margin="30, 0, 0, 0" Height="741" Width="auto">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.00001*"></RowDefinition>
                 <RowDefinition Height="0.1*"></RowDefinition>
@@ -240,6 +240,7 @@
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
                                   CanUserReorderColumns="False" Grid.RowSpan="2"
+                                  SelectionChanged="tbl_TK_Chung_SelectionChanged"
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>

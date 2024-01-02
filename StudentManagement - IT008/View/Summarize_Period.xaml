@@ -240,6 +240,7 @@
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
                                   CanUserReorderColumns="False" Grid.RowSpan="2"
+                                  SelectionChanged="tbl_TK_Chung_SelectionChanged"
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
@@ -249,6 +250,18 @@
                                 <DataGridTextColumn Width="2*" Header="Số lượng đạt" Binding="{Binding SL_Dat}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Tỉ lệ" Binding="{Binding TiLe}"></DataGridTextColumn>
                             </DataGrid.Columns>
+                            <DataGridTemplateColumn Width="0.6*">
+                                <DataGridTemplateColumn.Header>
+                                    <Grid>
+                                        <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="EditClass"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                         </DataGrid>
 
                         <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="367,30,26,30">

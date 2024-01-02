@@ -137,6 +137,8 @@
     <Compile Include="Model\PHH.cs" />
     <Compile Include="Model\TAIKHOAN.cs" />
     <Compile Include="Model\THAMSO.cs" />
+    <Compile Include="Model\TK_P_CHITIET.cs" />
+    <Compile Include="Model\TK_P_CHUNG.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Mainwd.cs" />
     <Compile Include="View\AddClass.xaml.cs">

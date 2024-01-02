@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement___IT008.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,23 +24,34 @@ namespace StudentManagement___IT008.View
         public Summarize_US()
         {
             InitializeComponent();
+            cb_Subject.Items.Clear();
+            cb_Subject.ItemsSource = Subjects();
             cb_Period.SelectedIndex = 0;
             cb_Subject.SelectedIndex = 0;
             ReportType.SelectedIndex = 0;
             ComboBoxItem cbi_Period = (ComboBoxItem)cb_Period.SelectedItem;
-            Summarize_Period periodList = new Summarize_Period(cbi_Period.Content.ToString());
+            string subject = (string)cb_Subject.SelectedItem;
+            Summarize_Subject subjectList = new Summarize_Subject(cbi_Period.Content.ToString(), subject);
             CurrentUC.Children.Clear();
-            CurrentUC.Children.Add(periodList);
+            CurrentUC.Children.Add(subjectList);
         }
-
+        private List<string> Subjects()
+        {
+            List<string> subjects = new List<string>();
+            foreach (MONHOC mh in Entity.ins.MONHOCs)
+            {
+                subjects.Add(mh.TENMH.ToString());
+            }
+            return subjects;
+        }
         private void btn_hoantat_Click(object sender, RoutedEventArgs e)
         {
             ComboBoxItem cbi_Period = (ComboBoxItem)cb_Period.SelectedItem;
-            ComboBoxItem cbi_Subject = (ComboBoxItem)cb_Subject.SelectedItem;
+            string subject = (string)cb_Subject.SelectedItem;
             switch (ReportType.SelectedIndex)
             {
                 case 0:
-                    Summarize_Subject subjectList = new Summarize_Subject();
+                    Summarize_Subject subjectList = new Summarize_Subject(cbi_Period.Content.ToString(), subject);
                     CurrentUC.Children.Clear();
                     CurrentUC.Children.Add(subjectList);
                     break;
