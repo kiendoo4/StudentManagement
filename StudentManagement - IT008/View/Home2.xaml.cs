@@ -23,6 +23,20 @@ namespace StudentManagement___IT008.View
         public Home2()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+        public bool isLoaded = false;
+        public string Lop { get; set; }
+        public string Siso { get; set; }
+
+        public string GVCN { get; set; }
+        private void Button_click(object sender, RoutedEventArgs e)
+        {
+           
+            Home1 home1 = new Home1();
+            MessageBox.Show("ákfkaskass");
+            
+            
         }
     }
 }

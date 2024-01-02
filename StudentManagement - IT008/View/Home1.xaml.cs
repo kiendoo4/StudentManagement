@@ -24,5 +24,12 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+
+        private void TroLai(object sender, RoutedEventArgs e)
+        {
+            Home home = new Home();
+            currentUC.Children.Clear();
+            currentUC.Children.Add(home);
+        }
     }
 }
