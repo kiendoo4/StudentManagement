@@ -222,7 +222,7 @@
                                    VerticalAlignment="Center"  
                                    Margin="0, 0, 26, 20"></TextBlock>
 
-<<<<<<< HEAD
+
                         <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
                                   ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
@@ -242,20 +242,6 @@
                                   CanUserDeleteRows="False"
                                   CanUserReorderColumns="False" Grid.RowSpan="2"
                                   SelectionChanged="tbl_TK_Chung_SelectionChanged"
-=======
-                        <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0, 0, 21, 0" 
-                                  AutoGenerateColumns="False"
-                            Background="White"
-                            ScrollViewer.CanContentScroll="True" 
-                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
-                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                            CanUserAddRows="False"
-                            CanUserDeleteRows="False"
-                            CanUserReorderColumns="False"   
-                            HorizontalScrollBarVisibility="Disabled"
-
-                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
->>>>>>> master
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
@@ -264,6 +250,7 @@
                                 <DataGridTextColumn Width="*" Header="Sĩ số" Binding="{Binding SiSo}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="2*" Header="Số lượng đạt" Binding="{Binding SL_Dat}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Tỉ lệ" Binding="{Binding TiLe}"></DataGridTextColumn>
+                                <!--
                                 <DataGridTemplateColumn Width="2*">
                                     <DataGridTemplateColumn.Header>
                                         <Grid>
@@ -276,6 +263,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
+                                !-->
                             </DataGrid.Columns>
                             <DataGridTemplateColumn Width="0.6*">
                                 <DataGridTemplateColumn.Header>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,8 @@ namespace StudentManagement___IT008.View
                 int siso = lhtt.HOCSINHs.Count();
                 int soluongdat = 0;
                 int stt_2 = 1;
-                foreach(HOCSINH hs in lhtt.HOCSINHs)
+                List<double> dtblist = new List<double>();
+                foreach (HOCSINH hs in lhtt.HOCSINHs)
                 {
                     bool check = true;
                     TK_P_CHITIET tk_hs = new TK_P_CHITIET();
@@ -77,7 +79,8 @@ namespace StudentManagement___IT008.View
 
                         dtb = (double)kq.DTBTatCaMonHocKy;
                     }
-                    if (dtb < 5)
+                    dtblist.Add(dtb);
+                    if (dtb < Double.Parse(Entity.ins.THAMSOes.SingleOrDefault(lda => lda.ID == "TS006").GIATRI))
                     {
                         check = false;
                     }
@@ -86,11 +89,20 @@ namespace StudentManagement___IT008.View
                     tk_lop.Tk_hs.Add(tk_hs);
                     stt_2++;
                 }
+                var sortedlist = dtblist.Select((value, index) => new { Value = value, OriginalIndex = index })
+                                  .OrderByDescending(pair => pair.Value)
+                                  .Select((pair, sortedIndex) => new { pair.Value, pair.OriginalIndex, SortedIndex = sortedIndex })
+                                  .ToList();
+                List<int> ranklist = sortedlist.OrderBy(pair => pair.OriginalIndex).Select(pair => pair.SortedIndex).ToList();
+                for (int i = 0; i < ranklist.Count; i++)
+                {
+                    tk_lop.Tk_hs[i].Hang = ranklist[i]+1;
+                }
                 tk_lop.STT = stt;
                 tk_lop.Lop = tenlop;
                 tk_lop.SiSo = siso;
                 tk_lop.SL_Dat = soluongdat;
-                tk_lop.TiLe = ((float)soluongdat / siso * 100).ToString() + "%";
+                tk_lop.TiLe = ((float)soluongdat / siso * 100).ToString("0") + "%";
                 ls.Add(tk_lop);
                 stt++;
             }
