@@ -60,9 +60,8 @@ namespace StudentManagement___IT008.View
                 int stt_2 = 1;
                 foreach (HOCSINH hs in lhtt.HOCSINHs)
                 {
-                    CheckBox check = new CheckBox();
+                    bool check = true;
                     TK_P_CHITIET tk_hs = new TK_P_CHITIET();
-                    check.IsChecked = true;
                     double dtb = 0;
                     if (year == "Cả năm")
                     {
@@ -86,11 +85,11 @@ namespace StudentManagement___IT008.View
 
                         dtb = (double)kq.DTBMonHocKy;
                     }
-                    if (dtb < 5)
+                    if (dtb < Double.Parse(Entity.ins.THAMSOes.SingleOrDefault(lda => lda.ID == "TS006").GIATRI))
                     {
-                        check.IsChecked = false;
+                        check = false;
                     }
-                    if (check.IsChecked == true) soluongdat++;
+                    if (check) soluongdat++;
                     tk_hs = new TK_P_CHITIET { STT = stt_2, Hoten = hs.HOTENHS, Lop = tenlop, DiemTB = dtb.ToString("0.00"), Dat = check, Hang = 1 };
                     tk_lop.Tk_hs.Add(tk_hs);
                     stt_2++;

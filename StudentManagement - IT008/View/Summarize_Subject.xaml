@@ -190,9 +190,9 @@
                 <RowDefinition Height="0.1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            
+
             <!--Table-->
-            <Grid Grid.Row="2" Margin="0, 25, 0, 0">
+            <Grid Grid.Row="1" Margin="0,34,0,59" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>

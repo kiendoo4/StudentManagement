@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,9 +53,8 @@ namespace StudentManagement___IT008.View
                 int stt_2 = 1;
                 foreach(HOCSINH hs in lhtt.HOCSINHs)
                 {
-                    CheckBox check = new CheckBox();
+                    bool check = true;
                     TK_P_CHITIET tk_hs = new TK_P_CHITIET();
-                    check.IsChecked = true;
                     double dtb = 0;
                     if (year == "Cả năm")
                     {
@@ -79,9 +79,9 @@ namespace StudentManagement___IT008.View
                     }
                     if (dtb < 5)
                     {
-                        check.IsChecked = false;
+                        check = false;
                     }
-                    if (check.IsChecked == true) soluongdat++;
+                    if (check) soluongdat++;
                     tk_hs = new TK_P_CHITIET { STT=stt_2, Hoten=hs.HOTENHS, Lop=tenlop, DiemTB=dtb.ToString("0.00"), Dat = check, Hang = 1};
                     tk_lop.Tk_hs.Add(tk_hs);
                     stt_2++;

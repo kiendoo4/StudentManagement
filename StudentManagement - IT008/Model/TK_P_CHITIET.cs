@@ -13,7 +13,7 @@ namespace StudentManagement___IT008.Model
         public String Hoten { get; set; }
         public String Lop { get; set; }
         public String DiemTB { get; set; }
-        public CheckBox Dat { get; set; }
+        public bool Dat { get; set; }
         public int Hang { get; set; }
     }
 }
