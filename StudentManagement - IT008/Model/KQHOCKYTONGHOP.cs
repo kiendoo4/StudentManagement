@@ -58,16 +58,19 @@ namespace StudentManagement___IT008.Model
         {
             get
             {
-                string kq = "";
-                int i = 1;
-                foreach (KQHOCKYTONGHOP kqh in Entity.ins.KQHOCKYTONGHOPs)
+                HOCSINH hs = HOCSINH;
+                string lopss = hs.LOP;
+                int count = 1;
+                foreach (HOCSINH myhs in Entity.ins.HOCSINHs)
                 {
-                    if (kqh.MAHK != MAHK) continue;
-                    if (kqh.MAHS == MAHS)
-                        kq = Convert.ToString(i);
-                    else i++;
+                    if (myhs.LOP == lopss)
+                    {
+                        if (myhs == hs) break;
+                        else count++;
+                    }
+                    else continue;
                 }
-                return kq;
+                return count.ToString();
             }
         }
     public double? DTBTatCaMonHocKy { get; set; }

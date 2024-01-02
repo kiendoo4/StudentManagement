@@ -328,7 +328,7 @@
                                 <DataGridTextColumn Width="1.5*" Header="Điểm TB" Binding="{Binding DTBMonHocKy}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Width="100" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
+                        <!--<Button Grid.Row="2" Height="35" Width="100" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -351,7 +351,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </Border>
             </Grid>

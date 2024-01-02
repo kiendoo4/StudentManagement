@@ -5,6 +5,7 @@ namespace StudentManagement___IT008.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("KQNAMHOC")]
     public partial class KQNAMHOC
@@ -53,15 +54,19 @@ namespace StudentManagement___IT008.Model
         {
             get
             {
-                string kq = "";
-                int i = 1;
-                foreach (KQNAMHOC kqh in Entity.ins.KQNAMHOCs)
+                HOCSINH hs = HOCSINH;
+                string lopss = hs.LOP;
+                int count = 1;
+                foreach (HOCSINH myhs in Entity.ins.HOCSINHs)
                 {
-                    if (kqh.MAHS == MAHS)
-                        kq = Convert.ToString(i);
-                    else i++;
+                    if (myhs.LOP == lopss)
+                    {
+                        if (myhs == hs) break;
+                        else count++;
+                    }
+                    else continue;
                 }
-                return kq;
+                return count.ToString();
             }
         }
 

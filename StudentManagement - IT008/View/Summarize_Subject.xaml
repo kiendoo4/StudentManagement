@@ -333,7 +333,7 @@
                                 <DataGridTextColumn Width="0.5*" Header="Hạng" Binding="{Binding Hang}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="422,30,10,30">
+                        <!--<Button Grid.Row="2" Height="35" Cursor="Hand" Margin="422,30,10,30">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -356,7 +356,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </Border>
             </Grid>
