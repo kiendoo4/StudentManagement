@@ -242,7 +242,6 @@
                                   SelectionChanged="tbl_TK_Chung_SelectionChanged" RowHeight="30"
                                   >
                             <DataGrid.Columns >
-                                <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
                                 <DataGridTextColumn Width="*" Header="STT" Binding="{Binding STT}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Lớp" Binding="{Binding Lop}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Sĩ số" Binding="{Binding SiSo}"></DataGridTextColumn>
