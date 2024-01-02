@@ -215,12 +215,12 @@
                     Báo cáo xếp loại học sinh năm học
                         </TextBlock>
 
-                        <!--<TextBlock Name="tb_HK"  
+                        <TextBlock Name="tb_HK"  
                            Height="20" Grid.Row="0" 
                            FontSize="16" FontFamily="Quicksand Semibold" 
                            HorizontalAlignment="Right" 
                            VerticalAlignment="Center"  
-                           Margin="0, 0, 26, 20"></TextBlock>-->
+                           Margin="0, 0, 26, 20"></TextBlock>
 
                         <DataGrid Name="Ranking" Grid.Row="1" Margin="0,-30,22,89" 
                           ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
@@ -328,7 +328,7 @@
                                 <DataGridTextColumn Width="1.5*" Header="Điểm TB" Binding="{Binding DTBMonHocNamHoc}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Width="100" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
+                        <!--<Button Grid.Row="2" Height="35" Width="100" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -351,7 +351,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </Border>
             </Grid>

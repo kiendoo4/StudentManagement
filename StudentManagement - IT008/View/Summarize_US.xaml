@@ -222,7 +222,18 @@
                 <ComboBoxItem>Văn</ComboBoxItem>
                 <ComboBoxItem>Anh</ComboBoxItem>
             </ComboBox>
-            
+            <ComboBox Name="cb_Class"
+              Width="141" Height="37" 
+              Margin="406,24,0,6" 
+              HorizontalAlignment="Left"
+              Style="{DynamicResource theComboBox}"
+              ItemContainerStyle="{DynamicResource theComboBoxItem}"
+              Grid.Row="1">
+                <ComboBoxItem>A1</ComboBoxItem>
+                <ComboBoxItem>A2</ComboBoxItem>
+                <ComboBoxItem>A3</ComboBoxItem>
+            </ComboBox>
+
             <Button Name="btn_hoantat" Click="btn_hoantat_Click" Grid.Row="1" HorizontalAlignment="Left" Width="122" Height="43" VerticalAlignment="Top" Cursor="Hand" Margin="568,24,0,0">
 
                 <Button.Template>

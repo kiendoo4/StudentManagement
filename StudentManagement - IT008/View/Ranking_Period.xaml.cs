@@ -23,10 +23,12 @@ namespace StudentManagement___IT008.View
     public partial class Ranking_Period : UserControl
     {
         private string period;
-        public Ranking_Period(string period)
+        private string ClassName;
+        public Ranking_Period(string period, string chooseClass)
         {
             InitializeComponent();
             this.period = period;
+            this.ClassName = chooseClass;
             changeLabel();
             LoadData();
         }
@@ -38,12 +40,25 @@ namespace StudentManagement___IT008.View
             string maHK = "";
             if (period == "Học kỳ I") maHK = "HK001";
             else maHK = "HK002";
-            int count = 0;
             foreach (KQHOCKYTONGHOP kq in Entity.ins.KQHOCKYTONGHOPs.ToList())
             {
                 if (kq.MAHK == maHK)
                 {
-                    kq_chosen.Add(kq);
+                    HOCSINH hs = new HOCSINH();
+                    foreach (HOCSINH hs2 in Entity.ins.HOCSINHs)
+                    {
+                        if (hs2.MAHS == kq.MAHS) { hs = hs2; break; }
+                    }
+                    LOPHOCTHUCTE lhtt = new LOPHOCTHUCTE();
+                    foreach (LOPHOCTHUCTE lh in Entity.ins.LOPHOCTHUCTEs.ToList())
+                    {
+                        if (lh.HOCSINHs.Contains(hs)) { lhtt = lh; break; }
+                    }
+                    if (lhtt != null)
+                    {
+                        string temp = lhtt.MALOP;
+                        if (temp.Contains(ClassName)) kq_chosen.Add(kq);
+                    }
                 }
             }
             Ranking.ItemsSource = kq_chosen;
@@ -51,7 +66,8 @@ namespace StudentManagement___IT008.View
 
         public void changeLabel()
         {
-            tb_HK.Text = ChiTietHS.Text = this.period;
+            tb_HK.Text = this.ClassName + " - " + this.period;
+            ChiTietHS.Text = this.period;
         }
 
         private void LoadSelection(object sender, SelectionChangedEventArgs e)

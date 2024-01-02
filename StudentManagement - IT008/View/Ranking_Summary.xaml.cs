@@ -22,9 +22,12 @@ namespace StudentManagement___IT008.View
     /// </summary>
     public partial class Ranking_Summary : UserControl
     {
-        public Ranking_Summary()
+        string className;
+        public Ranking_Summary(string className)
         {
             InitializeComponent();
+            this.className = className;
+            tb_HK.Text = className;
             LoadData();
         }
 
@@ -33,7 +36,21 @@ namespace StudentManagement___IT008.View
         {
             foreach (KQNAMHOC kq in Entity.ins.KQNAMHOCs.ToList())
             {
-                kq_chosen.Add(kq);
+                HOCSINH hs = new HOCSINH();
+                foreach (HOCSINH hs2 in Entity.ins.HOCSINHs)
+                {
+                    if (hs2.MAHS == kq.MAHS) { hs = hs2; break; }
+                }
+                LOPHOCTHUCTE lhtt = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lh in Entity.ins.LOPHOCTHUCTEs.ToList())
+                {
+                    if (lh.HOCSINHs.Contains(hs)) { lhtt = lh; break; }
+                }
+                if (lhtt != null)
+                {
+                    string temp = lhtt.MALOP;
+                    if (temp.Contains(className)) kq_chosen.Add(kq);
+                }
             }
             Ranking.ItemsSource = kq_chosen;
         }
