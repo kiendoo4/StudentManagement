@@ -223,13 +223,12 @@
                                Margin="0, 0, 26, 20"></TextBlock>
 
                         <DataGrid Name="Ranking" Grid.Row="1" Margin="0,-30,22,89" 
-                              ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                               AutoGenerateColumns="False"
                               IsReadOnly="True"
                               RowStyle="{StaticResource DataGridRowStyle}"
                               GridLinesVisibility="None"
                               Background="White"
-                              BorderThickness="0"
+                              BorderThickness="0" RowHeight="30"
                               BorderBrush="Gray"
                               HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Disabled"
@@ -305,10 +304,9 @@
                         </TextBlock>
 
                         <DataGrid Name="RankCuThe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                              ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                               AutoGenerateColumns="False"
                               IsReadOnly="True"
-                              RowStyle="{StaticResource DataGridRowStyle}"
+                              RowStyle="{StaticResource DataGridRowStyle}" RowHeight="30"
                               GridLinesVisibility="None"
                               Background="White"
                               BorderThickness="0"

@@ -224,8 +224,7 @@
 
 
                         <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
+                                  AutoGenerateColumns="False" RowHeight="30"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   GridLinesVisibility="None"
@@ -333,8 +332,7 @@
                         </TextBlock>
 
                         <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
+                                  AutoGenerateColumns="False" RowHeight="30"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   GridLinesVisibility="None"

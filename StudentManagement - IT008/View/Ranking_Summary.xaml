@@ -222,8 +222,7 @@
                            VerticalAlignment="Center"  
                            Margin="0, 0, 26, 20"></TextBlock>
 
-                        <DataGrid Name="Ranking" Grid.Row="1" Margin="0,-30,22,89" 
-                          ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
+                        <DataGrid Name="Ranking" Grid.Row="1" Margin="0,-30,22,89" RowHeight="30"
                           AutoGenerateColumns="False"
                           IsReadOnly="True"
                           RowStyle="{StaticResource DataGridRowStyle}"
@@ -304,8 +303,7 @@
                            Margin="0, 0, 26, 20">
                         </TextBlock>-->
 
-                        <DataGrid Name="RankCuThe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                          ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
+                        <DataGrid Name="RankCuThe" Grid.Row="1" Margin="0, -30, 21, 0" RowHeight="30"
                           AutoGenerateColumns="False"
                           IsReadOnly="True"
                           RowStyle="{StaticResource DataGridRowStyle}"

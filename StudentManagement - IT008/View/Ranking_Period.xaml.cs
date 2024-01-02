@@ -56,6 +56,7 @@ namespace StudentManagement___IT008.View
                     }
                     if (lhtt != null)
                     {
+                        if (lhtt.MALOP == null) continue;
                         string temp = lhtt.MALOP;
                         if (temp.Contains(ClassName)) kq_chosen.Add(kq);
                     }

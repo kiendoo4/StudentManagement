@@ -115,7 +115,7 @@
             <Setter Property="Height" Value="45"></Setter>
             <Setter Property="FontFamily" Value="Quicksand Semibold"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Margin" Value="8"></Setter>
+            <!--<Setter Property="Margin" Value="8"></Setter>-->
             <Setter Property="BorderBrush" Value="LightGray"></Setter>
             <Setter Property="BorderThickness" Value="1"></Setter>
         </Style>
