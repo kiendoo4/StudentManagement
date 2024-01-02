@@ -190,74 +190,9 @@
                 <RowDefinition Height="0.1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <ComboBox Name="cb_Period"
-              Width="153" Height="37" 
-              Margin="242,24,0,6" 
-              HorizontalAlignment="Left"
-              Style="{DynamicResource theComboBox}"
-              ItemContainerStyle="{DynamicResource theComboBoxItem}" SelectionChanged="cb_Period_SelectionChanged" Grid.Row="1">
-                <!--<ComboBoxItem>Loại báo cáo</ComboBoxItem>
-                <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
-                <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
-                <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
-                <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>-->
-                <ComboBoxItem>Cả năm</ComboBoxItem>
-                <ComboBoxItem>Học kỳ I</ComboBoxItem>
-                <ComboBoxItem>Học kỳ II</ComboBoxItem>
-            </ComboBox>
-            <ComboBox  Name="ReportType"
-                          Width="229" Height="37" 
-                          Margin="2,24,0,6" 
-                          HorizontalAlignment="Left"
-                          Style="{DynamicResource theComboBox}"
-                          ItemContainerStyle="{DynamicResource theComboBoxItem}" SelectionChanged="cb_Period_SelectionChanged" Grid.Row="1">
-                <!--<ComboBoxItem>Cả năm</ComboBoxItem>
-                <ComboBoxItem>Học kỳ I</ComboBoxItem>
-                <ComboBoxItem>Học kỳ II</ComboBoxItem>-->
-                <ComboBoxItem>Loại báo cáo</ComboBoxItem>
-                <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
-                <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
-                <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
-                <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>
-            </ComboBox>
-            <ComboBox Name="cb_Subject"
-                          Width="141" Height="37" 
-                          Margin="406,24,0,6" 
-                          HorizontalAlignment="Left"
-                          Style="{DynamicResource theComboBox}"
-                          ItemContainerStyle="{DynamicResource theComboBoxItem}"
-                          SelectionChanged="cb_Subject_SelectionChanged" Grid.Row="1">
-                <ComboBoxItem>Toán</ComboBoxItem>
-                <ComboBoxItem>Văn</ComboBoxItem>
-                <ComboBoxItem>Anh</ComboBoxItem>
-            </ComboBox>
-            <Button Grid.Row="1" HorizontalAlignment="Left" Width="122" Height="43" VerticalAlignment="Top" Cursor="Hand" Margin="568,24,0,0">
 
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
-                            <Border.Style>
-                                <Style TargetType="Border">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="LightBlue"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="CadetBlue"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
-                            <Grid>
-                                <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
-                            </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
             <!--Table-->
-            <Grid Grid.Row="2" Margin="0, 25, 0, 0">
+            <Grid Grid.Row="1" Margin="0,34,0,59" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -305,6 +240,7 @@
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
                                   CanUserReorderColumns="False" Grid.RowSpan="2"
+                                  SelectionChanged="tbl_TK_Chung_SelectionChanged"
                                   >
                             <DataGrid.Columns >
                                 <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>

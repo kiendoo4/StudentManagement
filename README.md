@@ -1,6 +1,6 @@
 ![UIT](https://img.shields.io/badge/from-UIT%20VNUHCM-blue?style=for-the-badge&link=https%3A%2F%2Fwww.uit.edu.vn%2F)
 
- <h2 align="center"> ỨNG DỤNG QUẢN LÝ HỌC SINH </h2>
+ <h2 align="center"> ỨNG DỤNG QUẢN LÝ HỌC SINH THPT </h2>
 
 <p align="center">
   <img src="https://en.uit.edu.vn/sites/vi/files/banner_en.png" alt="Alt text">
@@ -33,7 +33,12 @@ This Student management app includes the following features:
 - Parent communication: This can help schools to communicate with parents about student progress and other important information.
 - Automate tasks: Student management apps can automate tasks like tracking scores, generating reports, sending notifications, and more. This can help save time and effort for teachers and staff.
 - Data security: Student management applications must be designed to protect student data. This includes using security measures such as encryption and two-factor authentication.
-  
+
+About Permission Function, we divide into two main permissions:
+
+- Permission functions for Admin: The admin is the user with the highest authority in the application, having access to and the ability to perform all functions within the application. However, for efficient task delegation, the admin can assign permissions to teachers or other users.
+- Permission functions for Teachers: Teachers are users who utilize the application for teaching, managing students, and performing other education-related tasks. Depending on the position and responsibilities of the teacher, the admin can assign various permissions to them.
+
 Student management app can be a valuable tool for schools and educational institutions. It can help to improve efficiency, accuracy, and communication.
 
 To learn more about Student management app, please visit [Facebook](https://www.facebook.com/kiendoo4).
