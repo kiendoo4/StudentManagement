@@ -26,14 +26,18 @@ namespace StudentManagement___IT008.View
     /// </summary>
     public partial class Home : UserControl
     {
-        ObservableCollection<LOPHOCTHUCTE> lOPHOCTHUCTE = new ObservableCollection<LOPHOCTHUCTE>
-        {
-            new LOPHOCTHUCTE {MALOP = "10A1", MAGVCN = "Lường Đại Phát"}
-        };
+        ObservableCollection<LOP> lhtt = new ObservableCollection<LOP>();
         public Home()
         {
             InitializeComponent();
-            Data.ItemsSource = lOPHOCTHUCTE;
+            foreach (LOP item in Entity.ins.LOPs)
+            {
+                if(item.ISDELETED == false && item.LOPHOCTHUCTEs.Count > 0)
+                {
+                    lhtt.Add(item);
+                }    
+            }    
+            Data.ItemsSource = lhtt;
         }
 
 

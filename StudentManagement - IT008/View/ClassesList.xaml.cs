@@ -32,7 +32,7 @@ namespace StudentManagement___IT008.View
             InitializeComponent();
             foreach (LOP lh in Entity.ins.LOPs.ToList())
             {
-                if (lh.ISDELETED == false)
+                if (lh.ISDELETED == false && lh.LOPHOCTHUCTEs.Count() > 0)
                     lophocList.Add(lh);
             }
             Data.ItemsSource = lophocList;
@@ -110,7 +110,6 @@ namespace StudentManagement___IT008.View
             NewLopHocUC.Children.Clear();
             NewLopHocUC.Children.Add(classInfo);
         }
-        string findtk;
         private void FindCL_SelectionChanged(object sender, TextChangedEventArgs e)
         {
             TextBox inputTextBox = (TextBox)sender;
@@ -120,7 +119,7 @@ namespace StudentManagement___IT008.View
             {
                 foreach (LOP l in Entity.ins.LOPs.ToList())
                 {
-                    if (l.ISDELETED == false && l.MALOP.ToLower().Contains(findContent.ToLower()))
+                    if (l.ISDELETED == false && l.LOPHOCTHUCTEs.Count() > 0 && l.MALOP.ToLower().Contains(findContent.ToLower()))
                         lophocList.Add(l);
                 }
             }
@@ -130,12 +129,12 @@ namespace StudentManagement___IT008.View
                 {
                     if (l.TENGV != null)
                     {
-                        if (l.ISDELETED == false && l.TENGV.ToLower().Contains(findContent.ToLower()))
+                        if (l.ISDELETED == false && l.LOPHOCTHUCTEs.Count() > 0 && l.TENGV.ToLower().Contains(findContent.ToLower()))
                             lophocList.Add(l);
                     }
                     else
                     {
-                        if (l.ISDELETED == false)
+                        if (l.ISDELETED == false && l.LOPHOCTHUCTEs.Count() > 0)
                             lophocList.Add(l);
                     }    
                 }

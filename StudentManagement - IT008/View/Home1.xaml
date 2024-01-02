@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
               d:DesignHeight="670" d:DesignWidth="1220">
     <Grid Name="currentUC">
-        <Border Background="#ffffff" CornerRadius="20" BorderThickness="0" Margin="0,10,10,0">
+        <Border Background="Transparent" CornerRadius="20" BorderThickness="0" Margin="0,10,10,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -16,47 +16,12 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Text="Bảng Điểm Lớp Học" FontSize="30" FontFamily="Paytone One" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"/>
-                    <ComboBox HorizontalAlignment="Left"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21" Width="128"
-                               Margin="650,32,0,10" Background="White">
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="Học kì 1"></ComboBoxItem>
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="Học kì 2"></ComboBoxItem>
+                    <TextBlock Text="Xem thông tin" FontSize="25" FontFamily="Paytone One" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"/>
+                    <ComboBox Style="{StaticResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21"
+           Margin="234,20,692,20" Background="White">
+                        <ComboBoxItem Content="Cấu hình lớp học"></ComboBoxItem>
+                        <ComboBoxItem Content="Bảng điểm lớp học"></ComboBoxItem>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21" Width="128"
-                            Margin="800,32,0,10" Background="White">
-
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2021-2022"></ComboBoxItem>
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content="2022-2023"></ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox HorizontalAlignment="Left"  Cursor="Hand" BorderThickness="0" SelectedIndex ="0" FontFamily="Quicksand Semibold" FontSize="21" Width="128"
-           Margin="500,32,0,10" Background="White">
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content=""></ComboBoxItem>
-                        <ComboBoxItem VerticalAlignment="Center" HorizontalAlignment="Left" Content=""></ComboBoxItem>
-                    </ComboBox>
-
-                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="1005,19,0,0" RenderTransformOrigin="0.725,0.249">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="20" BorderThickness="0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="GreenYellow"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Green"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
-                                    <TextBlock  Text="Kết Quả"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
-                                    </TextBlock>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
                 </Grid>
                 <Grid Grid.Row="3">
 

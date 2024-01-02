@@ -8,7 +8,7 @@
                                    d:DesignHeight="670" d:DesignWidth="1220">
     <Grid Name="currentUC">
         <Border Background="Transparent" Margin="0,0,-36,0">
-            <Grid >
+            <Grid > 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.2*"></RowDefinition>
                     <RowDefinition Height="0.02*"></RowDefinition>
@@ -29,40 +29,6 @@
                         <ComboBoxItem Content="CMND"/>
                     </ComboBox>-->
                 
-                    <TextBox Name="SearchingStudent" FontFamily="Quicksand Semibold"  FontSize="17" Grid.Column="2" Grid.ColumnSpan="2">
-                        <TextBox.Style>
-                            <Style TargetType="{x:Type TextBox}">
-                                <Setter Property="BorderBrush" Value="Gray" />
-                                <Setter Property="BorderThickness" Value="0.5" />
-                                <!-- ... other style setters ... -->
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type TextBox}">
-                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
-        BorderThickness="0" Margin="250,12,70,2">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                                        <ColumnDefinition Width="6*"></ColumnDefinition>
-                                                    </Grid.ColumnDefinitions>
-                                                    <Image Grid.Column="0" Source="/Icons/icons8-search-30.png"></Image>
-                                                    <TextBlock Grid.Column="1" Text="Tìm kiếm" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,10,5">
-                                                        <TextBlock.Visibility>
-                                                            <MultiBinding Converter="{StaticResource InputToVisibility}">
-                                                                <Binding ElementName="inputText" Path="Text.IsEmpty" />
-                                                                <Binding ElementName="inputText" Path="IsFocused"/>
-                                                            </MultiBinding>
-                                                        </TextBlock.Visibility>
-                                                    </TextBlock>
-                                                    <TextBox Grid.Column="1" Name="inputText" Background="Transparent" />
-                                                </Grid>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TextBox.Style>
-                    </TextBox>
 
                 </Grid>
 
@@ -81,11 +47,16 @@
                             HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
                               >
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Width="0.25*" IsReadOnly="True">
-                                
-
-                            </DataGridTemplateColumn>
-                            <DataGridTextColumn Width="0.8*" Binding ="{Binding MALOP}" IsReadOnly="True" >
+                            <DataGridTextColumn Width="0.4*" Binding ="{Binding KHOI}" IsReadOnly="True" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="Khối lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Width="0.5*" Binding ="{Binding TENLOP}" IsReadOnly="True" >
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -94,7 +65,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding ="{Binding MAGVCN}" Width="1.2*" IsReadOnly="True">
+                            <DataGridTextColumn Binding ="{Binding TENGV}" Width="*" IsReadOnly="True">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -103,25 +74,16 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Width="0.5*" Binding="{Binding SoHS}" IsReadOnly="True">
+                            <DataGridTextColumn Width="0.3*" Binding="{Binding MAXSISO}" IsReadOnly="True">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <TextBlock Text="Tổng số học sinh" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="Sỉ số" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Width="0.5*"  IsReadOnly="True">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <TextBlock Text="Số học sinh tối đa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-                            <DataGridTemplateColumn Width="0.6*">
+                            <DataGridTemplateColumn Width="0.2*">
                                 <DataGridTemplateColumn.Header>
                                     <Grid>
                                         <TextBlock Text="Vào Lớp" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LoginLop"/>
