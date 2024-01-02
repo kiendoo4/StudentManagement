@@ -205,7 +205,7 @@
                           Margin="2,24,0,6" 
                           HorizontalAlignment="Left"
                           Style="{DynamicResource theComboBox}"
-                          ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Row="1">
+                          ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Row="1" SelectionChanged="SummaryChanged">
                 <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
                 <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
                 <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
@@ -222,6 +222,7 @@
                 <ComboBoxItem>Văn</ComboBoxItem>
                 <ComboBoxItem>Anh</ComboBoxItem>
             </ComboBox>
+            
             <Button Name="btn_hoantat" Click="btn_hoantat_Click" Grid.Row="1" HorizontalAlignment="Left" Width="122" Height="43" VerticalAlignment="Top" Cursor="Hand" Margin="568,24,0,0">
 
                 <Button.Template>

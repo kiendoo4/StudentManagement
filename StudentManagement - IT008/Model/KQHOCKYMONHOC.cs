@@ -19,6 +19,14 @@ namespace StudentManagement___IT008.Model
         [StringLength(7)]
         public string MAMH { get; set; }
 
+        public string tenMH
+        {
+            get
+            {
+                return MONHOC.TENMH;
+            }
+        }
+
         [Key]
         [Column(Order = 2)]
         [StringLength(7)]

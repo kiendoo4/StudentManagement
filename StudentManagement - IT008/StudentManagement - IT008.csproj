@@ -186,6 +186,9 @@
     <Compile Include="View\Ranking_Period.xaml.cs">
       <DependentUpon>Ranking_Period.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Ranking_Summary.xaml.cs">
+      <DependentUpon>Ranking_Summary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
@@ -277,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Ranking_Period.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Ranking_Summary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
