@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="StudentManagement___IT008.View.Summarize_Period"
+﻿<UserControl x:Class="StudentManagement___IT008.View.Ranking_Period"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1220">
+             d:DesignHeight="670" d:DesignWidth="1220">
     <UserControl.Resources>
         <Image x:Key="Search_icon" Source="search_icon.png"></Image>
         <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
@@ -18,22 +18,22 @@
                                 <ColumnDefinition Width="32" />
                             </Grid.ColumnDefinitions>
                             <Border x:Name="Border"
-                                    Grid.ColumnSpan="2"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="LightGray"
-                                    BorderThickness="1">
+                                Grid.ColumnSpan="2"
+                                CornerRadius="8"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="LightGray"
+                                BorderThickness="1">
                                 <ContentPresenter Content="{TemplateBinding Content}"></ContentPresenter>
                             </Border>
 
                             <Path
-                            x:Name="Arrow"
-                            Grid.Column="1"    
-                            Fill="{TemplateBinding Foreground}"
-                            Stroke="{TemplateBinding Foreground}"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Data="M 0 0 L 4 4 L 8 0 Z"/>
+                        x:Name="Arrow"
+                        Grid.Column="1"    
+                        Fill="{TemplateBinding Foreground}"
+                        Stroke="{TemplateBinding Foreground}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M 0 0 L 4 4 L 8 0 Z"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -60,47 +60,47 @@
                     <ControlTemplate TargetType="ComboBox">
                         <Grid>
                             <ToggleButton Cursor="Hand"
-                                          Name="ToggleButton"
-                                          BorderBrush="{TemplateBinding BorderBrush}"
-                                          Background="{TemplateBinding Background}"
-                                          Foreground="{TemplateBinding Foreground}"
-                                          Style="{StaticResource ComboBoxToggleButton}"
-                                          Grid.Column="2"
-                                          Focusable="false"
-                                          IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
-                                          ClickMode="Press"/>
+                                      Name="ToggleButton"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      Background="{TemplateBinding Background}"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      Style="{StaticResource ComboBoxToggleButton}"
+                                      Grid.Column="2"
+                                      Focusable="false"
+                                      IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press"/>
                             <ContentPresenter Name="ContentSite"
-                                              IsHitTestVisible="False"
-                                              Content="{TemplateBinding SelectionBoxItem}"
-                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                              Margin="10,3,30,3"
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Left" />
+                                          IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          Margin="10,3,30,3"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Left" />
                             <TextBox x:Name="PART_EditableTextBox"
-                                     Style="{x:Null}"
-                                     Template="{StaticResource ComboBoxTextBox}"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Center"
-                                     Margin="3,3,23,3"
-                                     Focusable="True"                               
-                                     Visibility="Hidden"
-                                     IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                                 Style="{x:Null}"
+                                 Template="{StaticResource ComboBoxTextBox}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"                               
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}"/>
                             <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Slide">
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
                                 <Grid Name="DropDown"
-                                      SnapsToDevicePixels="True"               
-                                      MinWidth="{TemplateBinding ActualWidth}"
-                                      MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                  SnapsToDevicePixels="True"               
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border CornerRadius="10"
-                                            x:Name="DropDownBorder"
-                                            Background="White"
-                                            BorderThickness="0"
-                                            BorderBrush="White">
+                                        x:Name="DropDownBorder"
+                                        Background="White"
+                                        BorderThickness="0"
+                                        BorderBrush="White">
                                     </Border>
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
@@ -139,15 +139,15 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBoxItem">
                         <Border
-                        Name="Border"
-                        Padding="5"
-                        Margin="2"
-                        BorderThickness="2,0,0,0"
-                        CornerRadius="0"
-                        Background="Transparent"
-                        BorderBrush="Transparent">
+                    Name="Border"
+                    Padding="5"
+                    Margin="2"
+                    BorderThickness="2,0,0,0"
+                    CornerRadius="0"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
                             <TextBlock TextAlignment="Left">
-                            <ContentPresenter />
+                        <ContentPresenter />
                             </TextBlock>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -190,12 +190,77 @@
                 <RowDefinition Height="0.1*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <ComboBox Name="cb_Period"
+          Width="153" Height="37" 
+          Margin="242,24,0,6" 
+          HorizontalAlignment="Left"
+          Style="{DynamicResource theComboBox}"
+          ItemContainerStyle="{DynamicResource theComboBoxItem}"  Grid.Row="1">
+                <!--<ComboBoxItem>Loại báo cáo</ComboBoxItem>
+            <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
+            <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
+            <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
+            <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>-->
+                <ComboBoxItem>Cả năm</ComboBoxItem>
+                <ComboBoxItem>Học kỳ I</ComboBoxItem>
+                <ComboBoxItem>Học kỳ II</ComboBoxItem>
+            </ComboBox>
+            <ComboBox  Name="ReportType"
+                      Width="229" Height="37" 
+                      Margin="2,24,0,6" 
+                      HorizontalAlignment="Left"
+                      Style="{DynamicResource theComboBox}"
+                      ItemContainerStyle="{DynamicResource theComboBoxItem}"  Grid.Row="1">
+                <!--<ComboBoxItem>Cả năm</ComboBoxItem>
+            <ComboBoxItem>Học kỳ I</ComboBoxItem>
+            <ComboBoxItem>Học kỳ II</ComboBoxItem>-->
+                <ComboBoxItem>Loại báo cáo</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết môn</ComboBoxItem>
+                <ComboBoxItem>Báo cáo tổng kết học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại học kỳ</ComboBoxItem>
+                <ComboBoxItem>Báo cáo xếp loại năm học</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="cb_Subject"
+                      Width="141" Height="37" 
+                      Margin="406,24,0,6" 
+                      HorizontalAlignment="Left"
+                      Style="{DynamicResource theComboBox}"
+                      ItemContainerStyle="{DynamicResource theComboBoxItem}"
+                       Grid.Row="1">
+                <ComboBoxItem>Toán</ComboBoxItem>
+                <ComboBoxItem>Văn</ComboBoxItem>
+                <ComboBoxItem>Anh</ComboBoxItem>
+            </ComboBox>
+            <Button Grid.Row="1" HorizontalAlignment="Left" Width="122" Height="43" VerticalAlignment="Top" Cursor="Hand" Margin="568,24,0,0">
 
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightBlue"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Background" Value="CadetBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid>
+                                <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <!--Table-->
-            <Grid Grid.Row="1" Margin="0,34,0,59" Grid.RowSpan="2">
+            <Grid Grid.Row="2" Margin="0, 25, 0, 0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="6.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="3.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <!--Table_General-->
@@ -209,89 +274,49 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Margin="0, 18, 0, 41" 
-                                   FontSize="20" FontFamily="Paytone One" 
-                                   HorizontalAlignment="Left" 
-                                   VerticalAlignment="Center">
-                            Tổng kết chung
+                               FontSize="20" FontFamily="Paytone One" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center">
+                        Báo cáo xếp loại học sinh năm học
                         </TextBlock>
 
                         <TextBlock Name="tb_Subject_Chung"  
-                                   Height="20" Grid.Row="0" 
-                                   FontSize="16" FontFamily="Quicksand Semibold" 
-                                   HorizontalAlignment="Right" 
-                                   VerticalAlignment="Center"  
-                                   Margin="0, 0, 26, 20"></TextBlock>
+                               Height="20" Grid.Row="0" 
+                               FontSize="16" FontFamily="Quicksand Semibold" 
+                               HorizontalAlignment="Right" 
+                               VerticalAlignment="Center"  
+                               Margin="0, 0, 26, 20"></TextBlock>
 
-<<<<<<< HEAD
-                        <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
-                                  IsReadOnly="True"
-                                  RowStyle="{StaticResource DataGridRowStyle}"
-                                  GridLinesVisibility="None"
-                                  Background="White"
-                                  BorderThickness="0"
-                                  BorderBrush="Gray"
-                                  HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Disabled"
-                                  HeadersVisibility="Column"
-                                  ScrollViewer.CanContentScroll="True"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  CanUserAddRows="False"
-                                  CanUserDeleteRows="False"
-                                  CanUserReorderColumns="False" Grid.RowSpan="2"
-                                  SelectionChanged="tbl_TK_Chung_SelectionChanged"
-=======
-                        <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0, 0, 21, 0" 
-                                  AutoGenerateColumns="False"
-                            Background="White"
-                            ScrollViewer.CanContentScroll="True" 
-                            ScrollViewer.VerticalScrollBarVisibility="Auto" 
-                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                            CanUserAddRows="False"
-                            CanUserDeleteRows="False"
-                            CanUserReorderColumns="False"   
-                            HorizontalScrollBarVisibility="Disabled"
-
-                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30"
->>>>>>> master
-                                  >
+                        <DataGrid Name="Ranking" Grid.Row="1" Margin="0,-30,22,89" 
+                              ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              RowStyle="{StaticResource DataGridRowStyle}"
+                              GridLinesVisibility="None"
+                              Background="White"
+                              BorderThickness="0"
+                              BorderBrush="Gray"
+                              HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Disabled"
+                              HeadersVisibility="Column"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserReorderColumns="False" Grid.RowSpan="2"
+                              >
                             <DataGrid.Columns >
-                                <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
+                                <DataGridCheckBoxColumn Width="0.5*"></DataGridCheckBoxColumn>
                                 <DataGridTextColumn Width="*" Header="STT" Binding="{Binding STT}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Lớp" Binding="{Binding Lop}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Sĩ số" Binding="{Binding SiSo}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="2*" Header="Số lượng đạt" Binding="{Binding SL_Dat}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Tỉ lệ" Binding="{Binding TiLe}"></DataGridTextColumn>
-                                <DataGridTemplateColumn Width="2*">
-                                    <DataGridTemplateColumn.Header>
-                                        <Grid>
-                                            <TextBlock Text="Chi tiết"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        </Grid>
-                                    </DataGridTemplateColumn.Header>
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Button VerticalAlignment="Top" Background="White" Content="Chọn"/>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Width="*" Header="Họ và tên" Binding="{Binding Lop}"></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="Điểm TB" Binding="{Binding SiSo}"></DataGridTextColumn>
+                                <DataGridTextColumn Width="2*" Header="Học lực" Binding="{Binding SL_Dat}"></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Header="Hạnh kiểm" Binding="{Binding TiLe}"></DataGridTextColumn>
                             </DataGrid.Columns>
-                            <DataGridTemplateColumn Width="0.6*">
-                                <DataGridTemplateColumn.Header>
-                                    <Grid>
-                                        <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    </Grid>
-                                </DataGridTemplateColumn.Header>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="EditClass"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
                         </DataGrid>
 
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="367,30,26,30">
+                        <Button Grid.Row="2" Height="35" Width="180" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -330,49 +355,45 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Margin="0, 18, 0, 41" 
-                                   FontSize="20" FontFamily="Paytone One" 
-                                   HorizontalAlignment="Left" 
-                                   VerticalAlignment="Center">
-                            Chi tiết
+                               FontSize="20" FontFamily="Paytone One" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center">
+                        Chi tiết
                         </TextBlock>
 
-                        <TextBlock Name="tb_Period_2" 
-                                   Height="20" Grid.Row="0" 
-                                   FontSize="16" FontFamily="Quicksand Semibold" 
-                                   HorizontalAlignment="Right" 
-                                   VerticalAlignment="Center"
-                                   Margin="0, 0, 26, 20">
+                        <TextBlock Name="ChiTietHS" 
+                               Height="20" Grid.Row="0" 
+                               FontSize="16" FontFamily="Quicksand Semibold" 
+                               HorizontalAlignment="Right" 
+                               VerticalAlignment="Center"
+                               Margin="0, 0, 26, 20">
                         </TextBlock>
 
                         <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
-                                  IsReadOnly="True"
-                                  RowStyle="{StaticResource DataGridRowStyle}"
-                                  GridLinesVisibility="None"
-                                  Background="White"
-                                  BorderThickness="0"
-                                  BorderBrush="Gray"
-                                  HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Disabled"
-                                  HeadersVisibility="Column"
-                                  ScrollViewer.CanContentScroll="True"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                  CanUserAddRows="False"
-                                  CanUserDeleteRows="False"
-                                  CanUserReorderColumns="False"
-                                  >
+                              ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              RowStyle="{StaticResource DataGridRowStyle}"
+                              GridLinesVisibility="None"
+                              Background="White"
+                              BorderThickness="0"
+                              BorderBrush="Gray"
+                              HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Disabled"
+                              HeadersVisibility="Column"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserReorderColumns="False"
+                              >
                             <DataGrid.Columns >
-                                <DataGridTextColumn Width="0.5*" Header="STT" Binding="{Binding STT}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="1.5*" Header="Họ tên" Binding="{Binding Hoten}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="0.8*" Header="Lớp" Binding="{Binding Lop}"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Header="Điểm TB" Binding="{Binding DiemTB}"></DataGridTextColumn>
-                                <DataGridCheckBoxColumn  Width="0.5*" Header="Đạt" Binding="{Binding Dat}"></DataGridCheckBoxColumn>
-                                <DataGridTextColumn Width="0.5*" Header="Hạng" Binding="{Binding Hang}"></DataGridTextColumn>
+                                <DataGridTextColumn Width="1*" Header="Môn học" Binding="{Binding STT}"></DataGridTextColumn>
+                                <DataGridTextColumn Width="1.5*" Header="Điểm TB" Binding="{Binding Hoten}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Width="100" HorizontalAlignment="Right" Margin="0,0,30,0">
+                        <Button Grid.Row="2" Height="35" Width="100" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,30,0">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">

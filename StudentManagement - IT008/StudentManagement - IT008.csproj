@@ -183,6 +183,9 @@
     <Compile Include="View\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Ranking_Period.xaml.cs">
+      <DependentUpon>Ranking_Period.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
@@ -273,6 +276,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Ranking_Period.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -326,6 +333,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icons\icons8-teacher-50.png" />
+    <Resource Include="Icons\school-software.png" />
     <Resource Include="Icons\storyline-branding-kit-corporate-identity-development.png" />
     <Resource Include="Icons\icons8-calendar-64 %281%29.png" />
     <Resource Include="Icons\icons8-school-building-48.ico" />

@@ -43,7 +43,33 @@ namespace StudentManagement___IT008.View
                 if (i == 5) DDTT.Text = thamsoList[i].GIATRI;
             }    
         }
-
+        public Setting(bool role)
+        {
+            InitializeComponent();
+            foreach (MONHOC mh in Entity.ins.MONHOCs.ToList())
+            {
+                if (mh.ISDELETED == false)
+                    monhocList.Add(mh);
+            }
+            Data.ItemsSource = monhocList;
+            List<THAMSO> thamsoList = Entity.ins.THAMSOes.ToList();
+            for (int i = 0; i < Entity.ins.THAMSOes.Count(); i++)
+            {
+                if (i == 0) TTSHS.Text = thamsoList[i].GIATRI;
+                if (i == 1) TTDHS.Text = thamsoList[i].GIATRI;
+                if (i == 2) DSTT.Text = thamsoList[i].GIATRI;
+                if (i == 3) DSTD.Text = thamsoList[i].GIATRI;
+                if (i == 4) SSTD.Text = thamsoList[i].GIATRI;
+                if (i == 5) DDTT.Text = thamsoList[i].GIATRI;
+            }
+            if(!role)
+            {
+                AddSubject.Visibility = Visibility.Hidden;
+                DeleteSubject.Visibility = Visibility.Hidden;
+                SaveInformation.Visibility = Visibility.Hidden;
+                FixSubjectColumn.Visibility = Visibility.Hidden;
+            }    
+        }
         private void CheckAllMonhocsClick(object sender, RoutedEventArgs e)
         {
             foreach (var item in Data.Items)

@@ -11,15 +11,16 @@
         Background="Transparent" Height="800" Width="1420"
         Icon="/Icons/icons8-school-building-48.ico">
     <Grid>
-        <Border Background="#F8F7F8" CornerRadius="20" BorderBrush="Gray" BorderThickness="0.5">
+        <Border Background="#F8F7F8" CornerRadius="50" BorderBrush="Gray" BorderThickness="0.5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" Margin="55,55,55,55" Background="#FFFFFF" CornerRadius="50">
-                    <Image Source="/Icons/2579711.jpg"></Image>
+                <Border Grid.Column="0" Margin="55,55,55,101" Background="#FFFFFF" CornerRadius="50">
+                    <Image Source="/Icons/school-software.png"></Image>
                 </Border>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Phần mềm quản lý học sinh" FontSize="35" FontFamily="Paytone One" Margin="0,710,0,0"/>
                 <Border Grid.Column="1">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -27,6 +28,83 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                             <RowDefinition Height="0.5*"></RowDefinition>
                         </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,-120,25,0">
+                            <Button Click="HideClick" Height="auto" Background="Transparent" BorderThickness="0" Width="30">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Ellipse Width="20" Height="20" Fill ="Green" Margin="0 0 10 0">
+                                        </Ellipse>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Click="CloseClick" Height="auto" Width="auto" Background="Transparent" BorderThickness="0">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Ellipse Width="20" Height="20" Fill="Red" Margin="0 0 10 0">
+                                        </Ellipse>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <Grid Grid.Row="1">
+                            <Border Background="White" CornerRadius="20" Margin="10, 10, 30, 10" BorderThickness="0.5" BorderBrush="Gray">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition Height="1.5*"></RowDefinition>
+                                        <RowDefinition Height="1.5*"></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Đăng nhập" FontSize="35" FontFamily="Paytone One" Width="384" />
+                                    <Border Grid.Row="1" CornerRadius="20" Grid.Column="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Content="Username" FontSize="20" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                            <TextBox Name="Username" BorderBrush="Gray" BorderThickness="0.25" FontSize="20" FontFamily="Quicksand Semibold" Margin="10,38,10,36" Grid.Column="1"/>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="2" CornerRadius="20" Grid.Column="0" Margin="25,15,25,15" BorderBrush="Gray" BorderThickness="0.5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Content="Password" FontSize="20" FontFamily="Quicksand Semibold" VerticalAlignment="Center" />
+                                            <PasswordBox Name="Password" BorderBrush="Gray" BorderThickness="0.25" FontSize="20" FontFamily="Quicksand Semibold" Margin="10,38,10,36" Grid.Column="1"/>
+                                        </Grid>
+
+                                    </Border>
+                                    <Button Grid.Row="3" HorizontalAlignment="Left" Width="123" Height="47" VerticalAlignment="Center" Cursor="Hand" Margin="281,0,0,0" Click="Finish_Click">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                                                    <Border.Style>
+                                                        <Style TargetType="Border">
+                                                            <Setter Property="Background" Value="Transparent"/>
+                                                            <Style.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Background" Value="LightBlue"/>
+                                                                </Trigger>
+                                                                <Trigger Property="IsMouseOver" Value="False">
+                                                                    <Setter Property="Background" Value="CadetBlue"/>
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Border.Style>
+                                                    <Grid>
+                                                        <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="18" Foreground="White"/>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
                     </Grid>
                 </Border>
             </Grid>

@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Border Background="#FFFBF7F8" CornerRadius="10,10,0,0"/>
-            <TextBlock Text="Thông tin chi tiết" FontFamily="Quicksand Bold" FontSize="23" Foreground="Black" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock Name="LabelToShow" FontFamily="Paytone One" FontSize="25" Foreground="Black" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
             <Border Background="White" CornerRadius="0,0,10,10">
@@ -29,25 +29,20 @@
 
                     <Grid Grid.Row="0" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
-                        <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Name="KhoiBox" FontFamily="Quicksand Bold" FontSize="18" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
                         <TextBlock Text="Tên lớp:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBox Name="ClassBox" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
-                        <TextBlock Text="GV chủ nhiệm:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
+                        <TextBlock Text="GVCN:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <ComboBox x:Name="TeacherBox" Style="{StaticResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"></ComboBox>
                     </Grid>
-                    <Grid Grid.Row="3" Margin="10" Height="45">
-                        <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
-                        <TextBlock Text="Niên khóa:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBlock Text="Test" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                    </Grid>
-                    <Button Grid.Row="5" HorizontalAlignment="Right" Width="126" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="15">
+                    <Button Grid.Row="5" HorizontalAlignment="Right" Width="126" Height="40" VerticalAlignment="Center" Cursor="Hand" Margin="0,0,15,0" Click="FinishButtonClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -57,16 +52,16 @@
                                             <Setter Property="Background" Value="Transparent"/>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#522c53"/>
+                                                    <Setter Property="Background" Value="LightBlue"/>
                                                 </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Purple"/>
+                                                    <Setter Property="Background" Value="CadetBlue"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Border.Style>
                                     <Grid>
-                                        <TextBlock Text="Chỉnh sửa"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
+                                        <TextBlock Text="Hoàn tất"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="19" Foreground="White" >
                                         </TextBlock>
                                     </Grid>
                                 </Border>

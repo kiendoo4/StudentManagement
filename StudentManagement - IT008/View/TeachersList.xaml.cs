@@ -34,7 +34,23 @@ namespace StudentManagement___IT008.View
             }
             Data.ItemsSource = taikhoanList;
         }
-
+        public TeachersList(bool role)
+        {
+            InitializeComponent();
+            FindTK.SelectedIndex = 0;
+            foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs.ToList())
+            {
+                if (tk.ISDELETED == false && tk.VAITRO == "GV")
+                    taikhoanList.Add(tk);
+            }
+            Data.ItemsSource = taikhoanList;
+            if(role == false)
+            {
+                AddGV.Visibility = Visibility.Hidden;
+                DeleteGV.Visibility = Visibility.Hidden;
+                ChinhSuaColumn.Visibility = Visibility.Hidden;
+            }    
+        }
         private void AddTeacherButton(object sender, RoutedEventArgs e)
         {
             AddTeacher addTeacher = new AddTeacher();

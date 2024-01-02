@@ -175,7 +175,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn Width="0.5*">
+                            <DataGridTemplateColumn Width="0.5*" x:Name="ChinhSuaColumn">
                                 <DataGridTemplateColumn.Header>
                                     <Grid>
                                         <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -200,7 +200,7 @@
                         <ColumnDefinition Width="0.05*"></ColumnDefinition>
 
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand" Click="AddTeacherButton">
+                    <Button Name="AddGV" Grid.Column="1" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Center" Cursor="Hand" Click="AddTeacherButton">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -225,7 +225,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Grid.Column="2" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Bottom" Cursor="Hand" Margin="0,0,0,10" Click="DeleteTeacherClick">
+                    <Button Name="DeleteGV" Grid.Column="2" HorizontalAlignment="Center" Width="149" Height="47" VerticalAlignment="Bottom" Cursor="Hand" Margin="0,0,0,10" Click="DeleteTeacherClick">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">

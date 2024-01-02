@@ -152,7 +152,7 @@
                                                 </DataTemplate>
                                             </DataGridTextColumn.HeaderTemplate>
                                         </DataGridTextColumn>
-                                        <DataGridTemplateColumn Width="0.25*">
+                                        <DataGridTemplateColumn Width="0.25*" x:Name="FixSubjectColumn">
                                             <DataGridTemplateColumn.Header>
                                                 <Grid>
                                                     <TextBlock Text="Chỉnh sửa" FontFamily="Paytone One" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -160,7 +160,7 @@
                                             </DataGridTemplateColumn.Header>
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Button VerticalAlignment="Top" Background="White" Content="Chọn" Click="ChangeTTMonhoc" />
+                                                    <Button  VerticalAlignment="Top" Background="White" Content="Chọn" Click="ChangeTTMonhoc" />
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
@@ -170,7 +170,7 @@
 
                         </Grid>
                     </Grid>
-                    <Button Click="AddSubjectButton" Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="255,2,0,13">
+                    <Button Name="AddSubject" Click="AddSubjectButton" Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="255,2,0,13">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -196,7 +196,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Click="SaveInfo"  Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="620,2,0,12">
+                    <Button Name="SaveInformation" Click="SaveInfo"  Grid.Row="3" HorizontalAlignment="Left" Width="165" Cursor="Hand" Margin="620,2,0,12">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -222,7 +222,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button Click="DeleteSubjectButton" Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Bottom" Cursor="Hand" Margin="439,0,0,13">
+                    <Button Name="DeleteSubject" Click="DeleteSubjectButton" Grid.Row="3" HorizontalAlignment="Left" Width="165" Height="42" VerticalAlignment="Bottom" Cursor="Hand" Margin="439,0,0,13">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
