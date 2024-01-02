@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Border Background="#FFFBF7F8" CornerRadius="10,10,0,0"/>
-            <TextBlock Text="Thông tin chi tiết" FontFamily="Quicksand Bold" FontSize="23" Foreground="Black" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock Name="LabelToShow" FontFamily="Paytone One" FontSize="25" Foreground="Black" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
             <Border Background="White" CornerRadius="0,0,10,10">
@@ -29,8 +29,8 @@
 
                     <Grid Grid.Row="0" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
-                        <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        <TextBox Name="KhoiBox" FontFamily="Quicksand Bold" FontSize="18" Foreground="Black" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
+                        <TextBlock Text="Khối:" FontFamily="Quicksand Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Name="KhoiBox" FontFamily="Quicksand Bold" FontSize="18" HorizontalAlignment="Right" Width="180" Margin="0,5,10,5"/>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Height="45">
                         <Border Background="#FFFBF7F8" CornerRadius="10,10,10,10"/>
