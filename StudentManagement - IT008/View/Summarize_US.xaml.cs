@@ -60,8 +60,49 @@ namespace StudentManagement___IT008.View
                     CurrentUC.Children.Clear();
                     CurrentUC.Children.Add(periodList);
                     break;
+                case 2:
+                    if (cbi_Period.Content.ToString() == "Cả năm")
+                    {
+                        MessageBox.Show("Vui lòng chọn học kỳ", "Thông báo");
+                        break;
+                    }
+                    else
+                    {
+                        Ranking_Period ranking_Period = new Ranking_Period(cbi_Period.Content.ToString());
+                        CurrentUC.Children.Clear();
+                        CurrentUC.Children.Add(ranking_Period);
+                        break;
+                    }
+                case 3:
+                    Ranking_Summary summaryList = new Ranking_Summary();
+                    CurrentUC.Children.Clear();
+                    CurrentUC.Children.Add(summaryList);
+                    break;
             }
 
+        }
+
+        private void SummaryChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (ReportType.SelectedIndex)
+            {
+                case 0:
+                    cb_Period.Visibility = Visibility.Visible;
+                    cb_Subject.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    cb_Period.Visibility = Visibility.Visible;
+                    cb_Subject.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    cb_Period.Visibility = Visibility.Visible;
+                    cb_Subject.Visibility = Visibility.Collapsed;
+                    break;
+                case 3:
+                    cb_Period.Visibility = Visibility.Collapsed;
+                    cb_Subject.Visibility = Visibility.Collapsed;
+                    break;
+            }
         }
     }
 }
