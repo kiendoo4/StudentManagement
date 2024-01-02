@@ -24,7 +24,11 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
-
+        public LoginView(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            mainWindow.Close();
+        }
         private void Finish_Click(object sender, RoutedEventArgs e)
         {
             bool ck = false;

@@ -43,7 +43,7 @@
                         <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup">
 
                         </leftGroup:LeftOptions>
-                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="199" Height="52" VerticalAlignment="Center" Cursor="Hand" Click="AddNamHoc">
+                        <Button Grid.Row="2" HorizontalAlignment="Center" Width="200" Height="52" VerticalAlignment="Top" Cursor="Hand" Click="AddNamHoc" Margin="0,59,0,0">
 
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -73,7 +73,36 @@
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
+                        <Button Name="DeleteGV" Grid.Row="2" HorizontalAlignment="Center" Width="200" Height="59" VerticalAlignment="Top" Cursor="Hand" Margin="0,116,0,0" Click="LogOutClick">
 
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="20" BorderThickness="0" Margin="0,0,0,6">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="OrangeRed"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Background" Value="Red"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="Icons/icons8-log-out-50.png" Margin="9,17,7,11"></Image>
+                                            <TextBlock Text="Đăng xuất"  VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="56,0,-6,0" Grid.ColumnSpan="2"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </Grid>
                     <TextBlock Text="Phần mềm" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="70,94,0,0" RenderTransformOrigin="0.672,0.065" />
                     <TextBlock Text="Quản lý học sinh" HorizontalAlignment="Left" FontSize="21" FontFamily="Paytone One" VerticalAlignment="Top" Margin="41,120,0,0" />

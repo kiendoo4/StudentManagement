@@ -167,5 +167,10 @@ namespace StudentManagement___IT008
             CurrentUC.Children.Clear();
             CurrentUC.Children.Add(addNewYear);
         }
+        private void LogOutClick(object sender, RoutedEventArgs e)
+        {
+            LoginView loginView = new LoginView(this);
+            loginView.Show();
+        }
     }
 }
