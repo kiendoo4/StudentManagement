@@ -40,7 +40,7 @@
                             </RowDefinition>
 
                         </Grid.RowDefinitions>
-                        <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup" Loaded="leftGroup_Loaded">
+                        <leftGroup:LeftOptions Grid.Row="1" x:Name="leftGroup">
 
                         </leftGroup:LeftOptions>
                         <Button Grid.Row="2" HorizontalAlignment="Center" Width="200" Height="52" VerticalAlignment="Top" Cursor="Hand" Click="AddNamHoc" Margin="0,59,0,0">
