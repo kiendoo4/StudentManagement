@@ -24,6 +24,14 @@ namespace StudentManagement___IT008.Model
         [StringLength(7)]
         public string MAMH { get; set; }
 
+        public string HOTEN
+        {
+            get
+            {
+                return HOCSINH.HOTENHS;
+            }
+        }
+
         public double DTBMonHocNamHoc { get; set; }
 
         public virtual HOCSINH HOCSINH { get; set; }

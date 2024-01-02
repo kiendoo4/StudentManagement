@@ -24,7 +24,7 @@ namespace StudentManagement___IT008.View
         public Ranking_Period()
         {
             InitializeComponent();
-            Ranking.ItemsSource = Entity.ins.HOCSINHs;
+            Ranking.ItemsSource = Entity.ins.HOCSINHs.ToList();
         }
     }
 }
