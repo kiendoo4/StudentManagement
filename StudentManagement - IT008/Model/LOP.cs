@@ -1,4 +1,4 @@
-namespace StudentManagement___IT008.Model
+﻿namespace StudentManagement___IT008.Model
 {
     using System;
     using System.Collections.Generic;
@@ -24,6 +24,13 @@ namespace StudentManagement___IT008.Model
 
         [StringLength(30)]
         public string TENLOP { get; set; }
+        public string TENLOPSHOW 
+        { 
+            get
+            {
+                return "Lớp: " + KHOI + TENLOP;
+            }
+        }
 
         public string SISO
         {
@@ -45,7 +52,26 @@ namespace StudentManagement___IT008.Model
                 return Convert.ToString(sl);
             }
         }
-
+        public string SISOSHOW
+        {
+            get
+            {
+                int sl = 0;
+                LOPHOCTHUCTE LopHoc = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lophocfind in LOPHOCTHUCTEs)
+                {
+                    if (lophocfind.MALOP == MALOP)
+                    {
+                        LopHoc = lophocfind; break;
+                    }
+                }
+                foreach (HOCSINH lh in LopHoc.HOCSINHs)
+                {
+                    if (lh.ISDELETED == false) sl++;
+                }
+                return "Sỉ số: " + Convert.ToString(sl);
+            }
+        }
         public string TENGV
         {
             get
@@ -82,6 +108,37 @@ namespace StudentManagement___IT008.Model
                 {
                     return "";
                 }    
+            }
+        }
+        public string TENGVSHOW
+        {
+            get
+            {
+                LOPHOCTHUCTE LopHoc = new LOPHOCTHUCTE();
+                foreach (LOPHOCTHUCTE lophocfind in LOPHOCTHUCTEs)
+                {
+                    if (lophocfind.MALOP == MALOP)
+                    {
+                        LopHoc = lophocfind; break;
+                    }
+                }
+                GIAOVIEN gvcn = new GIAOVIEN();
+                foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
+                {
+                    if (gv.MAGV == LopHoc.MAGVCN)
+                    {
+                        gvcn = gv; break;
+                    }
+                }
+                TAIKHOAN tk = new TAIKHOAN();
+                foreach (TAIKHOAN alltk in Entity.ins.TAIKHOANs)
+                {
+                    if (alltk.USERNAME == gvcn.USERNAME)
+                    {
+                        tk = alltk; break;
+                    }
+                }
+                return "GVCN: " + tk.HOTEN;
             }
         }
 

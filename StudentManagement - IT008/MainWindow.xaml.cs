@@ -42,6 +42,9 @@ namespace StudentManagement___IT008
         {
             InitializeComponent();
             loginView.Close();
+            Home home = new Home();
+            CurrentUC.Children.Clear();
+            CurrentUC.Children.Add(home);
             if (role == true)
             {
                 leftGroup.StudentScreenButton.ButtonClick += StudentScreenUserControl_ButtonClick;
