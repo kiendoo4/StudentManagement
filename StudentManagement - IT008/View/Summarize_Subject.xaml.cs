@@ -148,7 +148,8 @@ namespace StudentManagement___IT008.View
                 tk_chung.Cells[i + 4, 4] = chung[i].SL_Dat;
                 tk_chung.Cells[i + 4, 5] = chung[i].TiLe;
             }
-
+            Excel.Range usedRange = tk_chung.UsedRange;
+            usedRange.Columns.AutoFit();
             Excel.Worksheet tk_chitiet = (Excel.Worksheet)workbook.Worksheets.Add(Type.Missing, Type.Missing, 1, Type.Missing);
 
             tk_chitiet.Name = "TK_ChiTiet";
@@ -156,7 +157,7 @@ namespace StudentManagement___IT008.View
             tk_chitiet.Cells[2, 1] = "Thời gian xuất: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             headerrange = (Excel.Range)tk_chitiet.Cells[1, 1];
             headerrange.Font.Bold = true;
-
+            
             var selectedItems = tbl_TK_Chung.SelectedItems;
             int line = 5;
             foreach (var selectedItem in selectedItems)
@@ -184,6 +185,8 @@ namespace StudentManagement___IT008.View
                 }
                 line += 5 + tk_hs.Count;
             }
+            usedRange = tk_chitiet.UsedRange;
+            usedRange.Columns.AutoFit();
         }
     }
 }

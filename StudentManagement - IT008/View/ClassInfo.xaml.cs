@@ -65,11 +65,16 @@ namespace StudentManagement___IT008.View
                     TeacherBox.Items.Add(tk.GIAOVIENs.SingleOrDefault(lda => lda.USERNAME == tk.USERNAME).MAGV + "-" + tk.HOTEN);
             }
             int i = 0;
+            string magv = "";
+            if (info.LOPHOCTHUCTEs.SingleOrDefault(lda => lda.MALOP != null && lda.LOP.TENLOP == info.TENLOP).MAGVCN != null)
+            {
+                magv = info.LOPHOCTHUCTEs.SingleOrDefault(lda => lda.MALOP != null && lda.LOP.TENLOP == info.TENLOP).MAGVCN;
+            }
             foreach (string item in TeacherBox.Items)
             {
                 if (item == "")
                 {
-                    if (info.TENGV == "")
+                    if (magv == "")
                     {
                         TeacherBox.SelectedIndex = i;
                         break;
@@ -80,7 +85,7 @@ namespace StudentManagement___IT008.View
                         continue;
                     }
                 }
-                if (item.Split('-')[1] == info.TENGV)
+                if (item.Split('-')[0] == magv)
                 {
                     TeacherBox.SelectedIndex = i;
                     break;
