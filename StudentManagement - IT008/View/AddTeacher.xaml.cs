@@ -226,7 +226,7 @@ namespace StudentManagement___IT008.View
                 DateTime ns = DateTime.Parse(Ngsinh.Text);
                 if (DateTime.Now.Year - ns.Year < 20)
                 {
-                    MessageBox.Show("Ngày sinh không hợp lệ! (dưới 20 tuổi)");
+                    MessageBox.Show("Tuổi không đúng quy định");
                     return false;
                 }
             }

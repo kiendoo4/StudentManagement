@@ -7,6 +7,7 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Security.Cryptography.Xml;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +36,7 @@ namespace StudentManagement___IT008.View
             lophocList2 = lophocList;
             TeacherBox.Items.Clear();
             LabelToShow.Text = "Thêm lớp học";
+            TeacherBox.Items.Add("");
             foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
             {
                 if (tk.ISDELETED == false && tk.VAITRO == "GV")
@@ -56,15 +58,29 @@ namespace StudentManagement___IT008.View
             KhoiBox.IsEnabled = false;
             ClassBox.IsEnabled = false;
             TeacherBox.Items.Clear();
+            TeacherBox.Items.Add("");
             foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
             {
                 if (tk.ISDELETED == false && tk.VAITRO == "GV")
                     TeacherBox.Items.Add(tk.GIAOVIENs.SingleOrDefault(lda => lda.USERNAME == tk.USERNAME).MAGV + "-" + tk.HOTEN);
             }
             int i = 0;
-            foreach (var item in TeacherBox.Items)
+            foreach (string item in TeacherBox.Items)
             {
-                if (item == info.TENGV)
+                if (item == "")
+                {
+                    if (info.TENGV == "")
+                    {
+                        TeacherBox.SelectedIndex = i;
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                        continue;
+                    }
+                }
+                if (item.Split('-')[1] == info.TENGV)
                 {
                     TeacherBox.SelectedIndex = i;
                     break;
@@ -75,8 +91,9 @@ namespace StudentManagement___IT008.View
         string mal;
         private void FinishButtonClick(object sender, RoutedEventArgs e)
         {
-            string hotengv = TeacherBox.Text.Split('-')[1];
-            if (ValidateLop())
+            string hotengv="";
+            if (TeacherBox.Text!="") hotengv = TeacherBox.Text.Split('-')[1];
+            if (ValidateLop(LabelToShow.Text))
             {
                 if (LabelToShow.Text == "Thêm lớp học")
                 {
@@ -253,7 +270,7 @@ namespace StudentManagement___IT008.View
                 }
             }
         }
-        private bool ValidateLop()
+        private bool ValidateLop(string type)
         {
             if(KhoiBox.Text == "")
             {
@@ -264,18 +281,37 @@ namespace StudentManagement___IT008.View
             {
                 MessageBox.Show("Lớp không được để trống!");
                 return false;
-            }
-            string s = TeacherBox.Text.Split('-')[0];
-            if(TeacherBox.Text == "")
+            } else
             {
-                MessageBox.Show("GVCN không được để trống!");
-                return false;
+                Regex regex = new Regex(@"^A\d{1,2}$");
+                if (!regex.IsMatch(ClassBox.Text))
+                {
+                    MessageBox.Show("Sai định dạng tên lớp");
+                    return false;
+                }
             }
-            if (Entity.ins.LOPHOCTHUCTEs.FirstOrDefault(lda => lda.MAGVCN == s && lda.ISDELETED == false && lda.MALOP!=null && lda.LOP.ISDELETED != false) != null)
+            if (type == "Thêm lớp học")
             {
-                MessageBox.Show("Giáo viên này đã là gvcn của một lớp khác, không thể phân quyền chủ nhiệm cho giáo viên này!");
-                return false;
+                string malop = "L" + KhoiBox.Text + ClassBox.Text;
+                if (Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lda => lda.MALOP == malop && lda.LOP.ISDELETED == false) != null)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại, vui lòng nhập lớp khác!");
+                    return false;
+                }
             }
+            if (TeacherBox.Text != "")
+            {
+                string s = TeacherBox.Text.Split('-')[0];
+                if (Entity.ins.LOPHOCTHUCTEs.FirstOrDefault(lda => lda.MAGVCN == s && lda.MALOP != null && lda.LOP.ISDELETED == false) != null)
+                {
+                    MessageBox.Show("Giáo viên này đã được phân vào một lớp khác, vui lòng chọn lại!");
+                    return false;
+                }
+            }
+            /*if (Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lda => lda.MAGVCN == s && lda.MALOP != null) != null)
+            {
+                
+            }*/
             return true;
         }
     }
