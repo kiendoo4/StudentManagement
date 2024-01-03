@@ -73,7 +73,15 @@
             {
                 foreach (LOPHOCTHUCTE s in LOPHOCTHUCTEs)
                 {
-                    lop = s.MALOP;
+                    if (s.LOP != null)
+                    {
+                        lop = s.LOP.KHOI + s.LOP.TENLOP;
+                        
+                    }
+                    else
+                    { 
+                        lop = ""; 
+                    }
                     break;
                 }    
                 return lop;

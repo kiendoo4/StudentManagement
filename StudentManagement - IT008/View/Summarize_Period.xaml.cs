@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace StudentManagement___IT008.View
 {
@@ -45,16 +46,19 @@ namespace StudentManagement___IT008.View
             int stt = 1;
             foreach(LOP l in Entity.ins.LOPs)
             {
+                if (l.ISDELETED == true) continue;
                 TK_P_CHUNG tk_lop = new TK_P_CHUNG();
                 string malop = l.MALOP;
                 string tenlop = l.KHOI + l.TENLOP;
                 LOPHOCTHUCTE lhtt = l.LOPHOCTHUCTEs.SingleOrDefault(lda => lda.MALOP == malop);
-                int siso = lhtt.HOCSINHs.Count();
+                int siso = 0;
                 int soluongdat = 0;
                 int stt_2 = 1;
                 List<double> dtblist = new List<double>();
                 foreach (HOCSINH hs in lhtt.HOCSINHs)
                 {
+                    if (hs.ISDELETED == true) continue;
+                    siso++;
                     bool check = true;
                     TK_P_CHITIET tk_hs = new TK_P_CHITIET();
                     double dtb = 0;
@@ -121,6 +125,77 @@ namespace StudentManagement___IT008.View
                 TK_P_CHUNG selected = chung[index];
                 tbl_TK_Cuthe.ItemsSource = selected.Tk_hs;
             }
+        }
+
+        private void btn_exportExcel_Click(object sender, RoutedEventArgs e)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
+
+            Excel.Workbook workbook = excelApp.Workbooks.Add(Type.Missing);
+            Excel.Worksheet tk_chung = (Excel.Worksheet)workbook.Worksheets.Add(Type.Missing, Type.Missing, 1, Type.Missing);
+
+            tk_chung.Name = "TK_Chung";
+            tk_chung.Cells[1, 1] = "Báo cáo tổng kết chung cho " + year;
+            tk_chung.Cells[2, 1] = "Thời gian xuất: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            Excel.Range headerrange = (Excel.Range)tk_chung.Cells[1, 1];
+            headerrange.Font.Bold = true;
+
+            for (int i = 1; i <= tbl_TK_Chung.Columns.Count; i++)
+            {
+                tk_chung.Cells[3, i] = tbl_TK_Chung.Columns[i - 1].Header;
+            }
+
+            for (int i = 0; i < chung.Count; i++)
+            {
+                tk_chung.Cells[i + 4, 1] = chung[i].STT;
+                tk_chung.Cells[i + 4, 2] = chung[i].Lop;
+                tk_chung.Cells[i + 4, 3] = chung[i].SiSo;
+                tk_chung.Cells[i + 4, 4] = chung[i].SL_Dat;
+                tk_chung.Cells[i + 4, 5] = chung[i].TiLe;
+            }
+
+            Excel.Range usedRange = tk_chung.UsedRange;
+            usedRange.Columns.AutoFit();
+
+            Excel.Worksheet tk_chitiet = (Excel.Worksheet)workbook.Worksheets.Add(Type.Missing, Type.Missing, 1, Type.Missing);
+
+            tk_chitiet.Name = "TK_ChiTiet";
+            tk_chitiet.Cells[1, 1] = "Báo cáo tổng kết chi tiết cho " + year;
+            tk_chitiet.Cells[2, 1] = "Thời gian xuất: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            headerrange = (Excel.Range)tk_chitiet.Cells[1, 1];
+            headerrange.Font.Bold = true;
+
+            var selectedItems = tbl_TK_Chung.SelectedItems;
+            int line = 5;
+            foreach (var selectedItem in selectedItems)
+            {
+                int index = tbl_TK_Chung.Items.IndexOf(selectedItem);
+                
+
+                tk_chitiet.Cells[line, 1] = "Lớp: " + chung[index].Lop;
+                headerrange = (Excel.Range)tk_chitiet.Cells[line, 1];
+                headerrange.Font.Bold = true;
+
+                for (int i = 1; i <= tbl_TK_Cuthe.Columns.Count; i++)
+                {
+                    tk_chitiet.Cells[line+1, i] = tbl_TK_Cuthe.Columns[i - 1].Header;
+                }
+                List<TK_P_CHITIET> tk_hs = chung[index].Tk_hs;
+                for (int i = 0; i < tk_hs.Count; i++)
+                {
+                    tk_chitiet.Cells[i + line + 2, 1] = tk_hs[i].STT;
+                    tk_chitiet.Cells[i + line + 2, 2] = tk_hs[i].Hoten;
+                    tk_chitiet.Cells[i + line + 2, 3] = tk_hs[i].Lop;
+                    tk_chitiet.Cells[i + line + 2, 4] = tk_hs[i].DiemTB;
+                    tk_chitiet.Cells[i + line + 2, 5] = (tk_hs[i].Dat) ? 1 : 0;
+                    tk_chitiet.Cells[i + line + 2, 6] = tk_hs[i].Hang;
+                }
+                line += 5 + tk_hs.Count;
+            }
+
+            usedRange = tk_chitiet.UsedRange;
+            usedRange.Columns.AutoFit();
         }
     }
 }

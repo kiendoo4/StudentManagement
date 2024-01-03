@@ -61,20 +61,27 @@ namespace StudentManagement___IT008.Model
                 GIAOVIEN gvcn = new GIAOVIEN();
                 foreach (GIAOVIEN gv in Entity.ins.GIAOVIENs)
                 {
-                    if (gv.MAGV == LopHoc.MAGVCN)
+                    if (gv.MAGV == LopHoc.MAGVCN  && gv.ISDELETED == false)
                     {
                         gvcn = gv; break;
                     }
                 }
-                TAIKHOAN tk = new TAIKHOAN();
-                foreach (TAIKHOAN alltk in Entity.ins.TAIKHOANs)
+                if (gvcn != null)
                 {
-                    if (alltk.USERNAME == gvcn.USERNAME)
+                    TAIKHOAN tk = new TAIKHOAN();
+                    foreach (TAIKHOAN alltk in Entity.ins.TAIKHOANs)
                     {
-                        tk = alltk; break;
+                        if (alltk.USERNAME == gvcn.USERNAME)
+                        {
+                            tk = alltk; break;
+                        }
                     }
+                    return tk.HOTEN;
                 }
-                return tk.HOTEN;
+                else
+                {
+                    return "";
+                }    
             }
         }
 

@@ -243,7 +243,6 @@
                                   SelectionChanged="tbl_TK_Chung_SelectionChanged"
                                   >
                             <DataGrid.Columns >
-                                <DataGridCheckBoxColumn Width="*"></DataGridCheckBoxColumn>
                                 <DataGridTextColumn Width="*" Header="STT" Binding="{Binding STT}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Lớp" Binding="{Binding Lop}"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Header="Sĩ số" Binding="{Binding SiSo}"></DataGridTextColumn>
@@ -252,7 +251,7 @@
                             </DataGrid.Columns>
                         </DataGrid>
 
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="367,30,26,30">
+                        <Button Name="btn_exportExcel" Click="btn_exportExcel_Click" Grid.Row="2" Height="35" Cursor="Hand" Margin="367,30,26,30">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border CornerRadius="15" BorderThickness="0">

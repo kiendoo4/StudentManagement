@@ -10,6 +10,7 @@
         WindowStartupLocation="CenterScreen"
         Background="Black"
         AllowsTransparency="True">
+    
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -57,7 +58,13 @@
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" FontSize="19" Text="Học vị" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="13,0,292,0" />
-                            <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Hocvi" FontFamily="Quicksand Semibold"  Margin="44,0,19,0"></TextBox>
+                            <ComboBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Hocvi" FontFamily="Quicksand Semibold"  Margin="44,0,10,0"
+                                       Style="{DynamicResource theComboBox}"
+                                       ItemContainerStyle="{DynamicResource theComboBoxItem}">
+                                <ComboBoxItem>Cử nhân</ComboBoxItem>
+                                <ComboBoxItem>Thạc sĩ</ComboBoxItem>
+                                <ComboBoxItem>Tiến sĩ</ComboBoxItem>
+                            </ComboBox>
                         </Grid>
                     </Border>
                     <Border Grid.Row="2" Background="White" Margin="15,15,240,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >

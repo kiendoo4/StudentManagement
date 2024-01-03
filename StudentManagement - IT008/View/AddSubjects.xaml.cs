@@ -48,65 +48,82 @@ namespace StudentManagement___IT008.View
 
         private void FinishClick(object sender, RoutedEventArgs e)
         {
-            if(addorchange)
+            if (ValidateMonHoc())
             {
-                MONHOC newMh = new MONHOC();
-                newMh.MAMH = Mamh.Text;
-                newMh.TENMH = Tenmh.Text;
-                newMh.ISDELETED = false;
-                Entity.ins.MONHOCs.Add(newMh);
-                try
+                if (addorchange)
                 {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã thêm môn học thành công!", "Thông báo");
-                    monhocList2.Clear();
-                    foreach (MONHOC mh in Entity.ins.MONHOCs.ToList())
+                    MONHOC newMh = new MONHOC();
+                    newMh.MAMH = Mamh.Text;
+                    newMh.TENMH = Tenmh.Text;
+                    newMh.ISDELETED = false;
+                    Entity.ins.MONHOCs.Add(newMh);
+                    try
                     {
-                        if (mh.ISDELETED == false)
-                            monhocList2.Add(mh);
-                    }
-                    this.Visibility = Visibility.Collapsed;
-                    textBlock2.Text = "";
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã thêm môn học thành công!", "Thông báo");
+                        monhocList2.Clear();
+                        foreach (MONHOC mh in Entity.ins.MONHOCs.ToList())
                         {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            if (mh.ISDELETED == false)
+                                monhocList2.Add(mh);
+                        }
+                        this.Visibility = Visibility.Collapsed;
+                        textBlock2.Text = "";
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
                         }
                     }
                 }
-            }   
-            else
-            {
-                monhoc2.TENMH = Tenmh.Text;
-                try
+                else
                 {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã chỉnh sửa môn học thành công!", "Thông báo");
-                    monhocList2.Clear();
-                    foreach (MONHOC mh in Entity.ins.MONHOCs.ToList())
+                    monhoc2.TENMH = Tenmh.Text;
+                    try
                     {
-                        if (mh.ISDELETED == false)
-                            monhocList2.Add(mh);
-                    }
-                    this.Visibility = Visibility.Collapsed;
-                    textBlock2.Text = "";
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã chỉnh sửa môn học thành công!", "Thông báo");
+                        monhocList2.Clear();
+                        foreach (MONHOC mh in Entity.ins.MONHOCs.ToList())
+                        {
+                            if (mh.ISDELETED == false)
+                                monhocList2.Add(mh);
+                        }
+                        this.Visibility = Visibility.Collapsed;
+                        textBlock2.Text = "";
 
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
+                        foreach (var validationErrors in ex.EntityValidationErrors)
                         {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
                         }
                     }
                 }
-            }    
+            }
+        }
+        private bool ValidateMonHoc()
+        {
+            if (Mamh.Text == "")
+            {
+                MessageBox.Show("Mã môn học không được để trống!");
+                return false;
+            }
+            if (Tenmh.Text == "")
+            {
+                MessageBox.Show("Tên môn học không được để trống!");
+                return false;
+            }
+            return true;
         }
     }
 }

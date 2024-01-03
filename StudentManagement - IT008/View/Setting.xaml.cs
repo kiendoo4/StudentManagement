@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -170,18 +171,132 @@ namespace StudentManagement___IT008.View
         }
         private void SaveInfo(object sender, RoutedEventArgs e)
         {
-            List<THAMSO> thamsoList = Entity.ins.THAMSOes.ToList();
-            for (int i = 0; i < Entity.ins.THAMSOes.Count(); i++)
+            if (ValidateThamSo())
             {
-                if (i == 0) thamsoList[i].GIATRI = TTSHS.Text;
-                if (i == 1) thamsoList[i].GIATRI = TTDHS.Text;
-                if (i == 2) thamsoList[i].GIATRI = DSTT.Text;
-                if (i == 3) thamsoList[i].GIATRI = DSTD.Text;
-                if (i == 4) thamsoList[i].GIATRI = SSTD.Text;
-                if (i == 5) thamsoList[i].GIATRI = DDTT.Text;
+                List<THAMSO> thamsoList = Entity.ins.THAMSOes.ToList();
+                for (int i = 0; i < Entity.ins.THAMSOes.Count(); i++)
+                {
+                    if (i == 0) thamsoList[i].GIATRI = TTSHS.Text;
+                    if (i == 1) thamsoList[i].GIATRI = TTDHS.Text;
+                    if (i == 2) thamsoList[i].GIATRI = DSTT.Text;
+                    if (i == 3) thamsoList[i].GIATRI = DSTD.Text;
+                    if (i == 4) thamsoList[i].GIATRI = SSTD.Text;
+                    if (i == 5) thamsoList[i].GIATRI = DDTT.Text;
+                }
+                Entity.ins.SaveChanges();
+                MessageBox.Show("Lưu tham số thành công!", "Thông báo");
             }
-            Entity.ins.SaveChanges();
-            MessageBox.Show("Lưu tham số thành công!", "Thông báo");
+        }
+        private bool IsNumeric(string input)
+        {
+            Regex regex = new Regex(@"^[0-9]\d*(\.\d+)?$");
+            return regex.IsMatch(input);
+        }
+        private bool IsNumber(string input)
+        {
+            Regex regex = new Regex(@"^[0-9]\d*$");
+            return regex.IsMatch(input);
+        }
+        private bool ValidateThamSo()
+        {
+            if(TTSHS.Text == "")
+            {
+                MessageBox.Show("Tuổi tối thiểu học sinh không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumber(TTSHS.Text))
+                {
+                    MessageBox.Show("Định dạng của tuổi tối thiểu không đúng!");
+                    return false;
+                }
+            }
+            if (TTDHS.Text == "")
+            {
+                MessageBox.Show("Tuổi tối đa học sinh không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumber(TTDHS.Text))
+                {
+                    MessageBox.Show("Định dạng của tuổi tối đa không đúng!");
+                    return false;
+                }
+            }
+            if (DSTT.Text == "")
+            {
+                MessageBox.Show("Điểm số tối thiểu không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumeric(DSTT.Text))
+                {
+                    MessageBox.Show("Định dạng của điểm số tối thiểu không đúng!");
+                    return false;
+                }
+            }
+            if (DSTD.Text == "")
+            {
+                MessageBox.Show("Điểm số tối đa không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumeric(DSTD.Text))
+                {
+                    MessageBox.Show("Định dạng của điểm số tối đa không đúng!");
+                    return false;
+                }
+            } 
+            if (SSTD.Text == "")
+            {
+                MessageBox.Show("Sĩ số lớp tối đa không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumber(SSTD.Text))
+                {
+                    MessageBox.Show("Định dạng của sĩ số lớp tối đa không đúng!");
+                    return false;
+                }
+            }
+            if (DDTT.Text == "")
+            {
+                MessageBox.Show("Điểm đạt tối thiểu không được trống!");
+                return false;
+            } else
+            {
+                if (!IsNumeric(DDTT.Text))
+                {
+                    MessageBox.Show("Định dạng của điểm đạt tối thiểu không đúng!");
+                    return false;
+                }
+            }
+            double dstt = double.Parse(DSTT.Text);
+            double dstd = double.Parse(DSTD.Text);
+            double ddtt = double.Parse(DDTT.Text);
+            if (dstt > dstd)
+            {
+                MessageBox.Show("Điểm số tối thiểu không được lớn hơn điểm số tối đa!");
+                return false;
+            }
+            if (ddtt < dstt)
+            {
+                MessageBox.Show("Điểm đạt tối thiểu không được nhỏ hơn điếm số tối thiểu!");
+                return false;
+            }
+            if (ddtt > dstd)
+            {
+                MessageBox.Show("Điểm đạt tối thiểu không được lớn hơn điểm số tối đa!");
+                return false;
+            }
+            int ttshs = int.Parse(TTSHS.Text);
+            int ttdhs = int.Parse(TTDHS.Text);
+            if (ttdhs < ttshs)
+            {
+                MessageBox.Show("Tuổi tối thiểu học sinh không được lớn hơn tuổi tối đa học sinh!");
+                return false;
+            }
+            return true;
         }
     }
 }

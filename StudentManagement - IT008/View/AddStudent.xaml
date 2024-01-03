@@ -93,11 +93,11 @@
                     <Border Grid.Row="5" Background="White" Margin="15,15,268,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="101*"></ColumnDefinition>
+                                <ColumnDefinition Width="115*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" FontSize="19" Text="Lớp" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Margin="13,0,29,0" />
-                            <TextBox VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Grid.Column="1" Name ="Lop" FontFamily="Quicksand Semibold" Margin="0,0,10,0" ></TextBox>
+                            <TextBlock Grid.Column="0" FontSize="19" Text="Lớp" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Margin="13,0,29,0" Height="23" />
+                            <ComboBox Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.25" FontSize="19" Name ="Lop" FontFamily="Quicksand Semibold" Margin="1,0,10,0" Grid.Column="1" Height="35" />
                         </Grid>
                     </Border>
                     <Border Grid.Row="5" Background="White" Margin="250,15,20,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >
@@ -117,7 +117,7 @@
                                 <ColumnDefinition Width="6*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" FontSize="19" Text="Dân tộc" FontFamily="Quicksand Semibold" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="12,0,121,0" />
-                            <ComboBox Name="Dantoc" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="70,0,2,0" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
+                            <ComboBox Name="Dantoc" Style="{DynamicResource theComboBox}" ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="1" Margin="74,0,0,0" FontFamily="Quicksand Semibold" VerticalAlignment="Center" ></ComboBox>
                         </Grid>
                     </Border>
                     <Border Grid.Row="6" Background="White" Margin="250,15,20,15" CornerRadius="10" BorderBrush="Gray" BorderThickness="0.5" >

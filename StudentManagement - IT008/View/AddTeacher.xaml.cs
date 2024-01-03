@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,6 +32,7 @@ namespace StudentManagement___IT008.View
             LabelToShow.Text = "Thêm giáo viên";
             Magv.Text = "GV" + Convert.ToString(Entity.ins.GIAOVIENs.Count() + 1);
             Magv.IsEnabled = false;
+            Hocvi.SelectedIndex = 0;
             foreach (string gt in gioitinhList)
             {
                 Gioitinh.Items.Add(new ComboBoxItem { Content = gt });
@@ -105,104 +107,157 @@ namespace StudentManagement___IT008.View
         }
         private void Finish_Click(object sender, RoutedEventArgs e)
         {
-            if (LabelToShow.Text == "Thêm giáo viên")
+            if (ValidateGV())
             {
-                TAIKHOAN gv = new TAIKHOAN
+                if (LabelToShow.Text == "Thêm giáo viên")
                 {
-                    HOTEN = Hoten.Text,
-                    NGSINH = DateTime.Parse(Ngsinh.Text),
-                    EMAIL = Email.Text,
-                    DCHI = Dchi.Text,
-                    ISDELETED = false,
-                    GIOITINH = ((Gioitinh.Text == "Nam") ? true : false),
-                    USERNAME = Username.Text,
-                    PASSWRD = Password.Text,
-                    VAITRO = "GV"
-                };
-                GIAOVIEN newgv = new GIAOVIEN
-                {
-                    MAGV = Magv.Text,
-                    USERNAME = Username.Text,
-                    HOCVI = Hocvi.Text,
-                    ISDELETED = false
-                };
-                KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
-                foreach (MONHOC mh in Entity.ins.MONHOCs)
-                {
-                    if (mh.TENMH == Monday.Text)
+                    TAIKHOAN gv = new TAIKHOAN
                     {
-                        newknnd.MAMH = mh.MAMH;
-                        newknnd.MONHOC = mh;
-                        newknnd.MAGV = newgv.MAGV;
-                        newknnd.GIAOVIEN = newgv;
-                        newknnd.ISDELETED = false;
-                        newgv.KHANANGGIANGDAYs.Add(newknnd);
-                        break;
+                        HOTEN = Hoten.Text,
+                        NGSINH = DateTime.Parse(Ngsinh.Text),
+                        EMAIL = Email.Text,
+                        DCHI = Dchi.Text,
+                        ISDELETED = false,
+                        GIOITINH = ((Gioitinh.Text == "Nam") ? true : false),
+                        USERNAME = Username.Text,
+                        PASSWRD = Password.Text,
+                        VAITRO = "GV"
+                    };
+                    GIAOVIEN newgv = new GIAOVIEN
+                    {
+                        MAGV = Magv.Text,
+                        USERNAME = Username.Text,
+                        HOCVI = Hocvi.Text,
+                        ISDELETED = false
+                    };
+                    KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
+                    foreach (MONHOC mh in Entity.ins.MONHOCs)
+                    {
+                        if (mh.TENMH == Monday.Text)
+                        {
+                            newknnd.MAMH = mh.MAMH;
+                            newknnd.MONHOC = mh;
+                            newknnd.MAGV = newgv.MAGV;
+                            newknnd.GIAOVIEN = newgv;
+                            newknnd.ISDELETED = false;
+                            newgv.KHANANGGIANGDAYs.Add(newknnd);
+                            break;
+                        }
+                    }
+                    gv.GIAOVIENs.Add(newgv);
+                    Entity.ins.TAIKHOANs.Add(gv);
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã thêm giáo viên thành công!", "Thông báo");
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
+                        }
                     }
                 }
-                gv.GIAOVIENs.Add(newgv);
-                Entity.ins.TAIKHOANs.Add(gv);
-                try
+                else
                 {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã thêm giáo viên thành công!", "Thông báo");
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    fixTK.HOTEN = Hoten.Text;
+                    fixTK.NGSINH = DateTime.Parse(Ngsinh.Text);
+                    fixTK.VAITRO = "GV";
+                    fixTK.USERNAME = Username.Text;
+                    fixTK.PASSWRD = Password.Text;
+                    fixTK.DCHI = Dchi.Text;
+                    fixTK.EMAIL = Email.Text;
+                    fixTK.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);
+                    GIAOVIEN existinggv = Entity.ins.GIAOVIENs.SingleOrDefault(gv => gv.USERNAME == Username.Text);
+                    existinggv.HOCVI = Hocvi.Text;
+                    KHANANGGIANGDAY existingkn = existinggv.KHANANGGIANGDAYs.SingleOrDefault(gv => gv.MAGV == Magv.Text && gv.ISDELETED == false);
+                    existinggv.KHANANGGIANGDAYs.Remove(existingkn);
+                    KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
+                    foreach (MONHOC mh in Entity.ins.MONHOCs)
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
+                        if (mh.TENMH == Monday.Text)
                         {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            newknnd.MAMH = mh.MAMH;
+                            newknnd.MONHOC = mh;
+                            newknnd.MAGV = existinggv.MAGV;
+                            newknnd.GIAOVIEN = existinggv;
+                            newknnd.ISDELETED = false;
+                            existinggv.KHANANGGIANGDAYs.Add(newknnd);
+                            break;
+                        }
+                    }
+
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã chỉnh sửa giáo viên thành công!", "Thông báo");
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
                         }
                     }
                 }
             }
+        }
+        private bool ValidateGV()
+        {
+            if (Hoten.Text == "" || Hoten.Text == " ")
+            {
+                MessageBox.Show("Họ tên không được để trống!");
+                return false;
+            }
+            if(Ngsinh.Text == "" || Ngsinh.Text == " ")
+            {
+                MessageBox.Show("Ngày sinh không được để trống!");
+                return false;
+            } 
             else
             {
-                fixTK.HOTEN = Hoten.Text;
-                fixTK.NGSINH = DateTime.Parse(Ngsinh.Text);
-                fixTK.VAITRO = "GV";
-                fixTK.USERNAME = Username.Text;
-                fixTK.PASSWRD = Password.Text;
-                fixTK.DCHI = Dchi.Text;
-                fixTK.EMAIL = Email.Text;
-                fixTK.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);               
-                GIAOVIEN existinggv = Entity.ins.GIAOVIENs.SingleOrDefault(gv => gv.USERNAME == Username.Text);
-                existinggv.HOCVI = Hocvi.Text;
-                KHANANGGIANGDAY existingkn = existinggv.KHANANGGIANGDAYs.SingleOrDefault(gv => gv.MAGV == Magv.Text && gv.ISDELETED == false);
-                existinggv.KHANANGGIANGDAYs.Remove(existingkn);
-                KHANANGGIANGDAY newknnd = new KHANANGGIANGDAY();
-                foreach (MONHOC mh in Entity.ins.MONHOCs)
+                DateTime ns = DateTime.Parse(Ngsinh.Text);
+                if (DateTime.Now.Year - ns.Year < 20)
                 {
-                    if (mh.TENMH == Monday.Text)
-                    {
-                        newknnd.MAMH = mh.MAMH;
-                        newknnd.MONHOC = mh;
-                        newknnd.MAGV = existinggv.MAGV;
-                        newknnd.GIAOVIEN = existinggv;
-                        newknnd.ISDELETED = false;
-                        existinggv.KHANANGGIANGDAYs.Add(newknnd);
-                        break;
-                    }
-                }
-                
-                try
-                {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã chỉnh sửa giáo viên thành công!", "Thông báo");
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
-                        }
-                    }
+                    MessageBox.Show("Ngày sinh không hợp lệ! (dưới 20 tuổi)");
+                    return false;
                 }
             }
+            if (Email.Text != "" && Email.Text != " ")
+            {
+                string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+                Regex regex = new Regex(pattern);
+                if (!regex.IsMatch(Email.Text))
+                {
+                    MessageBox.Show("Sai định dạng email!");
+                    return false;
+                }
+            }
+            if (Username.Text == "")
+            {
+                MessageBox.Show("Username không được để trống!");
+                return false;
+            } else
+            {
+                if (Entity.ins.TAIKHOANs.SingleOrDefault(lda => lda.USERNAME == Username.Text && lda.ISDELETED==false) != null)
+                {
+                    MessageBox.Show("Username đã tồn tại, vui lòng nhập username khác!");
+                    return false;
+                }
+            }
+            if (Password.Text == "")
+            {
+                MessageBox.Show("Password không được để trống!");
+                return false;
+            }
+            return true;
         }
     }
 }

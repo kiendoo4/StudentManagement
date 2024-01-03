@@ -30,19 +30,24 @@ namespace StudentManagement___IT008.View
             bool ck = false;
             foreach (TAIKHOAN tk in Entity.ins.TAIKHOANs)
             {
-                if (tk.USERNAME == Username.Text && tk.PASSWRD == Password.Password) 
+                if (tk.USERNAME == Username.Text && tk.PASSWRD == Password.Password && tk.ISDELETED == false) 
                 {
                     if(tk.VAITRO == "admin")
                     {
                         MainWindow main = new MainWindow(true, this);
                         main.Show();
+                        ck = true;
                     }   
                     else
                     {
-                        MainWindow main = new MainWindow(false, this);
-                        main.Show();
+                        GIAOVIEN gv = Entity.ins.GIAOVIENs.SingleOrDefault(g => g.USERNAME == tk.USERNAME && g.ISDELETED == false);
+                        if(gv != null)
+                        {
+                            MainWindow main = new MainWindow(false, this);
+                            main.Show();
+                            ck = true;
+                        }    
                     }
-                    ck = true;
                     break;
                 }
             }

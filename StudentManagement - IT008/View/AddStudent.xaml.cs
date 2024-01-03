@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -101,6 +102,7 @@ namespace StudentManagement___IT008.View
         public AddStudent()
         {
             InitializeComponent();
+            LoadCbx_Lop();
             LabelToShow.Text = "Thêm học sinh";
             Mahs.Text = "HS" + Convert.ToString(Entity.ins.HOCSINHs.ToList().Count + 1);
             Mahs.IsEnabled = false;
@@ -125,6 +127,7 @@ namespace StudentManagement___IT008.View
         {
             fixHS = hocsinh;
             InitializeComponent();
+            LoadCbx_Lop();
             LabelToShow.Text = "Chỉnh sửa học sinh";
             CMND.Text = hocsinh.CCCD;
             Hoten.Text = hocsinh.HOTENHS;
@@ -180,72 +183,153 @@ namespace StudentManagement___IT008.View
         }
         private void FinishButon_Click(object sender, RoutedEventArgs e)
         {
-            if (LabelToShow.Text == "Thêm học sinh")
+            if (ValidateHS(LabelToShow.Text))
             {
-                HOCSINH hocsinh = new HOCSINH
+                if (LabelToShow.Text == "Thêm học sinh")
                 {
-                    CCCD = CMND.Text,
-                    HOTENHS = Hoten.Text,
-                    NGSINH = DateTime.Parse(Ngsinh.Text),
-                    EMAIL = Email.Text,
-                    DCHI = Dchi.Text,
-                    DANTOC = Dantoc.Text,
-                    TONGIAO = Tongiao.Text,
-                    MAHS = Mahs.Text,
-                    ISDELETED = false,
-                    SDT = Sdt.Text,
-                    GIOITINH = ((Gioitinh.Text == "Nam") ? true : false)
-                };
-                LOPHOCTHUCTE existingLopHoc = Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lop => lop.MALOP == Lop.Text);
-                hocsinh.LOPHOCTHUCTEs.Add(existingLopHoc);
-                Entity.ins.HOCSINHs.Add(hocsinh);
-                try
-                {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã thêm học sinh thành công!", "Thông báo");
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    HOCSINH hocsinh = new HOCSINH
                     {
-                        foreach (var validationError in validationErrors.ValidationErrors)
+                        CCCD = CMND.Text,
+                        HOTENHS = Hoten.Text,
+                        NGSINH = DateTime.Parse(Ngsinh.Text),
+                        EMAIL = Email.Text,
+                        DCHI = Dchi.Text,
+                        DANTOC = Dantoc.Text,
+                        TONGIAO = Tongiao.Text,
+                        MAHS = Mahs.Text,
+                        ISDELETED = false,
+                        SDT = Sdt.Text,
+                        GIOITINH = ((Gioitinh.Text == "Nam") ? true : false)
+                    };
+                    LOPHOCTHUCTE existingLopHoc = Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lop => (lop.LOP.KHOI + lop.LOP.TENLOP) == Lop.Text);
+                    hocsinh.LOPHOCTHUCTEs.Add(existingLopHoc);
+                    Entity.ins.HOCSINHs.Add(hocsinh);
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã thêm học sinh thành công!", "Thông báo");
+                        this.Close();
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
                         {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    fixHS.CCCD = CMND.Text;
+                    fixHS.HOTENHS = Hoten.Text;
+                    fixHS.NGSINH = DateTime.Parse(Ngsinh.Text);
+                    fixHS.EMAIL = Email.Text;
+                    fixHS.DCHI = Dchi.Text;
+                    fixHS.DANTOC = Dantoc.Text;
+                    fixHS.TONGIAO = Tongiao.Text;
+                    fixHS.SDT = Sdt.Text;
+                    LOPHOCTHUCTE newLopHoc = Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lop => (lop.LOP.KHOI + lop.LOP.TENLOP) == Lop.Text);
+                    fixHS.LOPHOCTHUCTEs.Clear();
+                    fixHS.LOPHOCTHUCTEs.Add(newLopHoc);
+                    fixHS.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);
+                    try
+                    {
+                        Entity.ins.SaveChanges();
+                        MessageBox.Show("Đã chỉnh sửa học sinh thành công!", "Thông báo");
+                        this.Close();}
+                    
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+                        foreach (var validationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                            }
                         }
                     }
                 }
             }
+        }
+        private void LoadCbx_Lop()
+        {
+            List<string> listlop = new List<string>();
+            foreach(LOP l in Entity.ins.LOPs)
+            {
+                listlop.Add(l.KHOI + l.TENLOP);
+            }
+            Lop.ItemsSource = listlop;
+            Lop.SelectedIndex = 0;
+        }
+        private bool ValidateHS(string type)
+        {
+            if (CMND.Text == "")
+            {
+                MessageBox.Show("CCCD/CMND không được để trống!");
+                return false;
+            } else
+            {
+                string pattern = @"^[0-9]{9,12}$";
+                Regex regex = new Regex(pattern);
+
+                if (!regex.IsMatch(CMND.Text))
+                {
+                    MessageBox.Show("Sai định dạng CCCD/CMND!");
+                    return false;
+                }
+                if (Entity.ins.HOCSINHs.SingleOrDefault(lda => lda.CCCD == CMND.Text && lda.ISDELETED==false) != null && type == "Thêm học sinh")
+                {
+                    MessageBox.Show("CCCD/CMND đã tồn tại!");
+                    return false;
+                }
+            }
+            if (Hoten.Text == "" || Hoten.Text == " ")
+            {
+                MessageBox.Show("Họ tên không được để trống!");
+                return false;
+            }
+            if (Ngsinh.Text == "" || Ngsinh.Text == " ")
+            {
+                MessageBox.Show("Ngày sinh không được để trống!");
+                return false;
+            }
             else
             {
-                fixHS.CCCD = CMND.Text;
-                fixHS.HOTENHS = Hoten.Text;
-                fixHS.NGSINH = DateTime.Parse(Ngsinh.Text);
-                fixHS.EMAIL = Email.Text;
-                fixHS.DCHI = Dchi.Text;
-                fixHS.DANTOC = Dantoc.Text;
-                fixHS.TONGIAO = Tongiao.Text;
-                fixHS.SDT = Sdt.Text;
-                LOPHOCTHUCTE newLopHoc = Entity.ins.LOPHOCTHUCTEs.SingleOrDefault(lop => lop.MALOP == Lop.Text);
-                fixHS.LOPHOCTHUCTEs.Clear();
-                fixHS.LOPHOCTHUCTEs.Add(newLopHoc);
-                fixHS.GIOITINH = ((Gioitinh.Text == "Nam") ? true : false);
-                try
+                DateTime ns = DateTime.Parse(Ngsinh.Text);
+                int minage = int.Parse(Entity.ins.THAMSOes.SingleOrDefault(lda => lda.ID == "TS001").GIATRI);
+                int maxage = int.Parse(Entity.ins.THAMSOes.SingleOrDefault(lda => lda.ID == "TS002").GIATRI);
+                int age = DateTime.Now.Year - ns.Year;
+                if (age < minage || age > maxage)
                 {
-                    Entity.ins.SaveChanges();
-                    MessageBox.Show("Đã chỉnh sửa học sinh thành công!", "Thông báo");
+                    MessageBox.Show("Ngày sinh không hợp lệ! (dưới tuổi tối thiểu hoặc trên tuổi tối đa theo quy định)");
+                    return false;
                 }
-                catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            }
+            if (Email.Text != "" && Email.Text != " ")
+            {
+                string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+                Regex regex = new Regex(pattern);
+                if (!regex.IsMatch(Email.Text))
                 {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
-                        }
-                    }
+                    MessageBox.Show("Sai định dạng email!");
+                    return false;
                 }
-            }    
+            }
+            if (Sdt.Text != "")
+            {
+                string pattern = @"^(\+[0-9]{1,3}(\s{0,1}){1})?([0-9]{10,12})$";
+                Regex regex = new Regex(pattern);
+
+                if (!regex.IsMatch(Sdt.Text))
+                {
+                    MessageBox.Show("Sai định dạng sđt!");
+                    return false;
+                }
+            }
+            return true;
         }
-        
     }
 }
