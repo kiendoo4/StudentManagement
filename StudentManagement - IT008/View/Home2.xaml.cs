@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement___IT008.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,27 @@ namespace StudentManagement___IT008.View
         {
             InitializeComponent();
         }
+        public static readonly RoutedEvent ButtonClickEvent = EventManager.RegisterRoutedEvent(
+            "ButtonClick",
+            RoutingStrategy.Bubble,
+            typeof(RoutedEventHandler),
+            typeof(Home2)
+        );
+        public event RoutedEventHandler ButtonClick
+        {
+            add { AddHandler(ButtonClickEvent, value); }
+            remove { RemoveHandler(ButtonClickEvent, value); }
+        }
+        private void RaiseButtonClickEvent()
+        {
+            RoutedEventArgs args = new RoutedEventArgs(ButtonClickEvent);
+            RaiseEvent(args);
+        }
+        private void Button_click(object sender, RoutedEventArgs e)
+        {
+            RaiseButtonClickEvent();
+        }
+        public LOP AssociatedLOP { get; set; }
+
     }
 }

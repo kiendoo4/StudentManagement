@@ -5,164 +5,58 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StudentManagement___IT008.View"
              mc:Ignorable="d" 
-             d:DesignHeight="670" d:DesignWidth="1220">
+             d:DesignHeight="200" d:DesignWidth="350">
     <Grid>
-        <Border Background="#ffffff" CornerRadius="20" BorderThickness="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock Text="Cấu hình lớp học" FontSize="30" FontFamily="Paytone One" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"/>
-                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="1005,19,0,0" RenderTransformOrigin="0.725,0.249">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="20" BorderThickness="0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="GreenYellow"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Green"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
-                                    <TextBlock  Text="Kết quả"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
-                                    </TextBlock>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="1005,0,0,0" RenderTransformOrigin="0.725,0.249">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="20" BorderThickness="0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#522c53"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Purple"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
-                                    <TextBlock  Text="Lưu thay đổi"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
-                                    </TextBlock>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button HorizontalAlignment="Left" Width="151" Height="55" VerticalAlignment="Top" Cursor="Hand" Margin="835,0,0,0" RenderTransformOrigin="0.725,0.249">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="20" BorderThickness="0">
-                                    <Border.Style>
-                                        <Style TargetType="Border">
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="GreenYellow"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter Property="Background" Value="Green"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Border.Style>
-                                    <TextBlock  Text="Trở lại"  HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Paytone One" FontSize="21" Foreground="White" Margin="0,10,0,0">
-                                    </TextBlock>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="4*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <Border CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                            </Border>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Border CornerRadius="20" BorderThickness="10">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                                </Border.Effect>
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#D9D9D9"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="Background" Value="#FDFEFF"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="3">
-                        <Border CornerRadius="20" BorderThickness="10">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Gray" Direction="300" ShadowDepth="9" Opacity="0.2" BlurRadius="5"/>
-                            </Border.Effect>
+        <Rectangle HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="330" RenderTransformOrigin="0.5,0.5" RadiusX="23.213" RadiusY="23.213" Fill="White">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.199"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <StackPanel Width="350" Height="200" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Width="350" Height="40">
+                <Label Margin="0, 10, 0, 0"  Content="{Binding TENLOPSHOW}" HorizontalAlignment="Center" FontFamily="Paytone One" FontSize="21" VerticalAlignment="Center"></Label>
+
+            </StackPanel>
+            <StackPanel  HorizontalAlignment="Center" Width="350" Height="40">
+                <Label Margin="0, 10, 0, 0" Content="{Binding SISOSHOW}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="21"></Label>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Width="350" Height="40">
+                <Label Margin="0, 10, 0, 0"  Content="{Binding TENGVSHOW}" HorizontalAlignment="Center" FontFamily="Quicksand Semibold" FontSize="21" ></Label>
+
+            </StackPanel>
+            <Button x:Name="JoinClass" Margin="0, 20, 0, 0" Width="150" Height="40" Cursor="Hand" Click="Button_click">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" BorderThickness="0">
                             <Border.Style>
                                 <Style TargetType="Border">
                                     <Setter Property="Background" Value="Transparent"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D9D9D9"/>
+                                            <Setter Property="Background" Value="Aqua"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Background" Value="#FDFEFF"/>
+                                            <Setter Property="Background" Value="MediumAquamarine"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
+                            <Grid>
+                                <TextBlock Text="Vào Lớp"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Paytone One" FontSize="21" Foreground="White" Grid.ColumnSpan="2"/>
+                            </Grid>
                         </Border>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+        </StackPanel>
+
     </Grid>
 </UserControl>

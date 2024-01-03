@@ -5,6 +5,7 @@ namespace StudentManagement___IT008.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("MONHOC")]
     public partial class MONHOC
@@ -27,6 +28,7 @@ namespace StudentManagement___IT008.Model
         public string TENMH { get; set; }
 
         public bool? ISDELETED { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIEMMONHOC> DIEMMONHOCs { get; set; }
