@@ -166,6 +166,9 @@
     <Compile Include="View\ClassInfo.xaml.cs">
       <DependentUpon>ClassInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassWelcome.xaml.cs">
+      <DependentUpon>ClassWelcome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,9 @@
     </Compile>
     <Compile Include="View\Ranking_Period.xaml.cs">
       <DependentUpon>Ranking_Period.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ranking_Summary.xaml.cs">
+      <DependentUpon>Ranking_Summary.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
@@ -252,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\ClassWelcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Home.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -281,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Ranking_Period.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Ranking_Summary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -337,6 +351,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icons\icons8-log-out-50.png" />
+    <Resource Include="Icons\icons8-log-out-80.png" />
     <Resource Include="Icons\icons8-teacher-50.png" />
     <Resource Include="Icons\school-software.png" />
     <Resource Include="Icons\storyline-branding-kit-corporate-identity-development.png" />

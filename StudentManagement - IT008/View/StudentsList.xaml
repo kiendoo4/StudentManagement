@@ -77,6 +77,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Grid.Column="2">
                 
                 <Border Grid.Row="2" Background="#FFFFFF" Margin="39,0,62,0" BorderBrush="Gray" BorderThickness="0.5" Height="534" VerticalAlignment="Center">
                     <DataGrid Name="Data"
+                              RowStyle="{StaticResource DataGridRowStyle}"
                             AutoGenerateColumns="False"
                             Background="White"
                             ScrollViewer.CanContentScroll="True" 

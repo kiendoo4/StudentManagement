@@ -95,6 +95,7 @@
                         <Grid Grid.Row="1">
                             <DataGrid BorderBrush="Gray" BorderThickness="0.5" Name="Data" Height="477" Margin="38,10,10,0" VerticalAlignment="Top" ColumnHeaderHeight="30" RowHeight="30" 
                                       AutoGenerateColumns="False"
+                                      RowStyle="{StaticResource DataGridRowStyle}" 
                                       Background="White"
                                       ScrollViewer.CanContentScroll="True" 
                                       ScrollViewer.VerticalScrollBarVisibility="Auto" 

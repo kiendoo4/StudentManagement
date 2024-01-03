@@ -22,21 +22,58 @@ Email: toannt@uit.edu.vn
 
 <h3>Video demo</h3>
 
-This is video demo 
+This is video demo [Uploading...].
 
 <h3>Description</h3>
-Student management app is a type of educational software that is designed to help schools and other educational institutions manage their students. This type of software can be used to track student information, such as contact information, academic records, and disciplinary records.
-This Student management app includes the following features:
+Quản lý học sinh là một nhiệm vụ quan trọng của nhà trường và nền giáo dục, đặc biệt là trong bối cảnh số lượng học sinh trong các trường học đang ngày càng gia tăng. Khi đó, việc quản lý học sinh bằng phương pháp thủ công sẽ càng lúc càng tốn rất nhiều thời gian và công sức. Từ thực trạng này, nhận thấy các công nghệ xung quanh chúng ta đang ngày càng phát triển, chúng tôi tin rằng việc ứng dụng các giải pháp công nghệ thông tin vào quản lý học sinh sẽ là một hướng đi cần thiết. Đó cũng chính là lý do mà chúng tôi phát triển ứng dụng này. 
 
-- Student information: This includes contact information, academic records.
-- Grade reporting: This can help schools to automate the process of generating grade reports for students.
-- Parent communication: This can help schools to communicate with parents about student progress and other important information.
-- Automate tasks: Student management apps can automate tasks like tracking scores, generating reports, sending notifications, and more. This can help save time and effort for teachers and staff.
-- Data security: Student management applications must be designed to protect student data. This includes using security measures such as encryption and two-factor authentication.
-  
-Student management app can be a valuable tool for schools and educational institutions. It can help to improve efficiency, accuracy, and communication.
+***Phần mềm bao gồm các chức năng chính như:***
 
-To learn more about Student management app, please visit [Facebook](https://www.facebook.com/kiendoo4).
+**Quản lý thông tin học sinh**
+- Chức năng này cho phép nhà trường lưu trữ và quản lý toàn bộ thông tin về học sinh, bao gồm:
+  - Thông tin cá nhân: họ tên, ngày tháng năm sinh, giới tính, dân tộc, tôn giáo, địa chỉ, số chứng minh nhân dân/căn cước công dân, số điện thoại, địa chỉ email,...
+  - Thông tin liên hệ: số điện thoại phụ huynh học sinh,...
+  - Thông tin học tập: lớp học, trường học, khóa học, môn học, điểm số,...
+  - Thông tin khác: thành tích học tập,...
+- Các thao tác quản lý thông tin học sinh bao gồm:
+  - Thêm mới: thêm thông tin mới về học sinh.
+  - Cập nhật: cập nhật thông tin đã có về học sinh.
+  - Xóa: xóa thông tin về học sinh.
+  - Tìm kiếm: tìm kiếm thông tin về học sinh theo các tiêu chí khác nhau.
+
+**Giáo viên và lớp học**
+- Chức năng này cho phép nhà trường lưu trữ và quản lý thông tin về giáo viên và lớp học, bao gồm:
+  - Thông tin giáo viên: họ tên, ngày tháng năm sinh, giới tính, dân tộc, tôn giáo, địa chỉ thường trú, địa chỉ email, học vị, thông tin tài khoản đăng nhập,...
+  - Thông tin lớp học: mã lớp, tên lớp, khối lớp, số lượng học sinh, giáo viên chủ nhiệm,...
+- Các thao tác quản lý giáo viên và lớp học bao gồm:
+  - Thêm mới: thêm thông tin mới về giáo viên hoặc lớp học.
+  - Cập nhật: cập nhật thông tin đã có về giáo viên hoặc lớp học.
+  - Xóa: xóa thông tin về giáo viên hoặc lớp học.
+  - Tìm kiếm: tìm kiếm thông tin về giáo viên hoặc lớp học theo các tiêu chí khác nhau.
+
+**Quản lý thông tin môn học**
+- Chức năng này cho phép nhà trường lưu trữ và quản lý thông tin về môn học, bao gồm:Tên môn học, Mã môn học, Giáo viên giảng dạy
+- Các thao tác quản lý thông tin môn học bao gồm:
+  - Thêm mới: thêm thông tin mới về môn học.
+  - Cập nhật: cập nhật thông tin đã có về môn học.
+  - Xóa: xóa thông tin về môn học.
+  - Tìm kiếm: tìm kiếm thông tin về môn học theo các tiêu chí khác nhau.
+
+
+**Lập báo cáo điểm số và kết quả của năm học**
+- Chức năng này cho phép nhà trường lập báo cáo điểm số và kết quả học tập của học sinh theo các tiêu chí khác nhau, bao gồm:
+  - Báo cáo điểm số theo môn học
+  - Báo cáo điểm số theo lớp học
+  - Báo cáo điểm số theo học kỳ
+  - Báo cáo điểm số theo năm học
+  - Báo cáo kết quả học tập theo học kỳ
+  - Báo cáo kết quả học tập theo năm học
+ 
+*Các báo cáo này có thể được xuất ra dưới dạng file Excel để tiện cho việc lưu trữ và sử dụng.*
+
+Hi vọng rằng với những gì chúng tôi đã làm được, phần mềm có thể trở thành một công cụ hữu ích để nâng cao hiệu quả việc quản lý trường học và giúp cho các nhà quản lý, giáo viên có thể dễ dàng truy cập và quản lý thông tin học sinh một cách hiệu quả.
+
+Để biết thêm thông tin chi tiết về *Ứng dụng quản lý học sinh* vui lòng liên hệ [Facebook](https://www.facebook.com/kiendoo4).
 
 
 <h3>How to use</h3>
@@ -49,7 +86,7 @@ Clone this repository into your local computer by this command (git required):
 </p>
 
 <h3>Additional information</h3>
-Thank you for using the Student management app. We are happy to know that you are satisfied with our products. We're always working to improve our app, and your feedback is important to us.
+Cảm ơn bạn đã sử dụng ứng dụng Quản lý sinh viên. Chúng tôi rất vui khi biết rằng bạn hài lòng với sản phẩm của chúng tôi. Chúng tôi luôn nỗ lực cải thiện ứng dụng của mình và phản hồi của bạn rất quan trọng đối với chúng tôi.
 
 <h3>Code of conducting</h3>
 

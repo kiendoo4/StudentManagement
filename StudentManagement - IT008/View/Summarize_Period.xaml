@@ -224,8 +224,7 @@
 
 
                         <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
+                                  AutoGenerateColumns="False" RowHeight="30"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   GridLinesVisibility="None"
@@ -332,8 +331,7 @@
                         </TextBlock>
 
                         <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
-                                  AutoGenerateColumns="False"
+                                  AutoGenerateColumns="False" RowHeight="30"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
                                   GridLinesVisibility="None"
@@ -359,7 +357,7 @@
                                 <DataGridTextColumn Width="0.5*" Header="Hạng" Binding="{Binding Hang}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Width="100" HorizontalAlignment="Right" Margin="0,0,30,0">
+                        <!--<Button Grid.Row="2" Height="35" Cursor="Hand" Width="100" HorizontalAlignment="Right" Margin="0,0,30,0">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -382,7 +380,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </Border>
             </Grid>

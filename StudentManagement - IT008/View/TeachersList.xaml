@@ -77,6 +77,7 @@
 
                 <Border Grid.Row="2" Background="#FFFFFF" Margin="39,0,62,0" BorderBrush="Gray" BorderThickness="0.5" Height="534" VerticalAlignment="Center">
                     <DataGrid Name="Data"
+                              RowStyle="{StaticResource DataGridRowStyle}"
                             AutoGenerateColumns="False"
                             Background="White"
                             ScrollViewer.CanContentScroll="True" 
@@ -87,7 +88,7 @@
                             CanUserReorderColumns="False"   
                             HorizontalScrollBarVisibility="Disabled"
                                     Margin="10,10,10,10"
-                            HeadersVisibility="Column" Grid.ColumnSpan="2">
+                            HeadersVisibility="Column" Grid.ColumnSpan="2" RowHeight="30">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Width="0.25*" IsReadOnly="True">
                                 <DataGridTemplateColumn.CellTemplate>

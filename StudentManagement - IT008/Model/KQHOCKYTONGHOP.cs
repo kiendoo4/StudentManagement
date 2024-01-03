@@ -14,6 +14,14 @@ namespace StudentManagement___IT008.Model
         [StringLength(7)]
         public string MAHS { get; set; }
 
+        public string HOTEN
+        {
+            get
+            {
+                return HOCSINH.HOTENHS;
+            }
+        }
+
         [Key]
         [Column(Order = 1)]
         [StringLength(7)]
@@ -27,10 +35,45 @@ namespace StudentManagement___IT008.Model
         [StringLength(7)]
         public string MaHocLuc { get; set; }
 
+        public string tenHL
+        {
+            get
+            {
+                return HOCLUC.TenHocLuc;
+            }
+        }
+
         [StringLength(7)]
         public string MaHanhKiem { get; set; }
 
-        public double? DTBTatCaMonHocKy { get; set; }
+        public string tenHKiem
+        {
+            get
+            {
+                return HANHKIEM.TenHanhKiem;
+            }
+        }
+        
+        public string STT
+        {
+            get
+            {
+                HOCSINH hs = HOCSINH;
+                string lopss = hs.LOP;
+                int count = 1;
+                foreach (HOCSINH myhs in Entity.ins.HOCSINHs)
+                {
+                    if (myhs.LOP == lopss)
+                    {
+                        if (myhs == hs) break;
+                        else count++;
+                    }
+                    else continue;
+                }
+                return count.ToString();
+            }
+        }
+    public double? DTBTatCaMonHocKy { get; set; }
 
         public virtual HANHKIEM HANHKIEM { get; set; }
 

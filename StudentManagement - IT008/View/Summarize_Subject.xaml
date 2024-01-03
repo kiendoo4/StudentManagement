@@ -223,7 +223,6 @@
                                    Margin="0, 0, 26, 20"></TextBlock>
 
                         <DataGrid Name="tbl_TK_Chung" Grid.Row="1" Margin="0,-30,22,89" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
@@ -240,7 +239,7 @@
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
                                   CanUserReorderColumns="False" Grid.RowSpan="2"
-                                  SelectionChanged="tbl_TK_Chung_SelectionChanged"
+                                  SelectionChanged="tbl_TK_Chung_SelectionChanged" RowHeight="30"
                                   >
                             <DataGrid.Columns >
                                 <DataGridTextColumn Width="*" Header="STT" Binding="{Binding STT}"></DataGridTextColumn>
@@ -305,10 +304,10 @@
                         </TextBlock>
 
                         <DataGrid Name="tbl_TK_Cuthe" Grid.Row="1" Margin="0, -30, 21, 0" 
-                                  ColumnHeaderStyle="{StaticResource DataGridColumnStyle}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
                                   RowStyle="{StaticResource DataGridRowStyle}"
+                                  RowHeight="30"
                                   GridLinesVisibility="None"
                                   Background="White"
                                   BorderThickness="0"
@@ -332,7 +331,7 @@
                                 <DataGridTextColumn Width="0.5*" Header="Hạng" Binding="{Binding Hang}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Grid.Row="2" Height="35" Cursor="Hand" Margin="422,30,10,30">
+                        <!--<Button Grid.Row="2" Height="35" Cursor="Hand" Margin="422,30,10,30">
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
                                     <Border CornerRadius="15" BorderThickness="0">
@@ -355,7 +354,7 @@
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </Border>
             </Grid>
