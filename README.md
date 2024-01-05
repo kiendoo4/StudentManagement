@@ -81,8 +81,12 @@ Hi vọng rằng với những gì chúng tôi đã làm được, phần mềm 
 Clone this repository into your local computer by this command (git required):
 <p>
 
-    git clone https://github.com/kiendoo4/StudentManagement---IT008
-  
+    1. git clone https://github.com/kiendoo4/StudentManagement---IT008
+    2. Sử dụng visual studio để chạy ứng dụng
+    3. Vào Microsoft SQL Server và chạy file QLHS.sql (script cho database)
+    4. Trong app.config, copy connection string trên máy bạn và paste vào connectionString
+    5. Run app và sử dụng
+    
 </p>
 
 <h3>Additional information</h3>
