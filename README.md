@@ -14,16 +14,6 @@
 - Member: Trần Hoài An - 21520553
 - Member: Lường Đại Phát - 21522443
 
-<h3>Supervisors</h3>
-
-Nguyễn Tấn Toàn
-
-Email: toannt@uit.edu.vn
-
-<h3>Video demo</h3>
-
-This is video demo [Uploading...].
-
 <h3>Description</h3>
 Quản lý học sinh là một nhiệm vụ quan trọng của nhà trường và nền giáo dục, đặc biệt là trong bối cảnh số lượng học sinh trong các trường học đang ngày càng gia tăng. Khi đó, việc quản lý học sinh bằng phương pháp thủ công sẽ càng lúc càng tốn rất nhiều thời gian và công sức. Từ thực trạng này, nhận thấy các công nghệ xung quanh chúng ta đang ngày càng phát triển, chúng tôi tin rằng việc ứng dụng các giải pháp công nghệ thông tin vào quản lý học sinh sẽ là một hướng đi cần thiết. Đó cũng chính là lý do mà chúng tôi phát triển ứng dụng này. 
 
